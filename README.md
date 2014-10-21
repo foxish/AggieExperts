@@ -1,7 +1,7 @@
 AggieExperts
 ============
 
-Abstract: TAMU faculty put their research on those pages, content management system for site admins and faculty.
+Abstract: We are building a content manangement system for TAMU faculty to showcase their research. The initial target is Professors in the Politicial Science department. Pages will be reviewed and approved by administrators before they go live. Major feature: keyword searches by area of Professor, a consistent UI.
 
 
 Issues we’re trying to solve:
