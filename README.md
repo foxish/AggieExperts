@@ -1,7 +1,7 @@
 AggieExperts
 ============
 
-Abstract: We are building a content manangement system for TAMU faculty to showcase their research and areas of interest. Currently, if a journalist or someone within the institute is trying to find a Professor based on his area of interest, it is not easy. The initial target audience is Professors in the Politicial Science department. Pages will be reviewed and approved by administrators before they go live. Major feature: keyword searches by area of Professor, a consistent UI.
+Abstract: We are building a content manangement system for TAMU faculty to showcase their research and areas of interest. Currently, if a journalist or someone within the institute is trying to find a Professor based on his area of interest, it is not easy. The initial target audience is Professors in the Politicial Science department. Pages will be reviewed and approved by site administrators before they go live. Major feature: keyword searches by area of Professor, a consistent UI.
 
 
 Issues we’re trying to solve:
