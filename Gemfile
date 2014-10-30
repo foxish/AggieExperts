@@ -40,9 +40,14 @@ gem 'haml'
 # instructions for dev/test
 group :development, :test do
   gem 'debugger'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-rails'
+  
+  gem 'autotest-rails'
+  gem 'test_notifier'  
+  gem 'autotest-fsevent'
 end

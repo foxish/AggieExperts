@@ -30,3 +30,72 @@ Processing by LoginController#index as HTML
   Rendered login/index.html.haml within layouts/application (54.1ms)
 Completed 200 OK in 130.7ms (Views: 130.0ms | ActiveRecord: 0.0ms)
   [1m[35m (2.5ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 73.5ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.9ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 107.1ms (Views: 106.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-10-30 07:20:35 -0500
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (92.4ms)
+Completed 200 OK in 179.4ms (Views: 178.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.5ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-10-30 07:21:32 -0500
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (68.9ms)
+Completed 200 OK in 189.8ms (Views: 188.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 139.8ms (Views: 139.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 58.2ms (Views: 57.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 55.2ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 59.6ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.9ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 59.0ms (Views: 58.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK

@@ -2506,3 +2506,454 @@ Connecting to database specified by database.yml
   [1m[36m (10.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
   [1m[35m (1.0ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 07:46:13 -0500
+Connecting to database specified by database.yml
+Processing by LoginController#index as HTML
+Completed 500 Internal Server Error in 107.8ms
+
+NoMethodError (undefined method `callModel' for Login(Table doesn't exist):Class):
+  app/controllers/login_controller.rb:3:in `index'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (53.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (2.5ms)
+Compiled login.css  (0ms)  (pid 31489)
+Compiled application.css  (8ms)  (pid 31489)
+Completed 200 OK in 50.7ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /login.css - 200 OK (2ms)
+
+
+Started GET "/assets/style_home.css?body=1" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /style_home.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/style_login.css?body=1" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /style_login.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /login.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/style_login.css" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+
+ActionController::RoutingError (No route matches [GET] "/style_login.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/style_home.css" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+
+ActionController::RoutingError (No route matches [GET] "/style_home.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/images/header_bg.gif" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /images/header_bg.gif - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/header_bg.gif"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/images/menu.gif" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /images/menu.gif - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/menu.gif"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/images/menu_a.gif" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /images/menu_a.gif - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/menu_a.gif"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/images/content_bg.gif" for 127.0.0.1 at 2014-10-30 07:47:00 -0500
+Served asset /images/content_bg.gif - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/content_bg.gif"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to Login (20141030125558)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (28.5ms)[0m  [1mCREATE TABLE "logins" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20141030125558')
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 08:00:24 -0500
+Connecting to database specified by database.yml
+Processing by LoginController#index as HTML
+  Rendered login/index.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 98.7ms (Views: 98.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 08:00:26 -0500
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2014-10-30 08:00:26 -0500
+Served asset /login.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/style_login.css?body=1" for 127.0.0.1 at 2014-10-30 08:00:26 -0500
+Served asset /style_login.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 08:00:26 -0500
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/style_home.css?body=1" for 127.0.0.1 at 2014-10-30 08:00:26 -0500
+Served asset /style_home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 08:00:26 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/style_home.css" for 127.0.0.1 at 2014-10-30 08:00:26 -0500
+
+ActionController::RoutingError (No route matches [GET] "/style_home.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/style_login.css" for 127.0.0.1 at 2014-10-30 08:00:26 -0500
+
+ActionController::RoutingError (No route matches [GET] "/style_login.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-10-30 08:00:26 -0500
+Served asset /login.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 08:00:26 -0500
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 08:00:53 -0500
+Processing by LoginController#index as HTML
+Completed 500 Internal Server Error in 413.0ms
+
+NoMethodError (undefined method `callModel' for #<Class:0x007fe410191710>):
+  app/controllers/login_controller.rb:3:in `index'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 08:01:41 -0500
+Processing by LoginController#index as HTML
+  [1m[36mLogin Load (0.6ms)[0m  [1mSELECT "logins".* FROM "logins" [0m
+  Rendered login/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 69.6ms (Views: 60.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2014-10-30 08:01:41 -0500
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 08:01:41 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style_home.css?body=1" for 127.0.0.1 at 2014-10-30 08:01:41 -0500
+Served asset /style_home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style_login.css?body=1" for 127.0.0.1 at 2014-10-30 08:01:41 -0500
+Served asset /style_login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 08:01:41 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 08:01:41 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/style_home.css" for 127.0.0.1 at 2014-10-30 08:01:42 -0500
+
+ActionController::RoutingError (No route matches [GET] "/style_home.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-10-30 08:01:42 -0500
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 08:01:42 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/style_login.css" for 127.0.0.1 at 2014-10-30 08:01:42 -0500
+
+ActionController::RoutingError (No route matches [GET] "/style_login.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 08:02:06 -0500
+Processing by LoginController#index as HTML
+Completed 500 Internal Server Error in 4.5ms
+
+NoMethodError (undefined method `return_text' for #<Class:0x007fe40c069940>):
+  app/controllers/login_controller.rb:3:in `index'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.9ms)
