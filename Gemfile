@@ -36,7 +36,13 @@ gem 'jquery-rails'
 
 # use Haml for templates
 gem 'haml'
-# use Ruby debugger
+
+# instructions for dev/test
 group :development, :test do
   gem 'debugger'
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
 end

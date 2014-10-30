@@ -8,7 +8,7 @@ development:
   password: cloudstack#
   host: localhost
 
-test:
+test: &test
   adapter: postgresql
   encoding: utf8
   reconnect: false
@@ -26,3 +26,5 @@ production:
   pool: 5
   username: aggieexperts
   password: cloudstack#
+cucumber:
+  <<: *test
