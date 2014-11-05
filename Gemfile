@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.16'
+ruby '1.9.3'
+gem 'rails', '3.2.19'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -36,7 +37,18 @@ gem 'jquery-rails'
 
 # use Haml for templates
 gem 'haml'
-# use Ruby debugger
+
+# instructions for dev/test
 group :development, :test do
   gem 'debugger'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec-rails'
+  
+  gem 'autotest-rails'
+  gem 'test_notifier'  
+  gem 'autotest-fsevent'
 end
