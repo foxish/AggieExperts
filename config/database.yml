@@ -5,14 +5,11 @@ development:
   timeout: 5000
 
 test: &test
-  adapter: postgresql
-  encoding: utf8
-  reconnect: false
-  database: aggieexperts_test
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
-  username: aggieexperts
-  password: cloudstack#
-  host: localhost
+  timeout: 5000
+
 
 production:
   adapter: postgresql
