@@ -48,7 +48,7 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   
-  gem 'autotest-rails'
-  gem 'test_notifier'  
-  gem 'autotest-fsevent'
+#  gem 'autotest-rails'
+#  gem 'test_notifier'  
+#  gem 'autotest-fsevent'
 end
