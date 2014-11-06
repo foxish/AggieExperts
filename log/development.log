@@ -336,3 +336,15 @@ ActionController::RoutingError (No route matches [GET] "/assets/images/content_b
 
 
   Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+Connecting to database specified by database.yml
+  [1m[36m (4.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20141106024412)
+Migrating to CreateProfiles (20141106024433)
+Migrating to CreatePkeywords (20141106024453)
+Migrating to CreateKeywords (20141106030120)
+Migrating to CreatePpics (20141106030144)
+Migrating to CreateSusers (20141106030202)
+Migrating to CreatePpublications (20141106030215)
+Migrating to CreateStatus (20141106030227)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
