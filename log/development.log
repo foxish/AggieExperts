@@ -3523,6 +3523,7 @@ Migrating to CreateSusers (20141105195514)
   [1m[35m (420.7ms)[0m  commit transaction
   [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Connecting to database specified by database.yml
+<<<<<<< HEAD
   [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
   [1m[35m (151.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
   [1m[36m (145.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
@@ -3705,3 +3706,111 @@ Connecting to database specified by database.yml
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Thu, 06 Nov 2014 03:28:14 UTC +00:00], ["email", "saisujithreddy@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Thu, 06 Nov 2014 03:28:14 UTC +00:00]]
   [1m[36m (143.5ms)[0m  [1mcommit transaction[0m
+=======
+  [1m[36m (3.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20141105132614)
+Migrating to CreateProfiles (20141105132639)
+Migrating to CreatePkeywords (20141105132705)
+Migrating to CreateKeywords (20141105132715)
+Migrating to CreatePpictures (20141105132732)
+Migrating to CreatePpublications (20141105132744)
+Migrating to CreateStatus (20141105133430)
+Migrating to CreateSusers (20141105195514)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 21:12:31 -0600
+Connecting to database specified by database.yml
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (5.9ms)
+Compiled style_home.css  (1ms)  (pid 15219)
+Compiled application.css  (1ms)  (pid 15219)
+Completed 200 OK in 201.3ms (Views: 200.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 21:12:33 -0600
+Served asset /application.css - 304 Not Modified (44ms)
+
+
+Started GET "/assets/style_home.css?body=1" for 127.0.0.1 at 2014-11-05 21:12:33 -0600
+Served asset /style_home.css - 200 OK (3ms)
+
+
+Started GET "/assets/style_login.css?body=1" for 127.0.0.1 at 2014-11-05 21:12:33 -0600
+Served asset /style_login.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 21:12:33 -0600
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 21:12:33 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-05 21:12:33 -0600
+Served asset /login.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 21:12:33 -0600
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/images/menu.gif" for 127.0.0.1 at 2014-11-05 21:12:34 -0600
+Served asset /images/menu.gif - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/menu.gif"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/assets/images/header_bg.gif" for 127.0.0.1 at 2014-11-05 21:12:34 -0600
+Served asset /images/header_bg.gif - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/header_bg.gif"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
+>>>>>>> 3a63cf67a18a8c1632e9bacc0e3135b6670daf9c

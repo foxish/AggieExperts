@@ -1,0 +1,23 @@
+-# app/views/layouts/application.html.haml
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    %title= content_for?(:title) ? yield(:title) : "AggieExperts"
+    %meta{:content => content_for?(:description) ? yield(:description) : "AggieExperts", :name => "Portfolio for TAMU Faculty"}
+    = stylesheet_link_tag :application, :media => "all"
+    = javascript_include_tag :application
+    = csrf_meta_tags
+    = yield(:head)
+  %body
+    %div{:class => "main"}
+      %div{:class => "header"}
+        %div{:id => "bar"}
+          %div{:class => "header_resize"}
+            %div{:class => "nav_menu"}
+              %ul
+                %li Home    
+                %li Contact Us
+            %div{:id => "container"}
+              %div{:id => "loginContainer"}
+    %div{:class=> "clear"}
+    = yield
