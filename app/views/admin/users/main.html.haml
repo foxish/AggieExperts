@@ -1,0 +1,16 @@
+%div{:class => "content"}
+	%div{:class => "content_resize"}
+		"Admin Page To have table"
+		%div{:align => 'center'}
+			%table#users
+				%thead
+					%tr
+						%th Name
+						%th Email
+						%th Actions
+				%tbody
+					- @users.each do |user|
+						%tr
+							%td= user.email
+							%td= user.email
+							%td= user.email
