@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 Started GET "/assets/rails.png" for 127.0.0.1 at 2014-10-22 15:21:07 -0500
@@ -6609,3 +6610,5 @@ Served asset /application.js - 304 Not Modified (19ms)
 
 Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-06 00:17:42 -0600
 Served asset /login.js - 304 Not Modified (2ms)
+=======
+>>>>>>> 7c26e2d6d1fd3b94992c4497664d6cb7adead250
