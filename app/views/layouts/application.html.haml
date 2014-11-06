@@ -11,6 +11,9 @@
     = yield(:head)
   %body
     %div{:class => "main"}
+      = flash.each do |key, value| 
+        %strong= key.to_s + ": " + value
+      
       %div{:class => "header"}
         %div{:id => "bar"}
           %div{:class => "header_resize"}
@@ -21,6 +24,4 @@
             %div{:id => "container"}
               %div{:id => "loginContainer"}
     %div{:class=> "clear"}
-    %div{:class=> "content"}
-      %div{:class=> "content_resize"}
-        = yield
+    = yield
