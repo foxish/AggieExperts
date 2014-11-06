@@ -1,6 +1,6 @@
-class CreatePpictures < ActiveRecord::Migration
-  def up
-  	create_table :ppictures do |t|
+class CreatePpics < ActiveRecord::Migration
+    def up
+  	create_table :ppics do |t|
   		t.belongs_to :user
   		t.binary :pic, :limit => 10.megabyte
   		t.timestamps
@@ -8,6 +8,6 @@ class CreatePpictures < ActiveRecord::Migration
   end
 
   def down
-  	drop_table :ppictures
+  	drop_table :ppics
   end
 end

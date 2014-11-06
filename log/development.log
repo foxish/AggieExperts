@@ -3522,3 +3522,186 @@ Migrating to CreateSusers (20141105195514)
   [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141105195514')[0m
   [1m[35m (420.7ms)[0m  commit transaction
   [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (151.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (145.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+Connecting to database specified by database.yml
+  [1m[36m (2.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (2.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (2.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20141106024412)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "password" varchar(255), "activation_date" datetime, "state_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106024412')[0m
+  [1m[35m (189.3ms)[0m  commit transaction
+Migrating to CreateProfiles (20141106024433)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "fname" varchar(255), "lname" varchar(255), "description" text, "phone" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106024433')[0m
+  [1m[35m (162.8ms)[0m  commit transaction
+Migrating to CreatePkeywords (20141106024453)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "pkeywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "keyword_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106024453')[0m
+  [1m[35m (184.4ms)[0m  commit transaction
+Migrating to CreateKeywords (20141106030120)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "keywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106030120')[0m
+  [1m[35m (163.9ms)[0m  commit transaction
+Migrating to CreatePpics (20141106030144)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "ppics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "pic" blob(10485760), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106030144')[0m
+  [1m[35m (152.8ms)[0m  commit transaction
+Migrating to CreateSusers (20141106030202)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "susers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "activation_link" varchar(255), "active_till" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106030202')[0m
+  [1m[35m (187.4ms)[0m  commit transaction
+Migrating to CreatePpublications (20141106030215)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "ppublications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar(255), "url" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106030215')[0m
+  [1m[35m (163.4ms)[0m  commit transaction
+Migrating to CreateStatus (20141106030227)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "status" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255), "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106030227')[0m
+  [1m[35m (172.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (2.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (3.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (10.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (3.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateStatus (20141106030227)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "status"[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141106030227'
+  [1m[36m (168.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePpublications (20141106030215)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "ppublications"[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141106030215'
+  [1m[36m (182.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSusers (20141106030202)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "susers"[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141106030202'
+  [1m[36m (165.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePpics (20141106030144)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "ppics"[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141106030144'
+  [1m[36m (149.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateKeywords (20141106030120)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "keywords"[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141106030120'
+  [1m[36m (186.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePkeywords (20141106024453)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "pkeywords"[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141106024453'
+  [1m[36m (186.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateProfiles (20141106024433)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "profiles"[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141106024433'
+  [1m[36m (142.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUsers (20141106024412)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141106024412'
+  [1m[36m (164.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (3.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20141106024412)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "password" varchar(255), "activation_date" datetime, "status_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106024412')[0m
+  [1m[35m (179.0ms)[0m  commit transaction
+Migrating to CreateProfiles (20141106024433)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "fname" varchar(255), "lname" varchar(255), "description" text, "phone" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106024433')[0m
+  [1m[35m (140.5ms)[0m  commit transaction
+Migrating to CreatePkeywords (20141106024453)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "pkeywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "keyword_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106024453')[0m
+  [1m[35m (141.4ms)[0m  commit transaction
+Migrating to CreateKeywords (20141106030120)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "keywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106030120')[0m
+  [1m[35m (186.2ms)[0m  commit transaction
+Migrating to CreatePpics (20141106030144)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "ppics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "pic" blob(10485760), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106030144')[0m
+  [1m[35m (186.1ms)[0m  commit transaction
+Migrating to CreateSusers (20141106030202)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "susers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "activation_link" varchar(255), "active_till" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106030202')[0m
+  [1m[35m (173.1ms)[0m  commit transaction
+Migrating to CreatePpublications (20141106030215)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "ppublications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar(255), "url" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106030215')[0m
+  [1m[35m (187.1ms)[0m  commit transaction
+Migrating to CreateStatus (20141106030227)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "status" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255), "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141106030227')[0m
+  [1m[35m (153.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (3.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (66.0ms)[0m  [1mINSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)[0m  [["code", "PACT"], ["created_at", Thu, 06 Nov 2014 03:28:12 UTC +00:00], ["description", "Pending Activation"], ["updated_at", Thu, 06 Nov 2014 03:28:12 UTC +00:00]]
+  [1m[35m (211.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)  [["code", "DISABLE"], ["created_at", Thu, 06 Nov 2014 03:28:12 UTC +00:00], ["description", "Disabled"], ["updated_at", Thu, 06 Nov 2014 03:28:12 UTC +00:00]]
+  [1m[36m (175.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)[0m  [["code", "PAPP"], ["created_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00], ["description", "Pending Approval"], ["updated_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00]]
+  [1m[35m (188.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)  [["code", "ACTIVE"], ["created_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00], ["description", "Active"], ["updated_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00]]
+  [1m[36m (145.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00], ["email", "prithvi.sakuru@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00]]
+  [1m[35m (148.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00], ["email", "anirudh4444@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00]]
+  [1m[36m (186.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00], ["email", "arunxls@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00]]
+  [1m[35m (165.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (51.2ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00], ["email", "malavikam92@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Thu, 06 Nov 2014 03:28:13 UTC +00:00]]
+  [1m[36m (167.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Thu, 06 Nov 2014 03:28:14 UTC +00:00], ["email", "vsiravara@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Thu, 06 Nov 2014 03:28:14 UTC +00:00]]
+  [1m[35m (188.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Thu, 06 Nov 2014 03:28:14 UTC +00:00], ["email", "saisujithreddy@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Thu, 06 Nov 2014 03:28:14 UTC +00:00]]
+  [1m[36m (143.5ms)[0m  [1mcommit transaction[0m

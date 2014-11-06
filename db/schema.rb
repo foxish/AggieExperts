@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141105195514) do
+ActiveRecord::Schema.define(:version => 20141106030227) do
 
   create_table "keywords", :force => true do |t|
     t.string   "key"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20141105195514) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "ppictures", :force => true do |t|
+  create_table "ppics", :force => true do |t|
     t.integer  "user_id"
     t.binary   "pic",        :limit => 10485760
     t.datetime "created_at",                     :null => false
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20141105195514) do
     t.string   "email"
     t.string   "password"
     t.datetime "activation_date"
-    t.integer  "state_id"
+    t.integer  "status_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
