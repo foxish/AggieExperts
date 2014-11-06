@@ -1,0 +1,338 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:27:53 -0600
+Connecting to database specified by database.yml
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (7.0ms)
+Compiled style_home.css  (0ms)  (pid 22480)
+Compiled style_login.css  (0ms)  (pid 22480)
+Compiled application.css  (58ms)  (pid 22480)
+Compiled jquery.js  (2ms)  (pid 22480)
+Compiled jquery_ujs.js  (0ms)  (pid 22480)
+Compiled login.js  (0ms)  (pid 22480)
+Compiled application.js  (73ms)  (pid 22480)
+Completed 200 OK in 245.6ms (Views: 244.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:27:56 -0600
+Served asset /application.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/style_home.css?body=1" for 127.0.0.1 at 2014-11-05 22:27:56 -0600
+Served asset /style_home.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/style_login.css?body=1" for 127.0.0.1 at 2014-11-05 22:27:56 -0600
+Served asset /style_login.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:27:56 -0600
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:27:56 -0600
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:27:56 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-05 22:27:56 -0600
+Served asset /login.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:31:40 -0600
+Connecting to database specified by database.yml
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 69.8ms
+
+ActionView::Template::Error (Indenting at the beginning of the document is illegal.):
+    1:   %form
+    2:   Search:
+    3:   %input{:name => "search", :type => "text"}
+    4:     %button{:type => "button"} Search!
+  app/views/home/index.html.haml:1
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (86.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:32:00 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (25.0ms)
+Completed 200 OK in 114.4ms (Views: 113.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:32:00 -0600
+Served asset /application.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/style_home.css?body=1" for 127.0.0.1 at 2014-11-05 22:32:00 -0600
+Served asset /style_home.css - 304 Not Modified (293ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:32:01 -0600
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/style_login.css?body=1" for 127.0.0.1 at 2014-11-05 22:32:01 -0600
+Served asset /style_login.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:32:01 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-05 22:32:01 -0600
+Served asset /login.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:32:01 -0600
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/images/header_bg.gif" for 127.0.0.1 at 2014-11-05 22:32:01 -0600
+Served asset /images/header_bg.gif - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/header_bg.gif"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/images/menu.gif" for 127.0.0.1 at 2014-11-05 22:32:01 -0600
+Served asset /images/menu.gif - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/menu.gif"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:36:09 -0600
+Connecting to database specified by database.yml
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (41.4ms)
+Completed 200 OK in 131.7ms (Views: 131.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:36:11 -0600
+Served asset /application.css - 304 Not Modified (124ms)
+
+
+Started GET "/assets/style_home.css?body=1" for 127.0.0.1 at 2014-11-05 22:36:11 -0600
+Served asset /style_home.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:11 -0600
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/style_login.css?body=1" for 127.0.0.1 at 2014-11-05 22:36:11 -0600
+Served asset /style_login.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:11 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:11 -0600
+Served asset /login.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:11 -0600
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:37:49 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (27.5ms)
+Completed 200 OK in 90.7ms (Views: 85.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:37:50 -0600
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/style_home.css?body=1" for 127.0.0.1 at 2014-11-05 22:37:50 -0600
+Served asset /style_home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style_login.css?body=1" for 127.0.0.1 at 2014-11-05 22:37:50 -0600
+Served asset /style_login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:50 -0600
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:50 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:50 -0600
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:50 -0600
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:38:20 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (53.4ms)
+Completed 200 OK in 114.8ms (Views: 107.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:38:20 -0600
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/style_home.css?body=1" for 127.0.0.1 at 2014-11-05 22:38:20 -0600
+Served asset /style_home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style_login.css?body=1" for 127.0.0.1 at 2014-11-05 22:38:20 -0600
+Served asset /style_login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:38:20 -0600
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-05 22:38:21 -0600
+Served asset /login.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:38:21 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:38:21 -0600
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:40:53 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (14.1ms)
+Completed 500 Internal Server Error in 98.7ms
+
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    22:               %div{:id => "loginContainer"}
+    23:     %div{:class=> "clear"}
+    24:     %div{:class=> "content"}
+    25:         %div{:class=> "content_resize"}
+    26:             = yield
+  app/views/layouts/application.html.haml:25
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:41:22 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 93.6ms (Views: 91.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:41:23 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:41:23 -0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/style_home.css?body=1" for 127.0.0.1 at 2014-11-05 22:41:23 -0600
+Served asset /style_home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:41:23 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style_login.css?body=1" for 127.0.0.1 at 2014-11-05 22:41:23 -0600
+Served asset /style_login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-05 22:41:23 -0600
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:41:23 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/images/content_bg.gif" for 127.0.0.1 at 2014-11-05 22:41:23 -0600
+Served asset /images/content_bg.gif - 404 Not Found (13ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/content_bg.gif"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)

@@ -10,5 +10,5 @@ Scenario: content on homepage
   
 Scenario: search field and button
   Given I am on the home page
-  When I fill in "#search" with "test" 
+  When I fill in "search" with "test" 
   And I should see "test"
