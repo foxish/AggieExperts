@@ -10,10 +10,7 @@
     = csrf_meta_tags
     = yield(:head)
   %body
-    %div{:class => "main"}
-      = flash.each do |key, value| 
-        %strong= key.to_s + ": " + value
-      
+    %div{:class => "main"}      
       %div{:class => "header"}
         %div{:id => "bar"}
           %div{:class => "header_resize"}
