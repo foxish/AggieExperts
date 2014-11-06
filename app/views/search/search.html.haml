@@ -3,19 +3,16 @@
 %div{:class=> "content"}
   %div{:class=> "content_resize"}
 
-    %form
-    Search:
-    %input{:name => "search", :type => "text", :id => "search"}
-    %br
-    %button{:type => "button"} Search    
+    %div{:id => "search_form"}
+      %form{:controller => 'index', :action => 'search', :method => 'get'}
+        %input{:name => "term", :type => "text", :id => "tb_search"}
+        %input{:type => "submit", :value => "Search!", :id => "bt_search"}
     %br
     
-    
-    - arr.each do |a|
-      %div{:id=>"searchdiv"}
-      %form
-      %img{:height => "42", :width => "42"}
-        %p line1
-        %p line2
-
-      end 
+    %h3{:class => "center"} Results
+    %div{:class=>"results"}
+      - arr.each do |a|
+        %div{:class=> "result" }
+          %img{:class => "thumb", :height => "100", :width => "100"}
+            %strong Prof
+            %p But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great...
