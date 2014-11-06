@@ -1,0 +1,21 @@
+- arr=[1,2,3]
+
+%div{:class=> "content"}
+  %div{:class=> "content_resize"}
+
+    %form
+    Search:
+    %input{:name => "search", :type => "text", :id => "search"}
+    %br
+    %button{:type => "button"} Search    
+    %br
+    
+    
+    - arr.each do |a|
+      %div{:id=>"searchdiv"}
+      %form
+      %img{:height => "42", :width => "42"}
+        %p line1
+        %p line2
+
+      end 

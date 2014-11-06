@@ -1,6 +1,9 @@
+arr=[1,2,3]
 
+arr.each do |a|
 
-- arr=[1,2,3]
+end 
+
 %form
   Search:
   %input{:name => "search", :type => "text", :id => "search"}
@@ -8,12 +11,9 @@
     %button{:type => "button"} Search!
     %br
   
-  
-- arr.each do |a|
-%div{:id=>"searchdiv"}
+  %div(:id=>"searchdiv"}
   %form
     %img{:height => "42", :width => "42"}
       %p line1
       %p line2
-
-  end 
+  

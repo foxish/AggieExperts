@@ -10,7 +10,7 @@
   
   
 - arr.each do |a|
-%div{:id=>"searchdiv"}
+  %div{:id=>"searchdiv"}
   %form
     %img{:height => "42", :width => "42"}
       %p line1

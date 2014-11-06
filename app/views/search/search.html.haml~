@@ -1,4 +1,6 @@
 
+%div{:class=> "content"}
+  %div{:class=> "content_resize"}
 
 - arr=[1,2,3]
 %form
@@ -10,7 +12,7 @@
   
   
 - arr.each do |a|
-%div{:id=>"searchdiv"}
+  %div{:id=>"searchdiv"}
   %form
     %img{:height => "42", :width => "42"}
       %p line1
