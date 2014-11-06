@@ -6,4 +6,4 @@ I want to arrive on the AggieExperts homepage
 Scenario: content on homepage
   Given I am on the home page
   Then I should see "Home"
-  And I should see "Contents"
+  And I should see "Contact Us"
