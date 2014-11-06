@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
 	def main
-		@users = Users.all
+		@users = User.all
 	end
 end

@@ -1,13 +1,7 @@
 AggieExperts::Application.routes.draw do
   match '/' => 'home#index'
 
-  namespace :admin do
-    resources :users, :only => [:index]
-  end
-    
-  match '/admin/users', to: 'admin/users#main', via: :all
-
-  get '/admin/main', to: 'admin/users#main', via: :all
+  get '/admin/main', to: 'admin#main', via: :all
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
