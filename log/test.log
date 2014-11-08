@@ -302,3 +302,164 @@ Processing by HomeController#index as HTML
   Rendered home/index.html.haml within layouts/application (0.2ms)
 Completed 200 OK in 2.9ms (Views: 2.6ms | ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-08 12:50:10 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 104.5ms (Views: 103.8ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-08 12:50:11 -0600
+Processing by AdminController#main as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered admin/main.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 185.9ms (Views: 11.2ms | ActiveRecord: 4.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-11-08 12:50:11 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 3.1ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-08 12:50:11 -0600
+Processing by AdminController#main as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered admin/main.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 5.4ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-08 12:50:11 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.9ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-08 13:42:00 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (12.4ms)
+Completed 200 OK in 125.2ms (Views: 124.5ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-08 13:42:01 -0600
+Processing by AdminController#main as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered admin/main.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 256.2ms (Views: 11.4ms | ActiveRecord: 4.4ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-11-08 13:42:01 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (65.9ms)
+Completed 200 OK in 69.3ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-08 13:42:01 -0600
+Processing by AdminController#main as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered admin/main.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 5.7ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-08 13:42:01 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 3.7ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-08 13:46:00 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 93.9ms (Views: 93.2ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-08 13:46:00 -0600
+Processing by AdminController#main as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered admin/main.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 182.7ms (Views: 11.3ms | ActiveRecord: 4.4ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-11-08 13:46:00 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 4.2ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-08 13:46:00 -0600
+Processing by AdminController#main as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered admin/main.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 5.4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-08 13:46:00 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.9ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-08 13:46:29 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 93.7ms (Views: 93.1ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-08 13:46:29 -0600
+Processing by AdminController#main as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered admin/main.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 182.8ms (Views: 11.2ms | ActiveRecord: 4.3ms)
+Started POST "/admin/add_user" for 127.0.0.1 at 2014-11-08 13:46:30 -0600
+Processing by AdminController#add_users as HTML
+  Parameters: {"userEmail"=>"abc@xyz.com"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSuser Exists (0.2ms)[0m  SELECT 1 AS one FROM "susers" WHERE "susers"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSuser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "susers" WHERE "susers"."activation_link" = '6a1d4919dea91996be10cfd6fdc438ab678b4fa165ee3098b8' LIMIT 1[0m
+  [1m[35mSQL (5.6ms)[0m  INSERT INTO "susers" ("activation_link", "active_till", "created_at", "email", "updated_at") VALUES (?, ?, ?, ?, ?)  [["activation_link", "6a1d4919dea91996be10cfd6fdc438ab678b4fa165ee3098b8"], ["active_till", Tue, 18 Nov 2014 19:46:30 UTC +00:00], ["created_at", Sat, 08 Nov 2014 19:46:30 UTC +00:00], ["email", "abc@xyz.com"], ["updated_at", Sat, 08 Nov 2014 19:46:30 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "status".* FROM "status" WHERE "status"."code" = 'PACT' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", nil], ["created_at", Sat, 08 Nov 2014 19:46:30 UTC +00:00], ["email", "abc@xyz.com"], ["password", "a"], ["status_id", 5], ["updated_at", Sat, 08 Nov 2014 19:46:30 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/main
+Completed 302 Found in 212.6ms (ActiveRecord: 8.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-08 13:46:30 -0600
+Processing by AdminController#main as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered admin/main.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 5.2ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-08 13:46:30 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.9ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-08 13:46:30 -0600
+Processing by AdminController#main as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" 
+  Rendered admin/main.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 5.9ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-11-08 13:46:30 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.8ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

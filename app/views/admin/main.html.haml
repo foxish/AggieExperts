@@ -1,16 +1,30 @@
 %div{:class => "content"}
 	%div{:class => "content_resize"}
-		"Admin Page To have table"
-		%div{:align => 'center'}
+		%div{:align => 'center', :class=>'users'}
+			%h3 AggieExperts Users
 			%table#users
 				%thead
 					%tr
 						%th Name
 						%th Email
+						%th Status
 						%th Actions
 				%tbody
 					- @users.each do |user|
 						%tr
+							%td= trim_email(user.email)
 							%td= user.email
+							%td= user.status_id
 							%td= user.email
-							%td= user.email
+							
+		%br
+
+		%div
+			= button_to 'Approve All', :controller => :admin, :action => :approve_all
+		%br
+
+		%div{:id => "add_form", :align=>'center'}
+			%form{:controller => :admin, :action => :add_user, :method => 'post'}
+				%input{:name => "userEmail", :type => "text", :id => "tb_add_user"}
+				%input{:type => "submit", :value => "Add User", :id => "bt_add_user"}
+
