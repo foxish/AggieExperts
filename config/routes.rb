@@ -1,8 +1,9 @@
 AggieExperts::Application.routes.draw do
   match '/' => 'home#index'
 
-  get '/admin/main', to: 'admin#main', via: :all
-  
+  get '/admin/main' => 'admin#main'
+  post '/admin/main' => 'admin#approve_all'
+  post '/admin/add_user' => 'admin#add_users'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
