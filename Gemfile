@@ -48,6 +48,7 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'pry'
   
 #  gem 'autotest-rails'
 #  gem 'test_notifier'  

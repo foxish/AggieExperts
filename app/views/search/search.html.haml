@@ -5,7 +5,7 @@
 
     %div{:id => "search_form"}
       %form{:controller => 'index', :action => 'search', :method => 'get'}
-        %input{:name => "term", :type => "text", :id => "tb_search"}
+        %input{:name => "term", :type => "text", :id => "tb_search", :value => @term}
         %input{:type => "submit", :value => "Search!", :id => "bt_search"}
     %br
     
@@ -13,6 +13,6 @@
     %div{:class=>"results"}
       - arr.each do |a|
         %div{:class=> "result" }
-          %img{:class => "thumb", :height => "100", :width => "100"}
+          %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
             %strong Prof
             %p But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great...
