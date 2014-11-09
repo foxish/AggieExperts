@@ -98,4 +98,15 @@ ol li .send { margin:16px 0 0 0;}
     background-color: #500000;
 }
 #container { width:960px; margin:0 auto; }
+#search_form {
+    text-align: center;
+    margin: 0px auto;
+
+}
+#tb_search {
+    width: 500px;
+    clear: both;
+}
+
+
 
