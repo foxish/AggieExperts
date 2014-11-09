@@ -1,3 +1,3 @@
 class Pkeyword < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :user_id, :keyword_id
 end
