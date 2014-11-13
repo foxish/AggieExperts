@@ -1,5 +1,3 @@
-- arr=[1,2,3]
-
 %div{:class=> "content"}
   %div{:class=> "content_resize"}
 
@@ -11,8 +9,9 @@
     
     %h3{:class => "center"} Results
     %div{:class=>"results"}
-      - arr.each do |a|
-        %div{:class=> "result" }
-          %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
-            %strong Prof
-            %p But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great...
+      - @profiles.each do |profile|
+        %a{:href => '#'}
+          %div{:class=> "result" }
+            %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
+              %strong= "Prof. " + profile.fname + " " + profile.lname
+              %p.oflow= profile.description

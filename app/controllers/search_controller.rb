@@ -3,10 +3,11 @@ class SearchController < ApplicationController
     @term = params[:term]
     @row = Keyword.where("keywords.key LIKE ?", '%'+@term+'%').first
     if not @row.nil?
-      @id = @row.id
-      @profiles = Profile.where(keyword_id: @ids).all 
-      binding.pry
+      @keyword_id = @row.id
+      @profiles = Profile.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').
+                       where('pkeywords.keyword_id = ?', @keyword_id).all
+      logger.debug(@users)
     end
-    
+    @profiles = [] unless @profiles
   end
 end
