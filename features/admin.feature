@@ -19,5 +19,5 @@ Scenario: Add new user
 	Then I should see "abc@xyz.com"
 
 Scenario: filter admin table
-	When I select "Pending Approval"
-	Then I should see "abc@xyz.com"
+	When I select "Pending Approval" from "filter"
+	Then I should see "Pending Approval"

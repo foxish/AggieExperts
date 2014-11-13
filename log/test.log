@@ -463,3 +463,903 @@ Processing by HomeController#index as HTML
   Rendered home/index.html.haml within layouts/application (0.3ms)
 Completed 200 OK in 2.8ms (Views: 2.5ms | ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:32:12 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (65.2ms)
+Completed 200 OK in 153.8ms (Views: 153.1ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:32:13 -0600
+Processing by AdminController#main as HTML
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (120.3ms)
+Completed 200 OK in 326.8ms (Views: 123.8ms | ActiveRecord: 5.6ms)
+Started POST "/admin/add_user" for 127.0.0.1 at 2014-11-13 00:32:13 -0600
+Processing by AdminController#add_users as HTML
+  Parameters: {"userEmail"=>"abc@xyz.com"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSuser Exists (0.2ms)[0m  SELECT 1 AS one FROM "susers" WHERE "susers"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSuser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "susers" WHERE "susers"."activation_link" = '86591ac4d76493bb03efcb6e0521d4ec6942fde91afcb564ea' LIMIT 1[0m
+  [1m[35mSQL (6.1ms)[0m  INSERT INTO "susers" ("activation_link", "active_till", "created_at", "email", "updated_at") VALUES (?, ?, ?, ?, ?)  [["activation_link", "86591ac4d76493bb03efcb6e0521d4ec6942fde91afcb564ea"], ["active_till", Sun, 23 Nov 2014 06:32:13 UTC +00:00], ["created_at", Thu, 13 Nov 2014 06:32:13 UTC +00:00], ["email", "abc@xyz.com"], ["updated_at", Thu, 13 Nov 2014 06:32:13 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."code" = 'PACT' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", nil], ["created_at", Thu, 13 Nov 2014 06:32:13 UTC +00:00], ["email", "abc@xyz.com"], ["password", "6"], ["status_id", 1], ["updated_at", Thu, 13 Nov 2014 06:32:13 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/main
+Completed 302 Found in 195.3ms (ActiveRecord: 8.2ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:32:13 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (28.8ms)
+Completed 200 OK in 33.7ms (Views: 30.6ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:32:13 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.8ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:32:13 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.3ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  Rendered admin/main.html.haml within layouts/application (26.0ms)
+Completed 200 OK in 31.1ms (Views: 27.8ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:32:13 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 3.0ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:35:01 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (59.4ms)
+Completed 200 OK in 137.5ms (Views: 137.0ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:35:01 -0600
+Processing by AdminController#main as HTML
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "status".* FROM "status" 
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (104.5ms)
+Completed 200 OK in 291.1ms (Views: 107.4ms | ActiveRecord: 4.7ms)
+Started POST "/admin/add_user" for 127.0.0.1 at 2014-11-13 00:35:01 -0600
+Processing by AdminController#add_users as HTML
+  Parameters: {"userEmail"=>"abc@xyz.com"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSuser Exists (0.2ms)[0m  SELECT 1 AS one FROM "susers" WHERE "susers"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSuser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "susers" WHERE "susers"."activation_link" = 'aaa4d41a5a1926ef49f2e33f466d523031dc47bc928f9fcc36' LIMIT 1[0m
+  [1m[35mSQL (5.5ms)[0m  INSERT INTO "susers" ("activation_link", "active_till", "created_at", "email", "updated_at") VALUES (?, ?, ?, ?, ?)  [["activation_link", "aaa4d41a5a1926ef49f2e33f466d523031dc47bc928f9fcc36"], ["active_till", Sun, 23 Nov 2014 06:35:01 UTC +00:00], ["created_at", Thu, 13 Nov 2014 06:35:01 UTC +00:00], ["email", "abc@xyz.com"], ["updated_at", Thu, 13 Nov 2014 06:35:01 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."code" = 'PACT' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", nil], ["created_at", Thu, 13 Nov 2014 06:35:01 UTC +00:00], ["email", "abc@xyz.com"], ["password", "1"], ["status_id", 1], ["updated_at", Thu, 13 Nov 2014 06:35:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/main
+Completed 302 Found in 182.6ms (ActiveRecord: 7.5ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:35:01 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (28.2ms)
+Completed 200 OK in 33.1ms (Views: 30.0ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:35:02 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.8ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:35:02 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.3ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  Rendered admin/main.html.haml within layouts/application (25.1ms)
+Completed 200 OK in 30.5ms (Views: 26.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:35:02 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 3.2ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:35:30 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (65.2ms)
+Completed 200 OK in 160.5ms (Views: 159.8ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:35:30 -0600
+Processing by AdminController#main as HTML
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (119.6ms)
+Completed 200 OK in 308.2ms (Views: 123.1ms | ActiveRecord: 5.5ms)
+Started POST "/admin/add_user" for 127.0.0.1 at 2014-11-13 00:35:31 -0600
+Processing by AdminController#add_users as HTML
+  Parameters: {"userEmail"=>"abc@xyz.com"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSuser Exists (0.3ms)[0m  SELECT 1 AS one FROM "susers" WHERE "susers"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSuser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "susers" WHERE "susers"."activation_link" = 'ea4acd6d1b7a5d7982b0e1b3f0c5c1c38376ba996cada732ec' LIMIT 1[0m
+  [1m[35mSQL (5.6ms)[0m  INSERT INTO "susers" ("activation_link", "active_till", "created_at", "email", "updated_at") VALUES (?, ?, ?, ?, ?)  [["activation_link", "ea4acd6d1b7a5d7982b0e1b3f0c5c1c38376ba996cada732ec"], ["active_till", Sun, 23 Nov 2014 06:35:31 UTC +00:00], ["created_at", Thu, 13 Nov 2014 06:35:31 UTC +00:00], ["email", "abc@xyz.com"], ["updated_at", Thu, 13 Nov 2014 06:35:31 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."code" = 'PACT' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", nil], ["created_at", Thu, 13 Nov 2014 06:35:31 UTC +00:00], ["email", "abc@xyz.com"], ["password", "7"], ["status_id", 1], ["updated_at", Thu, 13 Nov 2014 06:35:31 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/main
+Completed 302 Found in 194.5ms (ActiveRecord: 7.7ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:35:31 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (28.6ms)
+Completed 200 OK in 33.5ms (Views: 30.4ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:35:31 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.8ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:35:31 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.3ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  Rendered admin/main.html.haml within layouts/application (25.3ms)
+Completed 200 OK in 30.5ms (Views: 27.2ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:35:31 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 4.6ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:37:52 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (65.3ms)
+Completed 200 OK in 153.1ms (Views: 152.5ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:37:52 -0600
+Processing by AdminController#main as HTML
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (119.9ms)
+Completed 200 OK in 307.7ms (Views: 123.4ms | ActiveRecord: 5.4ms)
+Started POST "/admin/add_user" for 127.0.0.1 at 2014-11-13 00:37:52 -0600
+Processing by AdminController#add_users as HTML
+  Parameters: {"userEmail"=>"abc@xyz.com"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSuser Exists (0.2ms)[0m  SELECT 1 AS one FROM "susers" WHERE "susers"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSuser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "susers" WHERE "susers"."activation_link" = '2d03471855f4bb7afc22e612c6f71920aa29919a0af10a5d18' LIMIT 1[0m
+  [1m[35mSQL (6.7ms)[0m  INSERT INTO "susers" ("activation_link", "active_till", "created_at", "email", "updated_at") VALUES (?, ?, ?, ?, ?)  [["activation_link", "2d03471855f4bb7afc22e612c6f71920aa29919a0af10a5d18"], ["active_till", Sun, 23 Nov 2014 06:37:52 UTC +00:00], ["created_at", Thu, 13 Nov 2014 06:37:52 UTC +00:00], ["email", "abc@xyz.com"], ["updated_at", Thu, 13 Nov 2014 06:37:52 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."code" = 'PACT' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", nil], ["created_at", Thu, 13 Nov 2014 06:37:52 UTC +00:00], ["email", "abc@xyz.com"], ["password", "f"], ["status_id", 1], ["updated_at", Thu, 13 Nov 2014 06:37:52 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/main
+Completed 302 Found in 203.0ms (ActiveRecord: 9.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:37:52 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.3ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (33.5ms)
+Completed 200 OK in 39.5ms (Views: 35.7ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:37:52 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 3.2ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:37:52 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.3ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.4ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  Rendered admin/main.html.haml within layouts/application (25.7ms)
+Completed 200 OK in 32.6ms (Views: 27.5ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:37:53 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.8ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:41:17 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (65.0ms)
+Completed 200 OK in 153.1ms (Views: 152.4ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:41:17 -0600
+Processing by AdminController#main as HTML
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (120.4ms)
+Completed 200 OK in 308.7ms (Views: 123.9ms | ActiveRecord: 5.4ms)
+Started POST "/admin/add_user" for 127.0.0.1 at 2014-11-13 00:41:17 -0600
+Processing by AdminController#add_users as HTML
+  Parameters: {"userEmail"=>"abc@xyz.com"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSuser Exists (0.2ms)[0m  SELECT 1 AS one FROM "susers" WHERE "susers"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSuser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "susers" WHERE "susers"."activation_link" = 'b892cea888bb144f216cf1d2c67f43f1d368635322f7f12df7' LIMIT 1[0m
+  [1m[35mSQL (4.8ms)[0m  INSERT INTO "susers" ("activation_link", "active_till", "created_at", "email", "updated_at") VALUES (?, ?, ?, ?, ?)  [["activation_link", "b892cea888bb144f216cf1d2c67f43f1d368635322f7f12df7"], ["active_till", Sun, 23 Nov 2014 06:41:17 UTC +00:00], ["created_at", Thu, 13 Nov 2014 06:41:17 UTC +00:00], ["email", "abc@xyz.com"], ["updated_at", Thu, 13 Nov 2014 06:41:17 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."code" = 'PACT' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", nil], ["created_at", Thu, 13 Nov 2014 06:41:17 UTC +00:00], ["email", "abc@xyz.com"], ["password", "b"], ["status_id", 1], ["updated_at", Thu, 13 Nov 2014 06:41:17 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/main
+Completed 302 Found in 189.8ms (ActiveRecord: 6.7ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:41:17 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (25.7ms)
+Completed 200 OK in 29.8ms (Views: 27.1ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:41:18 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 2.4ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:41:18 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.3ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  Rendered admin/main.html.haml within layouts/application (29.9ms)
+Completed 200 OK in 35.1ms (Views: 31.8ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:41:18 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.7ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:42:32 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (59.2ms)
+Completed 200 OK in 137.3ms (Views: 136.7ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:42:32 -0600
+Processing by AdminController#main as HTML
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "status".* FROM "status" 
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (104.9ms)
+Completed 200 OK in 270.0ms (Views: 107.9ms | ActiveRecord: 4.5ms)
+Started POST "/admin/add_user" for 127.0.0.1 at 2014-11-13 00:42:32 -0600
+Processing by AdminController#add_users as HTML
+  Parameters: {"userEmail"=>"abc@xyz.com"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSuser Exists (0.2ms)[0m  SELECT 1 AS one FROM "susers" WHERE "susers"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSuser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "susers" WHERE "susers"."activation_link" = '542ee7c79981e5d5bf27ef8db2d0111ceab3511486a1093e37' LIMIT 1[0m
+  [1m[35mSQL (4.8ms)[0m  INSERT INTO "susers" ("activation_link", "active_till", "created_at", "email", "updated_at") VALUES (?, ?, ?, ?, ?)  [["activation_link", "542ee7c79981e5d5bf27ef8db2d0111ceab3511486a1093e37"], ["active_till", Sun, 23 Nov 2014 06:42:32 UTC +00:00], ["created_at", Thu, 13 Nov 2014 06:42:33 UTC +00:00], ["email", "abc@xyz.com"], ["updated_at", Thu, 13 Nov 2014 06:42:33 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."code" = 'PACT' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'abc@xyz.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", nil], ["created_at", Thu, 13 Nov 2014 06:42:33 UTC +00:00], ["email", "abc@xyz.com"], ["password", "8"], ["status_id", 1], ["updated_at", Thu, 13 Nov 2014 06:42:33 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/main
+Completed 302 Found in 170.5ms (ActiveRecord: 6.6ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:42:33 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  Rendered admin/main.html.haml within layouts/application (24.1ms)
+Completed 200 OK in 28.5ms (Views: 25.7ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:42:33 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 2.4ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started GET "/admin/main" for 127.0.0.1 at 2014-11-13 00:42:33 -0600
+Processing by AdminController#main as HTML
+  [1m[36mStatus Load (0.3ms)[0m  [1mSELECT "status".* FROM "status" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1[0m
+  Rendered admin/main.html.haml within layouts/application (24.3ms)
+Completed 200 OK in 29.2ms (Views: 26.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-11-13 00:42:33 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 3.0ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
