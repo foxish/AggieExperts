@@ -18,4 +18,5 @@ class User < ActiveRecord::Base
   	statusId = Status.where(code: 'PACT').first
   	User.create!(:email  => email,:password => tempPass, :status_id => statusId.id)
   end
+
 end
