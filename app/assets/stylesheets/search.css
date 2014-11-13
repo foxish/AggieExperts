@@ -17,7 +17,7 @@
     border: 1px solid #dbdbdb;
     margin: 10px;
     padding: 20px;
-    height: 100px;
+    height: 110px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -25,9 +25,14 @@
 
 .oflow {
     text-overflow : ellipsis;
-    height        : 80px;
+    height        : 60px;
     width         : 700px;
     overflow      : hidden;
+}
+
+.keywords {
+    margin-left: 110px;
+
 }
 
 a { text-decoration: none;

@@ -1,13 +1,16 @@
 class SearchController < ApplicationController
   def search
     @term = params[:term]
-    @row = Keyword.where("keywords.key LIKE ?", '%'+@term+'%').first
-    if not @row.nil?
-      @keyword_id = @row.id
-      @profiles = Profile.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').
-                       where('pkeywords.keyword_id = ?', @keyword_id).all
-      logger.debug(@users)
+    if not @term.nil?
+      @profiles = Profile.get_profiles_by_keyword(@term) || []
+      logger.debug(@profiles)
+      
+      @keywords = {}
+      @profiles.each do |profile|
+          @keywords[profile.user_id] = Keyword.get_for_user(profile.user_id)
+      end
+      logger.debug(@keywords)
     end
-    @profiles = [] unless @profiles
+    @profiles = @profiles || []
   end
 end
