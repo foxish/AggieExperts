@@ -45,7 +45,7 @@
 					- @users.each do |user|
 						%tr
 							%td{:align=>'center'}= trim_email(user.email)
-							%td{:align=>'center'}= user.email
+							%td{:align=>'center'}= link_to user.email, ("/")
 							%td{:align=>'center'}= status_description(user.status_id)
 							%td{:align=>'justify'}
 								%div{:id=>"action_container", :style=>'overflow: hidden; position: relative; white-space: nowrap;'}
