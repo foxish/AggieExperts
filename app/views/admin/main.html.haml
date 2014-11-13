@@ -1,8 +1,40 @@
 %div{:class => "content"}
 	%div{:class => "content_resize"}
-		%div{:align => 'center', :class=>'users'}
+		%script
+			:plain
+				$(document).ready( function () {
+					$('#users').DataTable({
+						"columns": [
+							null,
+							null,
+							null,
+							{ "width": "14%" }
+							]})
+
+				});	
+		%script
+			:plain
+				$(document).ready( function () {
+				$( "#filter" ).change(function(){
+					if(this.value != 'All')
+					$('#users').DataTable().search(this.value).draw()
+					else
+					$('#users').DataTable().search("").draw()
+				})
+				});
+		%div{:align => 'center', :class=>'main'}
 			%h3 AggieExperts Users
-			%table#users
+			%form{:style => 'float: left'}
+				%label{:for=>'filter'}
+					%font{:size => '2.8'} Status Filter: 
+				%select{:name => 'filter', :default => :all, :id=>'filter'}
+					%option{:value => :All} All
+					-@status.each do |status|
+						%option{:value => status.description} #{status.description}
+			
+			%br
+			%br
+			%table#users 	
 				%thead
 					%tr
 						%th Name
@@ -12,24 +44,41 @@
 				%tbody
 					- @users.each do |user|
 						%tr
-							%td= trim_email(user.email)
-							%td= user.email
-							%td= status_description(user.status_id)
-							%td
-								%div{:id=>"action_container", :style=>'overflow: hidden; position: relative;'}
+							%td{:align=>'center'}= trim_email(user.email)
+							%td{:align=>'center'}= user.email
+							%td{:align=>'center'}= status_description(user.status_id)
+							%td{:align=>'justify'}
+								%div{:id=>"action_container", :style=>'overflow: hidden; position: relative; white-space: nowrap;'}
 									%div{:id => 'disable_container',:style => 'float: left'}
 										%form{:controller => :admin, :action => :disable_user, :method => "post"}
-											%input{:type=>"image", :src=>"/assets/Disable.png", :alt=>"Submit", :title=>"Disable User"}
+											%input{:name=>'disable_user', :value=>user.id, :hidden=>"true"}
+											- if disable_enabled(user.status_id) == 1
+												%input{:type=>"image", :src=>"/assets/disable.png", :alt=>"Submit", :title=>"Disable User"}
+											- elsif disable_enabled(user.status_id) == 2
+												%input{:type=>"image", :src=>"/assets/enable.png", :alt=>"Submit", :title=>"Enable User"}
+											- else 
+												%img{:alt=>"Delete/Enable Disabled", :src=>"/assets/grey.png", :title=>"Delete/Enable Disabled"}
 									%div{:id => 'delete_container',:style => 'float: left'}
-										%form{:controller => :admin, :action => :delete_user, :method => "post"}
-											%input{:type=>"image", :src=>"/assets/Delete.png", :alt=>"Submit",:title=>"Delete User"}
+										%form{:controller => :admin, :action => :delete_user, :method =>"post"}
+											- if delete_enabled(user.status_id)
+												%input{:name=>'delete_user', :value=>user.id, :hidden=>"true"}
+												%input{:type=>"image", :src=>"/assets/Delete.png", :alt=>"Submit",:title=>"Delete User", :data=>{:confirm=>"Are you sure?"}}
+											-else
+												%img{:alt=>"Delete Disabled", :src=>"/assets/delete_disable.png", :title=>"Delete Disabled"}
 									%div{:id => image_tag("/images/Resend.png"),:style => 'float: left',}
 										%form{:controller => :admin, :action => :resend_act_user, :method => "post"}
-											%input{:type=>"image", :src=>"/assets/e-mail_icon.gif", :alt=>"Submit",:title=>"Resend Activation Link"}
-									%div{:id => 'makeadmin_container',:style => 'float: left'}	
-										%form{:controller => :admin, :action => :make_admin_user, :method => "post"}
-											%input{:type=>"image", :src=>"/assets/crown.png", :alt=>"Submit",:title=>"Make User Site Admin"}
-							
+											- if resend_enabled(user.status_id)
+												%input{:name=>'resend_user', :value=>user.id, :hidden=>"true"}
+												%input{:type=>"image", :src=>"/assets/Email.png", :alt=>"Submit",:title=>"Resend Activation Link"}
+											- else
+												%img{:alt=>"Resend Activation Disabled", :src=>"/assets/Email_disable.png", :title=>"Resend Activation Disabled"}
+									%div{:id => 'approve_container',:style => 'float: left'}	
+										%form{:controller => :admin, :action => :approve_user, :method => "post"}
+											- if approve_enabled(user.status_id)	
+												%input{:name=>'approve_user', :value=>user.id, :hidden=>"true"}
+												%input{:type=>"image", :src=>"/assets/approve.jpg", :alt=>"Submit",:title=>"Approve User"}
+											- else
+												%img{:alt=>"Approve Disabled", :src=>"/assets/approve_disable.jpg", :title=>"Approve Disabled"}	
 		%br
 
 		%div{:id => 'Approve All'}
