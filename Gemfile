@@ -49,8 +49,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'pry'
-  
-#  gem 'autotest-rails'
-#  gem 'test_notifier'  
-#  gem 'autotest-fsevent'
 end
+
+gem 'simplecov', :require => false, :group => :test

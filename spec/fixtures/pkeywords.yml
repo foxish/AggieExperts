@@ -1,0 +1,11 @@
+pkey1:
+    user_id: 1
+    keyword_id: 1
+    
+pkey2:
+    user_id: 1
+    keyword_id: 2
+    
+pkey3:
+    user_id: 2
+    keyword_id: 1
