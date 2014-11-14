@@ -3622,3 +3622,191 @@ Processing by SearchController#search as HTML
 Completed 200 OK in 97.4ms (Views: 3.9ms | ActiveRecord: 0.9ms)
 Started GET "/users/2" for 127.0.0.1 at 2014-11-14 02:49:02 -0600
   [1m[35m (0.4ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (1.7ms)[0m  [1mbegin transaction[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 88.2ms (Views: 87.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+Completed 200 OK in 7.1ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%Antiquity%') LIMIT 1
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (50.8ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+Completed 200 OK in 177.1ms (Views: 1.9ms | ActiveRecord: 56.9ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+Completed 200 OK in 5.9ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+Completed 200 OK in 2.2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.4ms)[0m  [1mDELETE FROM "keywords"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (1, 'foo', '2014-11-14 08:53:19', '2014-11-14 08:53:19')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (2, 'bar', '2014-11-14 08:53:19', '2014-11-14 08:53:19')[0m
+  [1m[35m (17.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%foo%') LIMIT 1
+  [1m[36mKeyword Load (0.3ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE "keywords"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE "keywords"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE "keywords"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "profiles"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (1, 'Charles', 'Xavier', 'X', 9790001122, 'xavier@tamu.edu', '2014-11-14 08:53:19', '2014-11-14 08:53:19', 206669143)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (2, 'John', 'Samuel', 'Y', 9790002233, 'samuel@tamu.edu', '2014-11-14 08:53:19', '2014-11-14 08:53:19', 358143215)[0m
+  [1m[35m (15.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%foo%') LIMIT 1
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36mProfile Load (0.1ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT 1[0m  [["id", 358143215]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%bar%') LIMIT 1
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 2)[0m
+  [1m[35mProfile Load (0.1ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%quux%') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (11.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mFixture Delete (2.2ms)[0m  [1mDELETE FROM "pkeywords"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (1, 1, '2014-11-14 08:53:40', '2014-11-14 08:53:40', 854109342)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (1, 2, '2014-11-14 08:53:40', '2014-11-14 08:53:40', 736230694)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (2, 1, '2014-11-14 08:53:40', '2014-11-14 08:53:40', 484887989)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "profiles"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (1, 'Charles', 'Xavier', 'X', 9790001122, 'xavier@tamu.edu', '2014-11-14 08:53:41', '2014-11-14 08:53:41', 206669143)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (2, 'John', 'Samuel', 'Y', 9790002233, 'samuel@tamu.edu', '2014-11-14 08:53:41', '2014-11-14 08:53:41', 358143215)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "keywords"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (1, 'foo', '2014-11-14 08:53:41', '2014-11-14 08:53:41')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (2, 'bar', '2014-11-14 08:53:41', '2014-11-14 08:53:41')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-11-14 02:53:41 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (80.7ms)
+Completed 200 OK in 161.3ms (Views: 160.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "pkeywords"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (1, 1, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 854109342)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (1, 2, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 736230694)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (2, 1, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 484887989)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "profiles"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (1, 'Charles', 'Xavier', 'X', 9790001122, 'xavier@tamu.edu', '2014-11-14 08:53:41', '2014-11-14 08:53:41', 206669143)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (2, 'John', 'Samuel', 'Y', 9790002233, 'samuel@tamu.edu', '2014-11-14 08:53:41', '2014-11-14 08:53:41', 358143215)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "keywords"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (1, 'foo', '2014-11-14 08:53:41', '2014-11-14 08:53:41')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (2, 'bar', '2014-11-14 08:53:41', '2014-11-14 08:53:41')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-11-14 02:53:41 -0600
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 4.1ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+Started GET "/search?term=test" for 127.0.0.1 at 2014-11-14 02:53:41 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"test"}
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%test%') LIMIT 1
+  Rendered search/search.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 16.0ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "pkeywords"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (1, 1, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 854109342)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (1, 2, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 736230694)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (2, 1, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 484887989)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "profiles"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (1, 'Charles', 'Xavier', 'X', 9790001122, 'xavier@tamu.edu', '2014-11-14 08:53:41', '2014-11-14 08:53:41', 206669143)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (2, 'John', 'Samuel', 'Y', 9790002233, 'samuel@tamu.edu', '2014-11-14 08:53:41', '2014-11-14 08:53:41', 358143215)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "keywords"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (1, 'foo', '2014-11-14 08:53:41', '2014-11-14 08:53:41')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (2, 'bar', '2014-11-14 08:53:41', '2014-11-14 08:53:41')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/search" for 127.0.0.1 at 2014-11-14 02:53:41 -0600
+Processing by SearchController#search as HTML
+  Rendered search/search.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.5ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "pkeywords"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (1, 1, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 854109342)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (1, 2, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 736230694)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (2, 1, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 484887989)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "profiles"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (1, 'Charles', 'Xavier', 'X', 9790001122, 'xavier@tamu.edu', '2014-11-14 08:53:41', '2014-11-14 08:53:41', 206669143)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (2, 'John', 'Samuel', 'Y', 9790002233, 'samuel@tamu.edu', '2014-11-14 08:53:41', '2014-11-14 08:53:41', 358143215)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "keywords"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (1, 'foo', '2014-11-14 08:53:41', '2014-11-14 08:53:41')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (2, 'bar', '2014-11-14 08:53:41', '2014-11-14 08:53:41')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/search" for 127.0.0.1 at 2014-11-14 02:53:41 -0600
+Processing by SearchController#search as HTML
+  Rendered search/search.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.4ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started GET "/search?term=test" for 127.0.0.1 at 2014-11-14 02:53:41 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"test"}
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%test%') LIMIT 1[0m
+  Rendered search/search.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 3.8ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "pkeywords"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (1, 1, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 854109342)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (1, 2, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 736230694)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "pkeywords" ("user_id", "keyword_id", "created_at", "updated_at", "id") VALUES (2, 1, '2014-11-14 08:53:41', '2014-11-14 08:53:41', 484887989)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "profiles"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (1, 'Charles', 'Xavier', 'X', 9790001122, 'xavier@tamu.edu', '2014-11-14 08:53:41', '2014-11-14 08:53:41', 206669143)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (2, 'John', 'Samuel', 'Y', 9790002233, 'samuel@tamu.edu', '2014-11-14 08:53:41', '2014-11-14 08:53:41', 358143215)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "keywords"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (1, 'foo', '2014-11-14 08:53:41', '2014-11-14 08:53:41')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (2, 'bar', '2014-11-14 08:53:41', '2014-11-14 08:53:41')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/search" for 127.0.0.1 at 2014-11-14 02:53:41 -0600
+Processing by SearchController#search as HTML
+  Rendered search/search.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2.5ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started GET "/search?term=foo" for 127.0.0.1 at 2014-11-14 02:53:41 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"foo"}
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%foo%') LIMIT 1
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)[0m
+  Rendered search/search.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 129.1ms (Views: 5.7ms | ActiveRecord: 0.8ms)
+Started GET "/users/2" for 127.0.0.1 at 2014-11-14 02:53:41 -0600
+  [1m[35m (0.3ms)[0m  rollback transaction

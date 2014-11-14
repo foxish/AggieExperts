@@ -312,6 +312,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/spec/controllers/search_controller_spec.rb": [
@@ -434,6 +435,6 @@
         null
       ]
     },
-    "timestamp": 1415950771
+    "timestamp": 1415955200
   }
 }
