@@ -1,0 +1,21 @@
+%div{:class=> "content"}
+  %div{:class=> "content_resize"}
+
+    %div{:id => "search_form"}
+      %form{:controller => 'index', :action => 'search', :method => 'get'}
+        %input{:name => "term", :type => "text", :id => "tb_search", :value => @term}
+        %input{:type => "submit", :value => "Search!", :id => "bt_search"}
+    %br
+    
+    %h3{:class => "center"} Results
+    %div{:class=> "results"}
+      - @profiles.each do |profile|
+        %a{:href => '#'}
+          %div{:class=> "result" }
+            %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
+              %strong= "Prof. " + profile.fname + " " + profile.lname
+              %p.oflow= profile.description
+              %span.keywords
+                %strong Keywords:
+              - @keywords[profile.user_id].each do |keyword|
+                =keyword.key + ';'

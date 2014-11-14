@@ -40,7 +40,9 @@ gem 'haml'
 
 # instructions for dev/test
 group :development, :test do
+gem 'turn', '< 0.8.3'
   gem 'debugger'
+gem "minitest"
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
@@ -48,7 +50,6 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'sqlite3'
-  gem 'pry'
   
 #  gem 'autotest-rails'
 #  gem 'test_notifier'  

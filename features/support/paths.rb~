@@ -16,7 +16,7 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
     when /^the search page$/
-    '/search'
+    '/search/?term='
     
 
     # Add more mappings here.

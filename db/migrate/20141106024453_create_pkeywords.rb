@@ -3,7 +3,7 @@ class CreatePkeywords < ActiveRecord::Migration
   	create_table :pkeywords do |t|
   		t.belongs_to :user
   		t.belongs_to :keyword
-  		t.timestamps
+      t.timestamps
  	end
   end
 
