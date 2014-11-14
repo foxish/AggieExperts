@@ -1,14 +1,10 @@
 require 'rails_helper'
- 
 describe HomeController do
-  describe 'Checking page' do
-    it 'should call the login controller' do
+  describe 'Home Page tests' do
+    it 'should render the index page' do
         get :index
         response.should render_template('index')
     end
-    it 'should load the login view' do
-    
-    end
-    it 'should make a single parameter X available to that view'
+    it 'should load the login view'
   end
 end
