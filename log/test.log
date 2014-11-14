@@ -971,3 +971,300 @@ Processing by SearchController#search as HTML
   [1m[35mKeyword Load (0.5ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
 Completed 200 OK in 4.4ms (Views: 1.3ms | ActiveRecord: 0.5ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 8.8ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+Completed 200 OK in 1.4ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%Antiquity%') LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+Completed 200 OK in 57.0ms (Views: 0.7ms | ActiveRecord: 32.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+Completed 200 OK in 1.7ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8.4ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+Completed 200 OK in 1.5ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%Antiquity%') LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+Completed 200 OK in 57.3ms (Views: 0.7ms | ActiveRecord: 3.2ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+Completed 200 OK in 1.6ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 9.8ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+Completed 200 OK in 1.4ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%Antiquity%') LIMIT 1
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+Completed 200 OK in 58.0ms (Views: 0.7ms | ActiveRecord: 33.4ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+Completed 200 OK in 1.7ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 10.3ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+Completed 200 OK in 1.9ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%Antiquity%') LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+Completed 200 OK in 56.2ms (Views: 0.6ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+Completed 200 OK in 1.7ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT key
+ FROM keywords JOIN pkeywords ON keywords.id = pkeywords.keyword_id
+ JOIN profiles ON profiles.user_id = pkeywords.user_id
+ WHERE profiles.user_id = 1;
+Completed 200 OK in 4.7ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 10.5ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+Completed 200 OK in 1.5ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%Antiquity%') LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+Completed 200 OK in 55.7ms (Views: 0.6ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+Completed 200 OK in 1.6ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT key
+ FROM keywords JOIN pkeywords ON keywords.id = pkeywords.keyword_id
+ JOIN profiles ON profiles.user_id = pkeywords.user_id
+ WHERE profiles.user_id = 1;
+Completed 200 OK in 4.7ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 9.6ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+Completed 200 OK in 1.5ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%Antiquity%') LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+Completed 200 OK in 60.8ms (Views: 0.6ms | ActiveRecord: 33.2ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+Completed 200 OK in 1.5ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT key
+ FROM keywords JOIN pkeywords ON keywords.id = pkeywords.keyword_id
+ JOIN profiles ON profiles.user_id = pkeywords.user_id
+ WHERE profiles.user_id = 1;
+Completed 200 OK in 4.7ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT key
+ FROM keywords JOIN pkeywords ON keywords.id = pkeywords.keyword_id
+ JOIN profiles ON profiles.user_id = pkeywords.user_id
+ WHERE profiles.user_id = 1;
+Completed 200 OK in 1.6ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 10.4ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+Completed 200 OK in 1.5ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%Antiquity%') LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+Completed 200 OK in 59.3ms (Views: 0.7ms | ActiveRecord: 3.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+Completed 200 OK in 1.7ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT key
+ FROM keywords JOIN pkeywords ON keywords.id = pkeywords.keyword_id
+ JOIN profiles ON profiles.user_id = pkeywords.user_id
+ WHERE profiles.user_id = 1;
+Completed 200 OK in 6.3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 8.9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+Completed 200 OK in 1.5ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%Antiquity%') LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+Completed 200 OK in 58.2ms (Views: 0.6ms | ActiveRecord: 34.4ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+Completed 200 OK in 1.7ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT key
+ FROM keywords JOIN pkeywords ON keywords.id = pkeywords.keyword_id
+ JOIN profiles ON profiles.user_id = pkeywords.user_id
+ WHERE profiles.user_id = 1;
+Completed 200 OK in 5.8ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT key
+ FROM keywords JOIN pkeywords ON keywords.id = pkeywords.keyword_id
+ JOIN profiles ON profiles.user_id = pkeywords.user_id
+ WHERE profiles.user_id = 1;
+Completed 200 OK in 2.1ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

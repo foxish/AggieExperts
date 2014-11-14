@@ -3,23 +3,28 @@
   <component name="DataSourceManagerImpl" format="xml" hash="2931315412">
     <data-source source="LOCAL" name="Rails AggieExperts: development" uuid="ceb4089a-4a9e-4fb9-92e8-7b4cf7784e4b">
       <driver-ref>postgresql</driver-ref>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/DATABASE_DEVELOPMENT</jdbc-url>
-      <user-name>USER_NAME</user-name>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails AggieExperts: test" uuid="35b435af-1842-45ac-a9b0-f831c3258705">
       <driver-ref>postgresql</driver-ref>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/DATABASE_TEST</jdbc-url>
-      <user-name>USER_NAME</user-name>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails AggieExperts: production" uuid="d6888ce6-97d7-4fcd-95b9-386892bb8dc9">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:DATABASE_PRODUCTION</jdbc-url>
-      <user-name>root</user-name>
+      <jdbc-url>jdbc:postgresql:aggieexperts_prod</jdbc-url>
+      <user-name>aggieexperts</user-name>
+      <user-password>dfc9dfc6dfc5dfdfdfcedfd9dfdedfcbdfc9dfc1df89</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails AggieExperts: cucumber" uuid="0bfa9df3-f2a8-4a78-b06e-7fc922cc1cec">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>

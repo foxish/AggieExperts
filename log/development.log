@@ -14285,3 +14285,187 @@ Served asset /login.js - 304 Not Modified (0ms)
 
 Started GET "/assets/default.png" for 127.0.0.1 at 2014-11-13 21:12:25 -0600
 Served asset /default.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (2.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "keywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "pkeywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "keyword_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "ppics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "pic" blob(10485760), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "ppublications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar(255), "url" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "fname" varchar(255), "lname" varchar(255), "description" text, "phone" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "status" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255), "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "susers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "activation_link" varchar(255), "active_till" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "password" varchar(255), "activation_date" datetime, "status_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141106030227')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141106024412')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141106024433')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141106024453')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141106030120')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141106030144')
+  [1m[36m (2.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141106030202')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141106030215')
+  [1m[36m (1.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.9ms)[0m  [1mINSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)[0m  [["code", "PACT"], ["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["description", "Pending Activation"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)  [["code", "DISABLE"], ["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["description", "Disabled"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)[0m  [["code", "PAPP"], ["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["description", "Pending Approval"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)  [["code", "ACTIVE"], ["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["description", "Active"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["email", "prithvi.sakuru@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["email", "anirudh4444@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["email", "arunxls@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["email", "malavikam92@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["email", "vsiravara@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["email", "saisujithreddy@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["key", "Antiquity"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["key", "Medieval"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["key", "Enlightenment"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["key", "Modern"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["key", "Communism"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["key", "Democracy"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["key", "Democratic"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["key", "Republican"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["key", "Libertarian"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "profiles" ("created_at", "description", "email", "fname", "lname", "phone", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["description", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["email", "xavier@tamu.edu"], ["fname", "Charles"], ["lname", "Xavier"], ["phone", 9790001122], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "profiles" ("created_at", "description", "email", "fname", "lname", "phone", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["description", "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio."], ["email", "samuel@tamu.edu"], ["fname", "John"], ["lname", "Samuel"], ["phone", 9790002233], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "profiles" ("created_at", "description", "email", "fname", "lname", "phone", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["description", "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat"], ["email", "singh@tamu.edu"], ["fname", "Jacob"], ["lname", "Singh"], ["phone", 9790004455], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "profiles" ("created_at", "description", "email", "fname", "lname", "phone", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["description", "sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["email", "patterson@tamu.edu"], ["fname", "Armando"], ["lname", "Patterson"], ["phone", 9790001122], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 4]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "profiles" ("created_at", "description", "email", "fname", "lname", "phone", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["description", " et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed"], ["email", "fox@tamu.edu"], ["fname", "David"], ["lname", "Fox"], ["phone", 9790001122], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 5]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 1], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 2], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 3], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 4], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 5], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 1], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 3], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 5], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 6], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 7], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 8], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 1], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 3]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 2], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 3], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 3]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 5], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 6], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 7], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 3]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 8], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 9], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 3]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 3], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 4]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 1], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 5]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 3], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 5]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 4], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 5]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["keyword_id", 7], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["user_id", 5]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "ppublications" ("created_at", "title", "updated_at", "url", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["title", "FlowDroid: Precise Context, Flow, Field, Object-sensitive and Lifecycle-aware Taint Analysis for Android Apps"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["url", "http://www.pub1.com"], ["user_id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ppublications" ("created_at", "title", "updated_at", "url", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["title", "A Few Billion Lines of Code Later: Using Static Analysis to Find Bugs in the Real World"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["url", "http://www.pub1.com"], ["user_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "ppublications" ("created_at", "title", "updated_at", "url", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["title", "Parallel ProgrammingMust Be Deterministic by Default"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["url", "http://www.pub1.com"], ["user_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "ppublications" ("created_at", "title", "updated_at", "url", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["title", "Line-Up: A Complete and Automatic Linearizability Checker"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["url", "http://www.pub1.com"], ["user_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "ppublications" ("created_at", "title", "updated_at", "url", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["title", "PARROT: A Practical Runtime for Deterministic, Stable, and Reliable Threads"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["url", "http://www.pub1.com"], ["user_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "ppublications" ("created_at", "title", "updated_at", "url", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["title", "Static and dynamic analysis: synergy and duality"], ["updated_at", Fri, 14 Nov 2014 04:58:55 UTC +00:00], ["url", "http://www.pub1.com"], ["user_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m

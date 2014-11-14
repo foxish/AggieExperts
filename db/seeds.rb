@@ -109,3 +109,15 @@ seed_pkeywords.each do |pkeyword|
     Pkeyword.create!(pkeyword)
 end
 
+seed_publications = [
+    {:user_id => 1, :title =>'FlowDroid: Precise Context, Flow, Field, Object-sensitive and Lifecycle-aware Taint Analysis for Android Apps', :url=>'http://www.pub1.com'},
+    {:user_id => 1, :title =>'A Few Billion Lines of Code Later: Using Static Analysis to Find Bugs in the Real World', :url=>'http://www.pub1.com'},
+    {:user_id => 1, :title =>'Parallel ProgrammingMust Be Deterministic by Default', :url=>'http://www.pub1.com'},
+    {:user_id => 1, :title =>'Line-Up: A Complete and Automatic Linearizability Checker', :url=>'http://www.pub1.com'},
+    {:user_id => 1, :title =>'PARROT: A Practical Runtime for Deterministic, Stable, and Reliable Threads', :url=>'http://www.pub1.com'},
+    {:user_id => 1, :title =>'Static and dynamic analysis: synergy and duality', :url=>'http://www.pub1.com'},
+]
+
+seed_publications.each do |pub|
+  Ppublication.create!(pub)
+end
