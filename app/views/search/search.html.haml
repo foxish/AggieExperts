@@ -10,7 +10,7 @@
     %h3{:class => "center"} Results
     %div{:class=> "results"}
       - @profiles.each do |profile|
-        %a{:href => '#'}
+        %a.div_link{:href => user_path(profile.user_id)}
           %div{:class=> "result" }
             %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
               %strong= "Prof. " + profile.fname + " " + profile.lname

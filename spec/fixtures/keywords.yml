@@ -1,0 +1,7 @@
+foo:
+    id: 1
+    key: foo
+
+bar:
+    id: 2
+    key: bar

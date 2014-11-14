@@ -1,0 +1,131 @@
+.box#photo {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.profile_pic {
+}
+.box#contact_info {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.top_content {
+    /*padding-bottom: 10px*/
+}
+
+.box#name {
+    padding-top: 0px;
+}
+
+.box {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.box#description {
+}
+
+.box#bio {
+}
+
+table#parent {
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+#parent tr {
+    vertical-align:top;
+}
+
+table#contact_info {
+    border:0;
+    padding:0;
+}
+
+table#publications {
+    margin:0;
+    padding:0;
+    width: 100%;
+}
+
+table#publication td, tr {
+    align: center;
+}
+
+.box#contact_info tr {
+    margin:0;
+    padding:0;
+}
+
+.bold_1 {
+    color: maroon;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.bold_2 {
+    color: maroon;
+    font-size:1rem;
+    font-weight:bold;
+}
+
+.bold_3 {
+    color: maroon;
+    font-size:0.8rem;
+    font-weight:bold;
+}
+
+.bold {
+    font-weight:bold;
+}
+
+.bold_2#heading {
+    margin: 1px;
+}
+
+input.bold_1 {
+    max-width: 49%;
+}
+
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+textarea.bio {
+    resize: none;
+    width: 99%;
+    height: auto;
+}
+
+input.publication {
+    width: 99%;
+    height: auto;
+    border: none;
+}
+
+td.pub {
+    width: 50%;
+    border: 1px solid gray;
+}
+
+input#key {
+    border:1px solid gray;
+}
+
+input {
+    border:1px solid gray;
+}
+
+.notice {
+    background-color: yellow;
+    color: red;
+    font-weight: 200;
+    width: 26%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    text-align: center;
+}

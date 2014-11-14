@@ -1,0 +1,44 @@
+.content
+  .content_resize
+    .notice
+      #{flash[:notice]}
+    %table#parent
+      %tbody
+        %tr
+          %td
+            .box#photo
+              %img.profile_pic{:alt => "", :height => "200", :src => asset_path("default.png"), :width => "200"}
+            .box#contact_info
+              %table#contact_info
+                %tbody
+                  %tr
+                    %td
+                      .bold_3
+                        Phone:
+                    %td #{@profile[:phone]}
+                  %tr
+                    %td
+                      .bold_3
+                        Email:
+                    %td #{@profile[:email]}
+          %td
+            .box#name
+              .bold_1
+                #{@profile[:fname]} #{@profile[:lname]}
+            .box#description
+              .bold_2#heading
+                Bio
+              #{@profile[:description]}
+            .box#publications
+              .bold_2#heading
+                Publications
+              %table#publications
+                %tbody
+                  - @publications.each do |pub|
+                    %tr
+                      %td= link_to(pub[:title], pub[:url])
+            .box#keywords
+              .bold_2#heading
+                Keywords
+              #{@keywords}
+    = link_to 'Edit info', edit_user_path(@profile)
