@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-11-14T01:28:33-06:00">2014-11-14T01:28:33-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-11-14T01:39:31-06:00">2014-11-14T01:39:31-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.24
+         1.32
        </span>
     </span> hits/line)
   </h2>
@@ -77,7 +77,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>2.8</td>
+        <td>3.2</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>1.9</td>
+        <td>3.0</td>
       </tr>
       
       <tr>
@@ -157,7 +157,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>2.6</td>
       </tr>
       
       <tr>
@@ -552,8 +552,8 @@
           <code class="ruby">      @profiles.each do |profile|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="10">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="6" data-linenumber="10">
+          <span class="hits">6</span>
           
           <code class="ruby">          @keywords[profile.user_id] = Keyword.get_for_user(profile.user_id)</code>
         </li>
@@ -702,8 +702,8 @@
           <code class="ruby">    def self.get_for_user(user_id)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="8">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="6" data-linenumber="8">
+          <span class="hits">6</span>
           
           <code class="ruby">      keywords = self.joins('JOIN pkeywords ON pkeywords.keyword_id = keywords.id').</code>
         </li>
@@ -714,8 +714,8 @@
           <code class="ruby">                       where('pkeywords.user_id = ?', user_id).all</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="10">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="6" data-linenumber="10">
+          <span class="hits">6</span>
           
           <code class="ruby">      return keywords</code>
         </li>
@@ -978,14 +978,14 @@
           <code class="ruby">    if not @row.nil?</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="10">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="10">
+          <span class="hits">3</span>
           
           <code class="ruby">      @keyword_id = @row.id</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="11">
+          <span class="hits">3</span>
           
           <code class="ruby">      @profiles = self.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').</code>
         </li>

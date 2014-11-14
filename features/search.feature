@@ -16,7 +16,9 @@ Scenario: Search field and button
 
 Scenario: Visiting profile
   Given I am on the search page
-  When I press "a"
+  When I fill in "tb_search" with "foo" 
+  Then I press "bt_search"
+  When I click first link of type ".div_link"
   Then I should be on the profile page
 
 

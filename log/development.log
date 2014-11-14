@@ -14615,3 +14615,762 @@ Connecting to database specified by database.yml
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (2.5ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:30:17 UTC +00:00], ["keyword_id", 7], ["updated_at", Fri, 14 Nov 2014 07:30:17 UTC +00:00], ["user_id", 5]]
   [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/search?term=demo" for 127.0.0.1 at 2014-11-14 01:44:16 -0600
+Connecting to database specified by database.yml
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"demo"}
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%demo%') LIMIT 1[0m
+  Rendered search/search.html.haml within layouts/application (73.6ms)
+Completed 200 OK in 361.6ms (Views: 201.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-14 01:44:19 -0600
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2014-11-14 01:44:19 -0600
+Served asset /login.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-11-14 01:44:19 -0600
+Served asset /home.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2014-11-14 01:44:19 -0600
+Served asset /search.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-14 01:44:19 -0600
+Served asset /jquery.js - 304 Not Modified (169ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-14 01:44:19 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-14 01:44:19 -0600
+Served asset /login.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-14 01:44:19 -0600
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/search?term=demo" for 127.0.0.1 at 2014-11-14 01:44:23 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"demo"}
+  [1m[35mKeyword Load (6.3ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%demo%') LIMIT 1
+  Rendered search/search.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 74.6ms (Views: 52.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-14 01:44:23 -0600
+Served asset /application.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-11-14 01:44:24 -0600
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2014-11-14 01:44:24 -0600
+Served asset /search.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2014-11-14 01:44:24 -0600
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-14 01:44:24 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-14 01:44:24 -0600
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-14 01:44:24 -0600
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-14 01:44:24 -0600
+Served asset /login.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (59.9ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (20.7ms)[0m  DROP TABLE "keywords"
+  [1m[36m (12.0ms)[0m  [1mCREATE TABLE "keywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (14.4ms)[0m  DROP TABLE "pkeywords"
+  [1m[36m (16.2ms)[0m  [1mCREATE TABLE "pkeywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "keyword_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (14.9ms)[0m  DROP TABLE "ppics"
+  [1m[36m (14.2ms)[0m  [1mCREATE TABLE "ppics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "pic" blob(10485760), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (10.9ms)[0m  DROP TABLE "ppublications"
+  [1m[36m (16.3ms)[0m  [1mCREATE TABLE "ppublications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar(255), "url" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (10.5ms)[0m  DROP TABLE "profiles"
+  [1m[36m (13.9ms)[0m  [1mCREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "fname" varchar(255), "lname" varchar(255), "description" text, "phone" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (14.5ms)[0m  DROP TABLE "status"
+  [1m[36m (22.4ms)[0m  [1mCREATE TABLE "status" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255), "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (13.7ms)[0m  DROP TABLE "susers"
+  [1m[36m (14.5ms)[0m  [1mCREATE TABLE "susers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "activation_link" varchar(255), "active_till" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (15.4ms)[0m  DROP TABLE "users"
+  [1m[36m (14.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "password" varchar(255), "activation_date" datetime, "status_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (25.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (26.9ms)[0m  [1mINSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)[0m  [["code", "PACT"], ["created_at", Fri, 14 Nov 2014 07:44:44 UTC +00:00], ["description", "Pending Activation"], ["updated_at", Fri, 14 Nov 2014 07:44:44 UTC +00:00]]
+  [1m[35m (16.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)  [["code", "DISABLE"], ["created_at", Fri, 14 Nov 2014 07:44:44 UTC +00:00], ["description", "Disabled"], ["updated_at", Fri, 14 Nov 2014 07:44:44 UTC +00:00]]
+  [1m[36m (14.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)[0m  [["code", "PAPP"], ["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["description", "Pending Approval"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[35m (15.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "status" ("code", "created_at", "description", "updated_at") VALUES (?, ?, ?, ?)  [["code", "ACTIVE"], ["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["description", "Active"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[36m (11.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["email", "prithvi.sakuru@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[35m (10.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["email", "anirudh4444@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[36m (13.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["email", "arunxls@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[35m (13.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["email", "malavikam92@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[36m (13.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["email", "vsiravara@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[35m (14.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", Sat, 01 Nov 2014 00:00:00 UTC +00:00], ["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["email", "saisujithreddy@tamu.edu"], ["password", "Temp123"], ["status_id", 1], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[36m (13.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["key", "Antiquity"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[35m (15.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["key", "Medieval"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[36m (15.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["key", "Enlightenment"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[35m (13.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["key", "Modern"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["key", "Communism"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[35m (11.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["key", "Democracy"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[36m (11.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["key", "Democratic"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[35m (16.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["key", "Republican"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[36m (14.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "keywords" ("created_at", "key", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["key", "Libertarian"], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00]]
+  [1m[35m (22.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "profiles" ("created_at", "description", "email", "fname", "lname", "phone", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["description", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["email", "xavier@tamu.edu"], ["fname", "Charles"], ["lname", "Xavier"], ["phone", 9790001122], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 1]]
+  [1m[36m (17.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "profiles" ("created_at", "description", "email", "fname", "lname", "phone", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["description", "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio."], ["email", "samuel@tamu.edu"], ["fname", "John"], ["lname", "Samuel"], ["phone", 9790002233], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 2]]
+  [1m[35m (15.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "profiles" ("created_at", "description", "email", "fname", "lname", "phone", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["description", "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat"], ["email", "singh@tamu.edu"], ["fname", "Jacob"], ["lname", "Singh"], ["phone", 9790004455], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 3]]
+  [1m[36m (13.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "profiles" ("created_at", "description", "email", "fname", "lname", "phone", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["description", "sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["email", "patterson@tamu.edu"], ["fname", "Armando"], ["lname", "Patterson"], ["phone", 9790001122], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 4]]
+  [1m[35m (10.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "profiles" ("created_at", "description", "email", "fname", "lname", "phone", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["description", " et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed"], ["email", "fox@tamu.edu"], ["fname", "David"], ["lname", "Fox"], ["phone", 9790001122], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 5]]
+  [1m[36m (13.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 1], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 1]]
+  [1m[35m (13.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 2], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 1]]
+  [1m[36m (19.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 3], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 1]]
+  [1m[35m (13.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 4], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 1]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 5], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 1]]
+  [1m[35m (13.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 1], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 2]]
+  [1m[36m (20.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 3], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 2]]
+  [1m[35m (16.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 5], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 2]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 6], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 2]]
+  [1m[35m (12.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 7], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 2]]
+  [1m[36m (15.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 8], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 2]]
+  [1m[35m (13.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 1], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 3]]
+  [1m[36m (11.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 2], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 3]]
+  [1m[35m (11.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 3], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 3]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 5], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 3]]
+  [1m[35m (13.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 6], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 3]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 7], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 3]]
+  [1m[35m (16.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 8], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 3]]
+  [1m[36m (15.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 9], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 3]]
+  [1m[35m (12.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 3], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 4]]
+  [1m[36m (13.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 1], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 5]]
+  [1m[35m (13.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 3], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 5]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 4], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 5]]
+  [1m[35m (12.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pkeywords" ("created_at", "keyword_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["keyword_id", 7], ["updated_at", Fri, 14 Nov 2014 07:44:45 UTC +00:00], ["user_id", 5]]
+  [1m[36m (14.4ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/search?term=demo" for 127.0.0.1 at 2014-11-14 01:44:59 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"demo"}
+  [1m[36mKeyword Load (10.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%demo%') LIMIT 1[0m
+  [1m[35mProfile Load (2.6ms)[0m  SELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 6)
+  [1m[36mEXPLAIN (0.3ms)[0m  [1mEXPLAIN QUERY PLAN SELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 6)[0m
+EXPLAIN for: SELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 6)
+0|0|1|SCAN TABLE pkeywords (~100000 rows)
+0|1|0|SEARCH TABLE profiles USING AUTOMATIC COVERING INDEX (user_id=?) (~7 rows)
+
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)
+  [1m[36mKeyword Load (0.3ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)[0m
+  Rendered search/search.html.haml within layouts/application (107.6ms)
+Completed 500 Internal Server Error in 1018.5ms
+
+ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x007ff83ce32f88>:0x007ff83c61fd50>):
+    10:     %h3{:class => "center"} Results
+    11:     %div{:class=> "results"}
+    12:       - @profiles.each do |profile|
+    13:         %a{:href => user_path(profile.user_id)}
+    14:           %div{:class=> "result" }
+    15:             %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
+    16:               %strong= "Prof. " + profile.fname + " " + profile.lname
+  app/views/search/search.html.haml:13:in `block in _app_views_search_search_html_haml__3503519310733993751_70352068380680'
+  app/views/search/search.html.haml:12:in `each'
+  app/views/search/search.html.haml:12:in `_app_views_search_search_html_haml__3503519310733993751_70352068380680'
+
+
+
+
+Started GET "/search?term=demo" for 127.0.0.1 at 2014-11-14 01:45:50 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"demo"}
+  [1m[35mKeyword Load (7.7ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%demo%') LIMIT 1
+  [1m[36mProfile Load (2.1ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 6)[0m
+  [1m[35mKeyword Load (1.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)[0m
+  Rendered search/search.html.haml within layouts/application (55.3ms)
+Completed 500 Internal Server Error in 167.9ms
+
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %link_to and nested within it.):
+    11:     %div{:class=> "results"}
+    12:       - @profiles.each do |profile|
+    13:         %link_to= user_path(profile.user_id)
+    14:           %div{:class=> "result" }
+    15:             %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
+    16:               %strong= "Prof. " + profile.fname + " " + profile.lname
+    17:               %p.oflow= profile.description
+  app/views/search/search.html.haml:14
+
+
+
+
+Started GET "/search?term=demo" for 127.0.0.1 at 2014-11-14 01:48:37 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"demo"}
+  [1m[35mKeyword Load (16.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%demo%') LIMIT 1
+  [1m[36mProfile Load (0.7ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 6)[0m
+  [1m[35mKeyword Load (2.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)
+  [1m[36mKeyword Load (0.4ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)[0m
+  Rendered search/search.html.haml within layouts/application (265.2ms)
+Completed 500 Internal Server Error in 360.2ms
+
+ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x007ff83ce32f88>:0x007ff83cca03a0>):
+    10:     %h3{:class => "center"} Results
+    11:     %div{:class=> "results"}
+    12:       - @profiles.each do |profile|
+    13:         %a{:href => user_path(profile.user_id)}
+    14:           %div{:class=> "result" }
+    15:             %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
+    16:               %strong= "Prof. " + profile.fname + " " + profile.lname
+  app/views/search/search.html.haml:13:in `block in _app_views_search_search_html_haml__3503519310733993751_70352074242000'
+  app/views/search/search.html.haml:12:in `each'
+  app/views/search/search.html.haml:12:in `_app_views_search_search_html_haml__3503519310733993751_70352074242000'
+
+
+
+
+Started GET "/search?term=demo" for 127.0.0.1 at 2014-11-14 01:49:37 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"demo"}
+  [1m[35mKeyword Load (6.3ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%demo%') LIMIT 1
+  [1m[36mProfile Load (0.6ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 6)[0m
+  [1m[35mKeyword Load (0.4ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)
+  [1m[36mKeyword Load (0.8ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)[0m
+  Rendered search/search.html.haml within layouts/application (81.0ms)
+Completed 500 Internal Server Error in 948.6ms
+
+ActionView::Template::Error (undefined method `user_url' for #<#<Class:0x007ff83ce32f88>:0x007ff82c422af8>):
+    10:     %h3{:class => "center"} Results
+    11:     %div{:class=> "results"}
+    12:       - @profiles.each do |profile|
+    13:         %a{:href => user_url(profile.user_id)}
+    14:           %div{:class=> "result" }
+    15:             %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
+    16:               %strong= "Prof. " + profile.fname + " " + profile.lname
+  app/views/search/search.html.haml:13:in `block in _app_views_search_search_html_haml__3503519310733993751_70351934239800'
+  app/views/search/search.html.haml:12:in `each'
+  app/views/search/search.html.haml:12:in `_app_views_search_search_html_haml__3503519310733993751_70351934239800'
+
+
+
+
+Started GET "/search?term=demo" for 127.0.0.1 at 2014-11-14 01:50:59 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"demo"}
+  [1m[35mKeyword Load (17.0ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%demo%') LIMIT 1
+  [1m[36mProfile Load (0.5ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 6)[0m
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)
+  [1m[36mKeyword Load (0.5ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)[0m
+  Rendered search/search.html.haml within layouts/application (184.8ms)
+Completed 500 Internal Server Error in 263.4ms
+
+ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x007ff83ce32f88>:0x007ff83c0da430>):
+    10:     %h3{:class => "center"} Results
+    11:     %div{:class=> "results"}
+    12:       - @profiles.each do |profile|
+    13:         %a{:href => user_path(profile.user_id)}
+    14:           %div{:class=> "result" }
+    15:             %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
+    16:               %strong= "Prof. " + profile.fname + " " + profile.lname
+  app/views/search/search.html.haml:13:in `block in _app_views_search_search_html_haml__3503519310733993751_70352068069420'
+  app/views/search/search.html.haml:12:in `each'
+  app/views/search/search.html.haml:12:in `_app_views_search_search_html_haml__3503519310733993751_70352068069420'
+
+
+
+
+Started GET "/search?term=demo" for 127.0.0.1 at 2014-11-14 01:53:16 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"demo"}
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%demo%') LIMIT 1
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 6)[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)[0m
+  Rendered search/search.html.haml within layouts/application (7.8ms)
+Completed 200 OK in 156.2ms (Views: 60.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-14 01:53:17 -0600
+Served asset /application.css - 304 Not Modified (349ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-11-14 01:53:18 -0600
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2014-11-14 01:53:18 -0600
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2014-11-14 01:53:18 -0600
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-14 01:53:18 -0600
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-14 01:53:18 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-14 01:53:18 -0600
+Served asset /login.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-14 01:53:18 -0600
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/default.png" for 127.0.0.1 at 2014-11-14 01:53:18 -0600
+Served asset /default.png - 304 Not Modified (7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-11-14 01:53:20 -0600
+
+ActionController::RoutingError (uninitialized constant UsersController):
+  activesupport (3.2.19) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.19) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.19) lib/active_support/inflector/methods.rb:229:in `constantize'
+  actionpack (3.2.19) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.19) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.19) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.19) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.19) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.19) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.19) lib/active_support/callbacks.rb:405:in `_run__4523115363543286367__call__4003187926298634939__callbacks'
+  activesupport (3.2.19) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.19) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.19) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.19) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/3" for 127.0.0.1 at 2014-11-14 01:53:24 -0600
+
+ActionController::RoutingError (uninitialized constant UsersController):
+  activesupport (3.2.19) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.19) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.19) lib/active_support/inflector/methods.rb:229:in `constantize'
+  actionpack (3.2.19) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.19) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.19) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.19) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.19) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.19) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.19) lib/active_support/callbacks.rb:405:in `_run__4523115363543286367__call__4003187926298634939__callbacks'
+  activesupport (3.2.19) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.19) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.19) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.19) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/search?term=anti" for 127.0.0.1 at 2014-11-14 01:53:31 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"anti"}
+  [1m[35mKeyword Load (17.2ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%anti%') LIMIT 1
+  [1m[36mProfile Load (1.5ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.4ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.4ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.5ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (0.3ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+  Rendered search/search.html.haml within layouts/application (29.4ms)
+Completed 200 OK in 173.8ms (Views: 77.3ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/search?term=anti" for 127.0.0.1 at 2014-11-14 01:54:06 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"anti"}
+  [1m[35mKeyword Load (25.0ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%anti%') LIMIT 1
+  [1m[36mProfile Load (0.7ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.6ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)
+  [1m[36mKeyword Load (1.5ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)[0m
+  Rendered search/search.html.haml within layouts/application (84.9ms)
+Completed 200 OK in 407.9ms (Views: 235.3ms | ActiveRecord: 28.4ms)
+
+
+Started GET "/search?term=anti" for 127.0.0.1 at 2014-11-14 01:55:21 -0600
+Connecting to database specified by database.yml
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"anti"}
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%anti%') LIMIT 1[0m
+  [1m[35mProfile Load (0.4ms)[0m  SELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)
+  [1m[36mKeyword Load (0.3ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)[0m
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)
+  Rendered search/search.html.haml within layouts/application (73.5ms)
+Completed 200 OK in 567.2ms (Views: 199.0ms | ActiveRecord: 67.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-14 01:55:23 -0600
+Served asset /application.css - 304 Not Modified (113ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /home.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /login.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /jquery.js - 304 Not Modified (38ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /search.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /login.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/default.png" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /default.png - 304 Not Modified (6ms)
+
+
+Started GET "/assets/images/header_bg.gif" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /images/header_bg.gif - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/header_bg.gif"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/assets/images/menu.gif" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /images/menu.gif - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/menu.gif"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/assets/images/content_bg.gif" for 127.0.0.1 at 2014-11-14 01:55:24 -0600
+Served asset /images/content_bg.gif - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/content_bg.gif"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anirudh/.rbenv/versions/1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/search?term=anti" for 127.0.0.1 at 2014-11-14 01:59:14 -0600
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"anti"}
+  [1m[36mKeyword Load (7.4ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%anti%') LIMIT 1[0m
+  [1m[35mProfile Load (2.1ms)[0m  SELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)
+  [1m[36mKeyword Load (2.7ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)[0m
+  [1m[35mKeyword Load (2.8ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 2)
+  [1m[36mKeyword Load (0.9ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 3)[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 5)
+  Rendered search/search.html.haml within layouts/application (88.6ms)
+Compiled search.css  (4ms)  (pid 27349)
+Compiled application.css  (22ms)  (pid 27349)
+Completed 200 OK in 427.9ms (Views: 298.2ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-14 01:59:15 -0600
+Served asset /application.css - 304 Not Modified (52ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2014-11-14 01:59:15 -0600
+Served asset /search.css - 200 OK (596ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-11-14 01:59:16 -0600
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-14 01:59:16 -0600
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2014-11-14 01:59:16 -0600
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-14 01:59:16 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2014-11-14 01:59:16 -0600
+Served asset /login.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-14 01:59:16 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/default.png" for 127.0.0.1 at 2014-11-14 01:59:16 -0600
+Served asset /default.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-14 02:16:02 -0600
+Served asset /application.css - 304 Not Modified (51ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2014-11-14 02:16:02 -0600
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.css?body=1" for 127.0.0.1 at 2014-11-14 02:16:02 -0600
+Served asset /search.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-11-14 02:16:02 -0600
+Served asset /home.css - 304 Not Modified (1ms)

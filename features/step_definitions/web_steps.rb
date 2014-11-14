@@ -18,7 +18,6 @@
 # * http://elabs.se/blog/15-you-re-cuking-it-wrong
 #
 
-
 require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
@@ -58,7 +57,7 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
-  print page.html
+  #print page.html
   fill_in(field, :with => value)
 end
 
@@ -210,7 +209,7 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should be checked$/ do |label, pa
   with_scope(parent) do
     field_checked = find_field(label)['checked']
     if field_checked.respond_to? :should
-      field_checked.should be_true
+      field_checked.shfirstould be_true
     else
       assert field_checked
     end
@@ -252,4 +251,8 @@ end
 
 Then /^show me the page$/ do
   save_and_open_page
+end
+
+When /^(?:|I )click first link of type "([^"]*)"$/ do |link|
+  first(link).click
 end
