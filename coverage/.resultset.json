@@ -357,11 +357,6 @@
         null,
         1,
         2,
-<<<<<<< HEAD
-=======
-        null,
-        2,
->>>>>>> 8d74cd4e273bd8abe520bb33460994f7bdedbdd6
         null,
         2,
         null,
@@ -646,10 +641,6 @@
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1416030988
-=======
-    "timestamp": 1416029119
->>>>>>> 8d74cd4e273bd8abe520bb33460994f7bdedbdd6
+    "timestamp": 1416031648
   }
 }
