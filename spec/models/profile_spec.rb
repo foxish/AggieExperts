@@ -1,9 +1,9 @@
 require 'rails_helper'
 describe Profile do
   fixtures :profiles
-  describe 'Profile model: test get_profiles_by_keyword' do
+  describe 'get_profiles_by_keyword' do
       it 'should get all profiles which list a particular keyword' do
-        Profile.get_profiles_by_keyword("foo").should == [profiles(:user1), profiles(:user2)]
+        Profile.get_profiles_by_keyword("foo").should == [profiles(:user2), profiles(:user1)]
       end
       
       it 'should correctly return single matches' do

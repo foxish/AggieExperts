@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-11-14T02:53:20-06:00">2014-11-14T02:53:20-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-11-14T23:25:19-06:00">2014-11-14T23:25:19-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.32
+         1.23
        </span>
     </span> hits/line)
   </h2>
@@ -77,7 +77,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>3.2</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>3.0</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -157,7 +157,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>2.6</td>
+        <td>2.4</td>
       </tr>
       
       <tr>
@@ -323,7 +323,7 @@
       <tr>
         <td class="strong"><a href="#ba4d792a6803e181bdc2fe0ab7047eeb1107747d" class="src_link" title="spec/models/pkeyword_spec.rb">spec/models/pkeyword_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>5</td>
+        <td>3</td>
         <td>2</td>
         <td>2</td>
         <td>0</td>
@@ -552,8 +552,8 @@
           <code class="ruby">      @profiles.each do |profile|</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="10">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">          @keywords[profile.user_id] = Keyword.get_for_user(profile.user_id)</code>
         </li>
@@ -702,8 +702,8 @@
           <code class="ruby">    def self.get_for_user(user_id)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="8">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
           <code class="ruby">      keywords = self.joins('JOIN pkeywords ON pkeywords.keyword_id = keywords.id').</code>
         </li>
@@ -714,8 +714,8 @@
           <code class="ruby">                       where('pkeywords.user_id = ?', user_id).all</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="10">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">      return keywords</code>
         </li>
@@ -978,14 +978,14 @@
           <code class="ruby">    if not @row.nil?</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="10">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">      @keyword_id = @row.id</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="11">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
           <code class="ruby">      @profiles = self.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').</code>
         </li>
@@ -2751,13 +2751,13 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  fixtures :keywords</code>
+          <code class="ruby">  fixtures :keywords, :pkeywords</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe 'Keyword model tests' do</code>
+          <code class="ruby">  describe 'test db getter functions' do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -2793,7 +2793,7 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">        Keyword.get_for_user(1).should == [keywords(:foo), keywords(:bar)]</code>
+          <code class="ruby">        Keyword.get_for_user(1).should == [keywords(:bar), keywords(:foo)]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -2847,19 +2847,7 @@
         <li class="never" data-hits="" data-linenumber="3">
           
           
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
           <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby"></code>
         </li>
       
     </ol>
@@ -2997,7 +2985,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe 'Profile model: test get_profiles_by_keyword' do</code>
+          <code class="ruby">  describe 'get_profiles_by_keyword' do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -3009,7 +2997,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">        Profile.get_profiles_by_keyword(&quot;foo&quot;).should == [profiles(:user1), profiles(:user2)]</code>
+          <code class="ruby">        Profile.get_profiles_by_keyword(&quot;foo&quot;).should == [profiles(:user2), profiles(:user1)]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
