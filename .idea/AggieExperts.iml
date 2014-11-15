@@ -37,7 +37,9 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
       <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
@@ -137,15 +139,12 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v3.2.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.3.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.8.0, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="columnize (v0.8.9, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber (v1.3.17, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-rails (v1.4.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-rails-training-wheels (v1.0.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="database_cleaner (v1.3.0, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="debugger (v1.6.8, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="debugger-linecache (v1.2.0, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="debugger-ruby_core_source (v1.3.5, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.5, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="docile (v1.1.5, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.2.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="gherkin (v2.12.2, rbenv: 1.9.3-p547) [gem]" level="application" />
@@ -181,6 +180,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.1.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.4.6, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v3.2.6, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.9.1, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.8.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="slop (v3.6.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v2.2.3, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.9, rbenv: 1.9.3-p547) [gem]" level="application" />

@@ -49,22 +49,29 @@
                     - @publications.each do |pub|
                       %tr
                         %td.pub
-                          %input.publication{:type=>'text',:value=>"#{pub[:title]}"}
+                          %input.publication{:type=>'text',:value=>"#{pub[:title]}",:name => "pub[#{pub[:id]}][data][title]"}
                         %td.pub
-                          %input.publication{:type=>'text',:value=>"#{pub[:url]}"}
+                          %input.publication{:type=>'text',:value=>"#{pub[:url]}", :name => "pub[#{pub[:id]}][data][url]"}
                         %td.center
-                          %input{:type=>'checkbox',:name=>"#{pub[:url]}#{pub[:title]}", :checked => ""}
+                          %input{:type=>'checkbox',:name=>"#{pub[:url]}#{pub[:title]}", :name => "pub[#{pub[:id]}][check]"}
 
               .box#keywords
                 .bold_2#heading
                   Keywords
                 %table#keywords
+                  %thead
+                    %td
+                      .bold_3
+                        Key
+                    %td
+                      .bold_3
+                        Delete
                   %tbody
                     -@keywords.each do |key|
                       %tr
                         %td
-                          %input{:type=>'checkbox',:name=>"#{key}", :checked => ""}
-                        %td
-                          %input#key{:type=>'text', :value=>"#{key}"}
+                          %input#key{:type=>'text', :value=>"#{key['key']}", :name => "key[#{key['id']}][data][key]" }
+                        %td.center
+                          %input{:type=>'checkbox',:name => "key[#{key['id']}][check]"}
 
       = submit_tag 'Save Changes'

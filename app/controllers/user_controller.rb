@@ -15,11 +15,17 @@ class UserController < ApplicationController
 
   def update
     profile = Profile.where(:user_id => params[:id]).first
-    @publications = Ppublication.where(:user_id => params[:id])
-    # user.update_attributes!(params[:id])
+    publications = Ppublication.where(:user_id => params[:id])
+
+    publications.each do |pub|
+      if ((params['pub'][pub.id.to_s]).key?("check"))
+        pub.destroy
+      else
+        pub.update_attributes!((params['pub'][pub.id.to_s])['data'])
+      end
+    end
 
     if profile.update_attributes(params['user'])
-      # if
       flash[:notice] = " Profile was successfully updated!"
       redirect_to user_path(profile)
     else

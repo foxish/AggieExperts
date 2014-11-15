@@ -40,7 +40,7 @@ gem 'haml'
 
 # instructions for dev/test
 group :development, :test do
-  gem 'debugger'
+  # gem 'debugger'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
