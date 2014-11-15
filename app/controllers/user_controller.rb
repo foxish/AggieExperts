@@ -1,16 +1,16 @@
 class UserController < ApplicationController
   def show
-    user = params[:id]
-    @publications = Ppublication.where(:user_id => user)
-    @profile = Profile.where(:user_id => user).first
-    @keywords = Profile.keywords_as_string(user)
+    @user = params[:id]
+    @publications = Ppublication.where(:user_id => params[:id])
+    @profile = Profile.where(:user_id => params[:id]).first
+    @keywords = Keyword.get_for_user_as_string(params[:id])
   end
 
   def edit
-    user = params[:id]
-    @publications = Ppublication.where(:user_id => user)
-    @profile = Profile.where(:user_id => user).first
-    @keywords = Profile.keywords(user)
+    @user = params[:id]
+    @publications = Ppublication.where(:user_id => params[:id])
+    @profile = Profile.where(:user_id => params[:id]).first
+    @keywords = Keyword.get_for_user(params[:id])
   end
 
   def update
