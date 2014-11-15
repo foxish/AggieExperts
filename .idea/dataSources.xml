@@ -10,7 +10,7 @@
     <data-source source="LOCAL" name="Rails AggieExperts: test" uuid="35b435af-1842-45ac-a9b0-f831c3258705">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails AggieExperts: production" uuid="d6888ce6-97d7-4fcd-95b9-386892bb8dc9">
@@ -24,7 +24,7 @@
     <data-source source="LOCAL" name="Rails AggieExperts: cucumber" uuid="0bfa9df3-f2a8-4a78-b06e-7fc922cc1cec">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>

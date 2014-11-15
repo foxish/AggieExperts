@@ -256,3 +256,7 @@ end
 When /^(?:|I )click first link of type "([^"]*)"$/ do |link|
   first(link).click
 end
+
+Then /^I should see the image "(.+)"$/ do |image|
+  page.should have_xpath("//img[contains(@src, \"#{image}\")]")
+end
