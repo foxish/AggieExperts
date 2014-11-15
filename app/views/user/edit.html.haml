@@ -53,10 +53,10 @@
                     - @publications.each do |pub|
                       %tr
                         %td.pub
-                          %textarea.publication{:rows=> '1', :name => "pub[#{pub[:id]}][data][title]", :id => "pub[#{pub[:id]}][data][title]"}
+                          %textarea.publication{:rows=> '2', :name => "pub[#{pub[:id]}][data][title]", :id => "pub[#{pub[:id]}][data][title]"}
                             #{pub[:title]}
                         %td.pub
-                          %textarea.publication{:rows=> '1', :name => "pub[#{pub[:id]}][data][url]", :id => "pub[#{pub[:id]}][data][url]"}
+                          %textarea.publication{:rows=> '2', :name => "pub[#{pub[:id]}][data][url]", :id => "pub[#{pub[:id]}][data][url]"}
                             #{pub[:url]}
                         %td.center
                           %input{:type=>'checkbox',:name=>"#{pub[:url]}#{pub[:title]}", :name => "pub[#{pub[:id]}][check]"}
