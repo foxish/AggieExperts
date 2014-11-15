@@ -19,9 +19,9 @@ class UserController < ApplicationController
 
     if profile.update_attributes(params['user'])
       flash[:notice] = " Profile was successfully updated!"
-      redirect_to user_path(profile)
+      redirect_to user_path(params[:id])
     else
-      render edit_path(profile)
+      render edit_path(params[:id])
     end
 
   end
