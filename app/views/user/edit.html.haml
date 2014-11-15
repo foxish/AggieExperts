@@ -15,14 +15,14 @@
                         .bold_3
                           Phone:
                       %td
-                        %textarea.contact{:rows=> '2', :name=> 'user[phone]'}
+                        %textarea.contact{:rows=> '2', :name=> 'user[phone]', :id => 'phone'}
                           #{@profile[:phone]}
                     %tr
                       %td
                         .bold_3
                           Email:
                       %td
-                        %textarea.contact{:rows=> '2', :name=> 'user[email]'}
+                        %textarea.contact{:rows=> '2', :name=> 'user[email]', :id => 'email'}
                           #{@profile[:email]}
             %td
               .box#name
