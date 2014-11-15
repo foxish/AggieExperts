@@ -1,6 +1,6 @@
 require 'rails_helper'
-include AdminHelper
 	describe AdminHelper, :type => :helper do
+      fixtures :status
   		describe 'Admin helper methods' do
   			it 'should tell us if delete should be enabled or not' do
   				statusId = 1
@@ -15,23 +15,23 @@ include AdminHelper
   				expect(status_description(statusId)).to eq(mock_desc)
   			end
   			it 'should tell us if resend should be enabled or not' do
-  				statusId = Status.find_by_code(:PACT)
+  				statusId = 1
   				expect(resend_enabled(statusId)).to eq(true)
   			end
 
   			it 'should tell us if approve should be enabled or not' do
-  				statusId = Status.find_by_code(:PACT)
+  				statusId = 1
   				expect(approve_enabled(statusId)).to eq(false)
   			end
 
   			it 'should tell us if approve should be enabled or not' do
-  				statusId = Status.find_by_code(:PACT)
+  				statusId = status(:status1).id
   				expect(disable_enabled(statusId)).to eq(0)
-  				statusId = Status.find_by_code(:PAPP)
+  				statusId = status(:status3).id
   				expect(disable_enabled(statusId)).to eq(0)
-  				statusId = Status.find_by_code(:DISABLE)
+  				statusId = status(:status2).id
   				expect(disable_enabled(statusId)).to eq(2)
-  				statusId = Status.find_by_code(:ACTIVE)
+  				statusId = status(:status4).id
   				expect(disable_enabled(statusId)).to eq(1)
   			end
   		end

@@ -9,7 +9,7 @@ module AdminHelper
 	end
 
 	def resend_enabled(statusId)
-		s=get_status_code(statusId)
+		s=Status.find_by_id(statusId).code
 		if s.eql?'PACT' then
 			return true
 		else
@@ -18,7 +18,7 @@ module AdminHelper
 	end
 
 	def approve_enabled(statusId)
-		s=get_status_code(statusId)
+		s=Status.find_by_id(statusId).code
 		if s.eql?'PAPP' then
 			return true
 		else
@@ -27,7 +27,7 @@ module AdminHelper
 	end
 
 	def disable_enabled(statusId)
-		s=get_status_code(statusId)
+		s=Status.find_by_id(statusId).code
 		if s.eql?'DISABLE' then
 			return 2
 		elsif (s.eql?'PACT' or s.eql?'PAPP') 
@@ -36,11 +36,5 @@ module AdminHelper
 			return 1
 		end
 	end
-
-	def get_status_code(statusId)
-		s=Status.find_by_id(statusId)
-		s.code
-	end
-
 
 end
