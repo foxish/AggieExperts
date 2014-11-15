@@ -1,0 +1,150 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#main as HTML
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered admin/main.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 181.0ms (Views: 149.0ms | ActiveRecord: 5.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#delete_user as HTML
+Redirected to http://test.host/admin/main
+Completed 302 Found in 1.2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#approve_all as HTML
+Redirected to http://test.host/admin/main
+Completed 302 Found in 1.4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#disable_user as HTML
+Redirected to http://test.host/admin/main
+Completed 302 Found in 1.5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by AdminController#add_users as HTML
+Redirected to http://test.host/admin/main
+Completed 302 Found in 1.1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by HomeController#index as HTML
+Completed 200 OK in 4.3ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+Completed 200 OK in 4.6ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[35mKeyword Load (0.2ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%Antiquity%') LIMIT 1
+Completed 200 OK in 8.7ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+  [1m[36mKeyword Load (0.4ms)[0m  [1mSELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)[0m
+Completed 200 OK in 112.9ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"Antiquity"}
+Completed 200 OK in 2.3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "status"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "status" ("id", "code", "description", "created_at", "updated_at") VALUES (1, 'PACT', 'PACT', '2014-11-15 06:02:32', '2014-11-15 06:02:32')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "status" ("id", "code", "description", "created_at", "updated_at") VALUES (2, 'DISABLE', 'DISABLE', '2014-11-15 06:02:32', '2014-11-15 06:02:32')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "status" ("id", "code", "description", "created_at", "updated_at") VALUES (3, 'PAPP', 'PAPP', '2014-11-15 06:02:32', '2014-11-15 06:02:32')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "status" ("id", "code", "description", "created_at", "updated_at") VALUES (4, 'ACTIVE', 'ACTIVE', '2014-11-15 06:02:32', '2014-11-15 06:02:32')
+  [1m[36m (164.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mStatus Load (0.3ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mStatus Load (0.3ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mStatus Load (0.4ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 1 LIMIT 1
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 3 LIMIT 1
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 2 LIMIT 1
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "status".* FROM "status" WHERE "status"."id" = 4 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "keywords"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (1, 'foo', '2014-11-15 06:02:33', '2014-11-15 06:02:33')
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "keywords" ("id", "key", "created_at", "updated_at") VALUES (2, 'bar', '2014-11-15 06:02:33', '2014-11-15 06:02:33')[0m
+  [1m[35m (148.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%foo%') LIMIT 1
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE "keywords"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" JOIN pkeywords ON pkeywords.keyword_id = keywords.id WHERE (pkeywords.user_id = 1)
+  [1m[36mKeyword Load (0.1ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE "keywords"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKeyword Load (0.1ms)[0m  SELECT "keywords".* FROM "keywords" WHERE "keywords"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "profiles"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (1, 'Charles', 'Xavier', 'X', 9790001122, 'xavier@tamu.edu', '2014-11-15 06:02:33', '2014-11-15 06:02:33', 206669143)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "profiles" ("user_id", "fname", "lname", "description", "phone", "email", "created_at", "updated_at", "id") VALUES (2, 'John', 'Samuel', 'Y', 9790002233, 'samuel@tamu.edu', '2014-11-15 06:02:33', '2014-11-15 06:02:33', 358143215)[0m
+  [1m[35m (163.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%foo%') LIMIT 1
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 1)[0m
+  [1m[35mProfile Load (0.3ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36mProfile Load (0.1ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT 1[0m  [["id", 358143215]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mKeyword Load (0.3ms)[0m  SELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%bar%') LIMIT 1
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT "profiles".* FROM "profiles" JOIN pkeywords ON profiles.user_id = pkeywords.user_id WHERE (pkeywords.keyword_id = 2)[0m
+  [1m[35mProfile Load (0.1ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT 1  [["id", 206669143]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT "keywords".* FROM "keywords" WHERE (keywords.key LIKE '%quux%') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSuser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "susers" WHERE "susers"."email" = 'foo@abc.com' LIMIT 1[0m
+  [1m[35mSuser Exists (0.1ms)[0m  SELECT 1 AS one FROM "susers" WHERE "susers"."activation_link" = '123456789012hlgjvhljvjkljkjvgu' LIMIT 1
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "susers" ("activation_link", "active_till", "created_at", "email", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["activation_link", "123456789012hlgjvhljvjkljkjvgu"], ["active_till", Tue, 25 Nov 2014 06:02:33 UTC +00:00], ["created_at", Sat, 15 Nov 2014 06:02:33 UTC +00:00], ["email", "foo@abc.com"], ["updated_at", Sat, 15 Nov 2014 06:02:33 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("email", "password", "status_id", "created_at", "updated_at", "id") VALUES ('foo@abc.com', 'foopass', 1, '2014-11-15 06:02:33', '2014-11-15 06:02:33', 206669143)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("email", "password", "status_id", "created_at", "updated_at", "id") VALUES ('foo2@abc.com', 'foo2pass', 2, '2014-11-15 06:02:33', '2014-11-15 06:02:33', 358143215)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("email", "password", "status_id", "created_at", "updated_at", "id") VALUES ('foo3@abc.com', 'foo3pass', 3, '2014-11-15 06:02:33', '2014-11-15 06:02:33', 576709754)
+  [1m[36m (186.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."status_id" = 3[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE ("users"."email" = 'foo3@abc.com' AND "users"."id" != 576709754) LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  UPDATE "users" SET "status_id" = 4, "updated_at" = '2014-11-15 06:02:33.691531' WHERE "users"."id" = 576709754
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE ("users"."email" = 'foo3@abc.com' AND "users"."id" != 576709754) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 576709754]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSuser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "susers" WHERE "susers"."email" = 'foo4@abc.com' LIMIT 1[0m
+  [1m[35mSuser Exists (0.2ms)[0m  SELECT 1 AS one FROM "susers" WHERE "susers"."activation_link" = '251e112bb2b2ce98c8abe453e917a9bbe323412f267dee7ba4' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "susers" ("activation_link", "active_till", "created_at", "email", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["activation_link", "251e112bb2b2ce98c8abe453e917a9bbe323412f267dee7ba4"], ["active_till", Tue, 25 Nov 2014 06:02:33 UTC +00:00], ["created_at", Sat, 15 Nov 2014 06:02:33 UTC +00:00], ["email", "foo4@abc.com"], ["updated_at", Sat, 15 Nov 2014 06:02:33 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStatus Load (0.3ms)[0m  [1mSELECT "status".* FROM "status" WHERE "status"."code" = 'PACT' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'foo4@abc.com' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("activation_date", "created_at", "email", "password", "status_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["activation_date", nil], ["created_at", Sat, 15 Nov 2014 06:02:33 UTC +00:00], ["email", "foo4@abc.com"], ["password", nil], ["status_id", 1], ["updated_at", Sat, 15 Nov 2014 06:02:33 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'foo4@abc.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
