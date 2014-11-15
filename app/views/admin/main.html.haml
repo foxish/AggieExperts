@@ -25,9 +25,9 @@
 		%div{:align => 'center', :class=>'main'}
 			%h3 AggieExperts Users
 			%form{:style => 'float: left'}
-				%label{:for=>'filter'}
+				%label{:for=>'filter', :id=> 'filter_id'}
 					%font{:size => '2.8'} Status Filter: 
-				%select{:name => 'filter', :default => :all, :id=>'filter'}
+				%select{:default => :all, :id=>'filter'}
 					%option{:value => :All} All
 					-@status.each do |status|
 						%option{:value => status.description} #{status.description}

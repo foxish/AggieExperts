@@ -19,6 +19,8 @@ module NavigationHelpers
     '/search'
     when /^the profile page$/
     '/user/.*'
+  when /^the admin page$/
+    '/admin/main'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
