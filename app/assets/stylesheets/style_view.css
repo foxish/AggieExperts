@@ -84,10 +84,6 @@ table#publication td, tr {
     margin: 1px;
 }
 
-input.bold_1 {
-    max-width: 49%;
-}
-
 div {
     text-align: justify;
     text-justify: inter-word;
@@ -129,4 +125,16 @@ input {
 
 .center {
     text-align: center;
+}
+
+textarea.contact {
+    height: 45%;
+    width: 100%;
+    resize: none;
+}
+
+textarea.bold_1 {
+    width: 48.749%;
+    height: 50%;
+    resize: none;
 }
