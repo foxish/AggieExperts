@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/environment.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/environment.rb": [
         null,
         1,
         null,
@@ -9,7 +9,7 @@
         1,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/application.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/application.rb": [
         1,
         null,
         null,
@@ -81,7 +81,7 @@
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/boot.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/boot.rb": [
         1,
         null,
         null,
@@ -89,7 +89,7 @@
         null,
         1
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/environments/test.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/environments/test.rb": [
         1,
         null,
         null,
@@ -128,7 +128,7 @@
         1,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/initializers/backtrace_silencers.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -137,7 +137,7 @@
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/initializers/inflections.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -158,14 +158,14 @@
         1,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/initializers/mime_types.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/initializers/secret_token.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -174,7 +174,7 @@
         null,
         1
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/initializers/session_store.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/initializers/session_store.rb": [
         null,
         null,
         1,
@@ -184,7 +184,7 @@
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/initializers/wrap_parameters.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -200,42 +200,161 @@
         1,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/controllers/application_controller.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/controllers/admin_controller.rb": [
         1,
         1,
-        null
-      ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/helpers/application_helper.rb": [
         1,
-        null
-      ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/helpers/login_helper.rb": [
-        1,
-        null
-      ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/controllers/home_controller.rb": [
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/controllers/search_controller.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/controllers/application_controller.rb": [
         1,
+        1,
+        1,
+        null
+      ],
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/helpers/application_helper.rb": [
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/helpers/admin_helper.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        1,
+        null,
+        null,
+        null,
         1,
         4,
         4,
+        1,
+        3,
+        2,
+        1,
+        1,
         null,
-        4,
-        3,
-        3,
-        3,
+        null,
+        null,
+        1,
+        6,
         6,
         null,
         null,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/models/keyword.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/helpers/login_helper.rb": [
+        1,
+        null
+      ],
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/controllers/home_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/controllers/search_controller.rb": [
+        1,
+        1,
+        4,
+        4,
+        null,
+        4,
+        3,
+        3,
+        3,
+        2,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/models/keyword.rb": [
         1,
         1,
         1,
@@ -243,38 +362,30 @@
         null,
         null,
         1,
-        6,
+        2,
         null,
-        6,
-        null,
-        null
-      ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/models/login.rb": [
-        1,
-        1,
-        1,
-        0,
+        2,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/models/pkeyword.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/models/pkeyword.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/models/ppic.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/models/ppic.rb": [
         1,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/models/ppublication.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/models/ppublication.rb": [
         1,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/models/profile.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/models/profile.rb": [
         1,
         1,
         1,
@@ -284,38 +395,87 @@
         4,
         null,
         4,
-        3,
-        3,
+        2,
+        2,
         null,
         null,
         4,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/models/status.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/models/suser.rb": [
-        1,
-        null,
-        null
-      ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/app/models/user.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/config/routes.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/models/status.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/spec/controllers/search_controller_spec.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/models/suser.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/config/routes.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/controllers/home_controller_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/controllers/search_controller_spec.rb": [
         1,
         null,
         1,
@@ -361,7 +521,47 @@
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/spec/models/keyword_spec.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/helpers/admin_helper_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/models/keyword_spec.rb": [
         1,
         1,
         1,
@@ -376,28 +576,28 @@
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/spec/models/pkeyword_spec.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/models/pkeyword_spec.rb": [
         1,
         1,
         null,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/spec/models/ppic_spec.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/models/ppic_spec.rb": [
         1,
         1,
         null,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/spec/models/ppublication_spec.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/models/ppublication_spec.rb": [
         1,
         1,
         null,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/spec/models/profile_spec.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/models/profile_spec.rb": [
         1,
         1,
         1,
@@ -416,25 +616,39 @@
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/spec/models/status_spec.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/models/status_spec.rb": [
         1,
         1,
         null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/spec/models/suser_spec.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/models/suser_spec.rb": [
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         null,
+        null,
         null
       ],
-      "/home/anirudh/Programming/mscs/CSCE-606 (Software Engineering)/AggieExperts/spec/models/user_spec.rb": [
+      "/home/warzon/Documents/Assignments/SE/admin_page/AggieExperts/spec/models/user_spec.rb": [
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1415955200
+    "timestamp": 1416029307
   }
 }
