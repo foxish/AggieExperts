@@ -10,10 +10,6 @@
     padding-bottom: 0px;
 }
 
-.top_content {
-    /*padding-bottom: 10px*/
-}
-
 .box#name {
     padding-top: 0px;
 }
@@ -21,9 +17,6 @@
 .box {
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-.box#description {
 }
 
 .box#bio {
@@ -103,7 +96,6 @@ input.publication {
 
 td.pub {
     width: 50%;
-    border: 1px solid gray;
 }
 
 input#key {
@@ -137,4 +129,9 @@ textarea.bold_1 {
     width: 48.749%;
     height: 50%;
     resize: none;
+}
+
+textarea.publication {
+    resize: none;
+    width: 95%
 }
