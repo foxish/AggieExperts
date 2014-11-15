@@ -1,0 +1,14 @@
+user1:
+    email: foo@abc.com
+    password: foopass
+    status_id: 1
+    
+user2:
+    email: foo2@abc.com
+    password: foo2pass
+    status_id: 2
+    
+user3:
+    email: foo3@abc.com
+    password: foo3pass
+    status_id: 3

@@ -1,0 +1,20 @@
+status1:
+    id: 1
+    code: PACT
+    description: PACT
+    
+status2:
+    id: 2
+    code: DISABLE
+    description: DISABLE
+    
+status3:
+    id: 3
+    code: PAPP
+    description: PAPP
+    
+status4:
+    id: 4
+    code: ACTIVE
+    description: ACTIVE
+
