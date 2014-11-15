@@ -26,14 +26,14 @@
                           #{@profile[:email]}
             %td
               .box#name
-                %textarea.bold_1{:rows=> '1', :name=> 'user[fname]'}
+                %textarea.bold_1{:rows=> '1', :name=> 'user[fname]', :id => 'fname'}
                   #{@profile[:fname]}
-                %textarea.bold_1{:rows=> '1', :name=> 'user[lname]'}
+                %textarea.bold_1{:rows=> '1', :name=> 'user[lname]', :id => 'lname'}
                   #{@profile[:lname]}
               .box#description
                 .bold_2#heading
                   Bio
-                %textarea.bio{:rows=> '10', :name=> 'user[description]'}
+                %textarea.bio{:rows=> '10', :name=> 'user[description]', :id => 'bio'}
                   #{@profile[:description]}
               .box#publications
                 .bold_2#heading
