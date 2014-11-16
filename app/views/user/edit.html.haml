@@ -76,7 +76,8 @@
                     -@keywords.each do |key|
                       %tr
                         %td
-                          %input#key{:type=>'text', :value=>"#{key['key']}", :name => "key[#{key['id']}][data][key]" }
+                          %textarea.publication{:rows=> '1', :name => "key[#{key['id']}][data][key]", :id => "key[#{key['id']}][data][key]"}
+                            #{key['key']}
                         %td.center
                           %input{:type=>'checkbox',:name => "key[#{key['id']}][check]"}
 
