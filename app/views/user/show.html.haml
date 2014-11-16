@@ -40,5 +40,5 @@
             .box#keywords
               .bold_2#heading
                 Keywords
-              #{@keywords}
+              #{@keywords.map{|k| k.key}.join(', ')}
     = link_to 'Edit info', edit_user_path(@user)

@@ -9,13 +9,4 @@ class Keyword < ActiveRecord::Base
                        where('pkeywords.user_id = ?', user_id).all
       return keywords
     end
-
-    def self.get_for_user_as_string(id)
-      keys = self.get_for_user(id).map{ |k| k.key}
-      keywords = keys[0]
-      for i in 1..(keys.size() - 1)
-        keywords = keywords + ', ' + keys[i]
-      end
-      return keywords
-    end
 end
