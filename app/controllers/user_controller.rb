@@ -23,6 +23,5 @@ class UserController < ApplicationController
     else
       render edit_path(params[:id])
     end
-
   end
 end
