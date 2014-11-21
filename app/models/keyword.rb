@@ -5,7 +5,7 @@ class Keyword < ActiveRecord::Base
        message: "Keyword should be atleast 3 characters long" }
 
     def self.get_match(term)
-        @row = Keyword.where("keywords.key LIKE ?", '%'+ term +'%').first
+        @row = Keyword.where("keywords.key ILIKE ?", '%'+ term +'%').first
     end
     
     def self.get_for_user(user_id)
