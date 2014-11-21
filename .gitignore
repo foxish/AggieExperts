@@ -8,3 +8,4 @@
 .rspec
 tmp/
 log/
+coverage/
