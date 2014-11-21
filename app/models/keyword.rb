@@ -1,7 +1,7 @@
 class Keyword < ActiveRecord::Base
     attr_accessible :key
     def self.get_match(term)
-        @row = Keyword.where("keywords.key LIKE ?", '%'+ term +'%').first
+        @row = Keyword.where("keywords.key ILIKE ?", '%'+ term +'%').first
     end
     
     def self.get_for_user(user_id)
