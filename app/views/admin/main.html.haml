@@ -4,8 +4,12 @@
 			:plain
 				$(document).ready( function () {
 					$('#users').DataTable({
-						})
-
+					"columns": [
+							null,
+							null,
+							null,
+							{ "width": "14%" }
+							]})
 				});	
 		%script
 			:plain
@@ -19,10 +23,10 @@
 				});
 		%div{:align => 'center', :class=>'container-fluid'}
 			%h3{:class=>'page-header', :align =>'center'} AggieExperts Users
-			%form{:style => 'float: left'}
-				%label{:for=>'filter', :id=> 'filter_id'}
-					%font{:size => '2.8'} Status Filter: 
-				%select{:default => :all, :id=>'filter', :class=>'btn dropdown-toggle'}
+			%form{:style => 'float: left', :class=>'pure-form '}
+				%label{:for=>'filter', :id=> 'filter_id', :class=>'label'}
+					%font{:size => '2.9'} Status Filter: 
+				%select{:default => :all, :id=>'filter'}
 					%option{:value => :All} All
 					-@status.each do |status|
 						%option{:value => status.description} #{status.description}
@@ -77,11 +81,11 @@
 		%br
 
 		%div{:id => 'Approve All'}
-			= button_to 'Approve All', {:controller => :admin, :action => :approve_all}
+			= button_to 'Approve All', {:controller => :admin, :action => :approve_all}, :class =>'pure-button pure-button-active'
 		%br
 
 		%div{:id => "add_form", :align=>'center'}
-			%form{:controller => :admin, :action => :add_user, :method => 'post', :align => 'center'}	
+			%form{:controller => :admin, :action => :add_user, :method => 'post', :align => 'center', :class=>'pure-form'}	
 				%input{:name => "userEmail", :type => "text", :id => "tb_add_user", :placeholder =>'abc@xyz.edu'}
-				%input{:type => "submit", :value => "Add User", :id => "bt_add_user"}
+				%input{:type => "submit", :value => "Add User", :id => "bt_add_user", :class =>'pure-button pure-button-active'}
 
