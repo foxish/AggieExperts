@@ -361,3 +361,11 @@ a.pure-button-selected {
     background-color: rgb(0, 120, 231);
     color: #fff;
 }
+
+.button-large{
+    font-size: 110%;
+}
+
+.button-xlarge{
+    font-size: 115%;
+}

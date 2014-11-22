@@ -21,7 +21,7 @@
 					$('#users').DataTable().search("").draw()
 				})
 				});
-		%div{:align => 'center', :class=>'container-fluid'}
+		%div{:align => 'center'}
 			%h3{:class=>'page-header', :align =>'center'} AggieExperts Users
 			%form{:style => 'float: left', :class=>'pure-form '}
 				%label{:for=>'filter', :id=> 'filter_id', :class=>'label'}
@@ -86,6 +86,6 @@
 
 		%div{:id => "add_form", :align=>'center'}
 			%form{:controller => :admin, :action => :add_user, :method => 'post', :align => 'center', :class=>'pure-form'}	
-				%input{:name => "userEmail", :type => "text", :id => "tb_add_user", :placeholder =>'abc@xyz.edu'}
-				%input{:type => "submit", :value => "Add User", :id => "bt_add_user", :class =>'pure-button pure-button-active'}
+				%input{:name => "userEmail", :type => "text", :id => "tb_add_user", :placeholder =>'abc@xyz.edu', :class=>'addUserForm'}
+				%input{:type => "submit", :value => "Add User", :id => "bt_add_user", :class =>'pure-button pure-button-active button-large'}
 
