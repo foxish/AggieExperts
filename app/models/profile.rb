@@ -14,5 +14,20 @@ class Profile < ActiveRecord::Base
     end
     return @profiles
   end
+  
+  def self.get_profiles_by_name(term)
+  @term=term;
+  @profiles=[]
+  @profiles=Profile.where('profiles.name=?',@term).all || []
+  return @profiles
+  end
+  
+  def self.get_profiles_by_desc(term)
+ 
+  @profiles=[]
+  @profiles=Profile.where('profiles.description LIKE ?', '%'+ term +'%').all || []
+  return @profiles
+  end
+  
 end
 
