@@ -19,6 +19,6 @@
     %br
     
     %div{:id => "search_form"}
-      %form{:controller => 'index', :action => 'search', :method => 'get'}
+      %form{:controller => 'index', :action => 'search', :method => 'get', :class=>'pure-form'}
         %input{:name => "term", :type => "text", :id => "tb_search"}
-        %input{:type => "submit", :value => "Search!", :id => "bt_search"}
+        %input{:type => "submit", :value => "Search!", :id => "bt_search", :class=>'pure-button pure-button-active button-xlarge'}

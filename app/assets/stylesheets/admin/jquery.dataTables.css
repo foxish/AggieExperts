@@ -305,12 +305,33 @@ table.dataTable td {
 .dataTables_wrapper .dataTables_length {
   float: left;
 }
+
+.dataTables_wrapper .dataTables_length select{
+  margin-left: 0.5em;
+  padding: 0.2em 0.2em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
 .dataTables_wrapper .dataTables_filter {
   float: right;
   text-align: right;
 }
 .dataTables_wrapper .dataTables_filter input {
   margin-left: 0.5em;
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .dataTables_wrapper .dataTables_info {
   clear: both;
