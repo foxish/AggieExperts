@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   	tempPass = Suser.insert_suser(email)
   	#new user always starts with status code 'PACT'
   	statusId = Status.where(code: 'PACT').first
-  	User.create!(:email  => email, :status_id => statusId.id)
+    uroleId = Urole.find_by_code('USER')
+  	User.create!(:email  => email, :status_id => statusId.id, :urole_id => uroleId.id)
   end
 end

@@ -2,7 +2,8 @@ class AdminController < ApplicationController
 	helper AdminHelper
 	def main
 		@status = Status.all
-		@users = User.all
+		urole = Urole.find_by_code('USER')
+		@users = urole.users
 	end
 
 	def approve_all
