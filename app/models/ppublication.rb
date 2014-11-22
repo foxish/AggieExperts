@@ -1,5 +1,7 @@
 class Ppublication < ActiveRecord::Base
   attr_accessible :user_id, :url, :title
+  belongs_to :user
+  validates :title, presence: true
 
   def self.update(params)
     self.where(:user_id => params[:id]).each do |pub|

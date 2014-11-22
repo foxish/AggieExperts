@@ -1,6 +1,7 @@
 class Profile < ActiveRecord::Base
   has_many :pkeywords
-  attr_accessible :user_id, :fname, :lname, :description, :phone, :email
+  belongs_to :user
+  attr_accessible :user_id, :name, :description, :phone, :email
 
   def self.get_profiles_by_keyword(term)
     @row = Keyword.get_match(term)

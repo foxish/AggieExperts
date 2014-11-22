@@ -1,8 +1,13 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :activation_date, :status_id
+  attr_accessible :email, :password, :status_id, :urole_id
   has_many :pkeywords
+  has_one :profile
+  has_many :ppublications
+  has_one :ppic
+  belongs_to :urole
   belongs_to :status
   validates :email, presence: true,uniqueness: {:message => "email already exists"}
+  validates :urole_id, presence: true
 
   def self.update_status(fromStatusId, toStatusId)
   	users = User.where(status_id: fromStatusId)

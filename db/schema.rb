@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141122012105) do
+ActiveRecord::Schema.define(:version => 20141122052534) do
 
   create_table "keywords", :force => true do |t|
     t.string   "key",        :null => false
@@ -45,8 +45,7 @@ ActiveRecord::Schema.define(:version => 20141122012105) do
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
-    t.string   "fname"
-    t.string   "lname"
+    t.string   "name"
     t.text     "description"
     t.string   "phone"
     t.string   "email"
@@ -83,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20141122012105) do
     t.integer  "status_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "urole"
+    t.integer  "urole_id"
   end
 
 end
