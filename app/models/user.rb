@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+include Clearance::User
   attr_accessible :email, :password, :status_id, :urole_id
   has_many :pkeywords
   has_one :profile
@@ -6,7 +7,7 @@ class User < ActiveRecord::Base
   has_one :ppic
   belongs_to :urole
   belongs_to :status
-  validates :email, presence: true,uniqueness: {:message => "email already exists"}
+  validates :email, presence: true, uniqueness: {:message => "email already exists"}
   validates :urole_id, presence: true
 
   def self.update_status(fromStatusId, toStatusId)

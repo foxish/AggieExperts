@@ -1,17 +1,17 @@
 %div{:class=> "content"}
   %div{:class=> "content_resize"}
 
-    %div{:id => "search_form"}
+    %div.pure-form{:id => "search_form"}
       %form{:controller => 'index', :action => 'search', :method => 'get'}
         %input{:name => "term", :type => "text", :id => "tb_search", :value => @term}
-        %input{:type => "submit", :value => "Search!", :id => "bt_search"}
+        %input{:type => "submit", :value => "Search!", :id => "bt_search", :class => "pure-button pure-button-active button-xlarge"}
     %br
     
     %h3{:class => "center"} Results
     %div{:class=> "results"}
       - @profiles.each do |profile|
         %a.div_link{:href => user_path(profile.user_id)}
-          %div{:class=> "result" }
+          %div{:class=> "result"}
             %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
               %strong= profile.name
               %p.oflow= profile.description

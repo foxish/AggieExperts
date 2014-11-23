@@ -18,12 +18,13 @@ seed_uroles.each do |urole|
     Urole.create!(urole)
 end
 
-seed_users = [{:email=>'xavier@tamu.edu', :password =>'Temp123', :status_id=>4, :urole_id=> 2},
-{:email=>'samuel@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
-{:email=>'singh@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
-{:email=>'patterson@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
-{:email=>'fox@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
-{:email=>'saisujithreddy@tamu.edu',:password =>'Temp123',  :urole_id=> 1}
+seed_users = [
+#~ {:email=>'xavier@tamu.edu', :password =>'Temp123', :status_id=>4, :urole_id=> 2},
+#~ {:email=>'samuel@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
+#~ {:email=>'singh@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
+#~ {:email=>'patterson@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
+#~ {:email=>'fox@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
+#~ {:email=>'saisujithreddy@tamu.edu',:password =>'Temp123',  :urole_id=> 1}
 ]
 
 
