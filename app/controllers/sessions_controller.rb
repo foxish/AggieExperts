@@ -1,10 +1,9 @@
 class SessionsController < Clearance::SessionsController
-    skip_before_filter :authorize, only: [:create, :new, :destroy]
+  skip_before_filter :authorize, only: [:create, :new, :destroy]
   protect_from_forgery except: :create
 
   def create
     @user = authenticate(params)
-
     sign_in(@user) do |status|
       if status.success?
         redirect_back_or url_after_create
@@ -14,12 +13,12 @@ class SessionsController < Clearance::SessionsController
       end
     end
   end
-
+  
   def destroy
     sign_out
     redirect_to url_after_destroy
   end
-
+  
   def new
     render template: 'sessions/new'
   end
