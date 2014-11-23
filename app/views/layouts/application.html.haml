@@ -5,6 +5,9 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
     %title= content_for?(:title) ? yield(:title) : "AggieExperts"
     %meta{:content => content_for?(:description) ? yield(:description) : "AggieExperts", :name => "Portfolio for TAMU Faculty"}
+    %script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    %script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+    
     = stylesheet_link_tag :application, :media => "all"
     = javascript_include_tag :application
     = csrf_meta_tags
@@ -28,4 +31,10 @@
                   = render :partial => "unauthenticated"
               
     %div{:class=> "clear"}
+    - flash.each do |key, value|
+      .alert{ :class => "alert-#{key}", :style => 'background-color: yellow;' }
+        %button.close{ :data => { :dismiss => "alert" } } x
+        %strong
+          = value
+    
     = yield
