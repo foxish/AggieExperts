@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 include Clearance::User
-  attr_accessible :email, :password, :status_id, :urole_id
+  attr_accessible :email, :password, :status_id, :urole_id, :encrypted_password
   has_many :pkeywords
   has_one :profile
   has_many :ppublications
