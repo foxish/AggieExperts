@@ -10,7 +10,7 @@ class Profile < ActiveRecord::Base
     if not @row.nil?
       @keyword_id = @row.id
       @profiles = self.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').
-                       where('pkeywords.keyword_id = ?', @keyword_id).all || []
+                       where('pkeywords.keyword_id =?', @keyword_id ).all || []
     end
     return @profiles
   end
@@ -18,7 +18,7 @@ class Profile < ActiveRecord::Base
   def self.get_profiles_by_name(term)
   @term=term;
   @profiles=[]
-  @profiles=Profile.where('profiles.name=?',@term).all || []
+  @profiles=Profile.where('profiles.name LIKE ?','%'+term+'%').all || []
   return @profiles
   end
   

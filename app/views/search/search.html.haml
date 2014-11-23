@@ -12,7 +12,10 @@
     - else
       %h3{:class => "center"}  Results  
     %div{:class=> "results"}
-      - @profiles.first(5).each do |profile|
+    
+      - @profiles.take(5).each do |profile|
+        
+        - @profiles_count=@profiles_count-1
         %a.div_link{:href => user_path(profile.user_id)}
           %div{:class=> "result" }
             %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
@@ -22,3 +25,8 @@
                 %strong Keywords:
               - @keywords[profile.user_id].each do |keyword|
                 =keyword.key + ';'
+              - @profiles.drop(5)  
+    - if @istermnull==0 
+      - if @profiles_count>0 
+        %a{:href => 'search?term='} next page
+
