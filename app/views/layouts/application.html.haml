@@ -22,5 +22,10 @@
                   %a{:href => '#'} Contact Us
             %div{:id => "container"}
               %div{:id => "loginContainer"}
+                - if signed_in?
+                  = render :partial => "authenticated"
+                - else
+                  = render :partial => "unauthenticated"
+              
     %div{:class=> "clear"}
     = yield

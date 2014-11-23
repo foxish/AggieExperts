@@ -1,0 +1,12 @@
+%a{:href => '#', :id => 'loginButton'}
+  %span Login
+    
+%div{:id =>'loginBox'}
+  .pure-form
+    %form{:controller => 'sessions', :action => 'create', :method => 'post'}
+      %input{:name => "email", :type => "text"}
+      %input{:name => "password", :type => "password"}
+      %input{:type => "submit", :value => "Sign in!", :class => "pure-button pure-button-active button-xlarge"}
+      
+
+
