@@ -26,4 +26,16 @@ include Clearance::User
     uroleId = Urole.find_by_code('USER')
   	User.create!(:email  => email, :status_id => statusId.id, :urole_id => uroleId.id)
   end
+  
+  def self.get_admin_role()
+    1
+  end
+  
+  def self.get_user_role()
+    2
+  end
+  
+  def get_role()
+    self.urole_id
+  end
 end

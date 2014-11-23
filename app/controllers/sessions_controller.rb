@@ -5,8 +5,16 @@ class SessionsController < Clearance::SessionsController
   def create
     @user = authenticate(params)
     sign_in(@user) do |status|
+      #binding.pry
       if status.success?
-        redirect_back_or url_after_create
+        if current_user.get_role == User.get_user_role
+          redirect_back_or url_after_create
+        elsif current_user.get_role == User.get_admin_role
+          redirect_to admin_main_path
+        else
+          raise 'No such role'
+        end
+        
       else
         flash.notice = status.failure_message
         redirect_to request.referer
