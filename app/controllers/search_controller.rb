@@ -4,6 +4,7 @@ class SearchController < ApplicationController
     @profiles = []
     @istermnull=0
     
+     
     if @term==""
     @istermnull=1
     
@@ -11,6 +12,14 @@ class SearchController < ApplicationController
       @profiles=Profile.get_profiles_by_keyword(@term)
       @profiles += Profile.get_profiles_by_name(@term)
       @profiles += Profile.get_profiles_by_desc(@term)
+     splitterms=@term.split(" ")
+     splitterms.each do |splitterm|
+    
+      @profiles+=Profile.get_profiles_by_keyword(splitterm)
+      @profiles += Profile.get_profiles_by_name(splitterm)
+      @profiles += Profile.get_profiles_by_desc(splitterm)
+      end
+      
       @profiles=@profiles.uniq  
       @profiles_count=@profiles.count      
       @keywords = {}
