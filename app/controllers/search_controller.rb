@@ -10,7 +10,8 @@ class SearchController < ApplicationController
     else
       @profiles=Profile.get_profiles_by_keyword(@term)
       @profiles += Profile.get_profiles_by_name(@term)
-      @profiles += Profile.get_profiles_by_desc(@term)  
+      @profiles += Profile.get_profiles_by_desc(@term)
+      @profiles=@profiles.uniq  
       @profiles_count=@profiles.count      
       @keywords = {}
       @profiles.each do |profile|
