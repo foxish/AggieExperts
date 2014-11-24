@@ -11,6 +11,14 @@ class Profile < ActiveRecord::Base
       @keyword_id = @row.id
       @profiles = self.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').
                        where('pkeywords.keyword_id =?', @keyword_id ).all || []
+       @row1=Status.where('status.code =?', 'ACTIVE').first
+       @row2=User.where('users.status_id=?', @row1.id).first
+       
+       @profiles=Profile.where('profiles.user_id=?',@row2.id ) and @profiles
+       
+ # @profiles=Profile.where('profiles.user_id=?',@row2.id )  Profile.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').where('pkeywords.keyword_id =?', @keyword_id ).all || []
+  
+  #@profiles=Profile.where('profiles.user_id=?',@row2.id ).joins('JOIN  Profile.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id')').where('pkeywords.keyword_id =?', @keyword_id ).all || []
     end
     return @profiles
   end
@@ -31,7 +39,11 @@ class Profile < ActiveRecord::Base
   def self.get_profiles_by_desc(term)
  
   @profiles=[]
-  @profiles=Profile.where('profiles.description LIKE ?', '%'+ term +'%').all || []
+  #@profiles=Profile.where('profiles.description LIKE ?', '%'+ term +'%').all || []
+   @row1=Status.where('status.code =?', 'ACTIVE').first
+  @row2=User.where('users.status_id=?', @row1.id).first
+  
+  @profiles=Profile.where('profiles.description LIKE ?','%'+term+'%') and Profile.where('profiles.user_id=?',@row2.id ).all || []
   return @profiles
   end
   
