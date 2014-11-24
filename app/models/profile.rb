@@ -6,19 +6,25 @@ class Profile < ActiveRecord::Base
   def self.get_profiles_by_keyword(term)
     @row = Keyword.get_match(term)
     @profiles = []
-    
+    @profiles2 = []
+    @profiles1 = []
     if not @row.nil?
       @keyword_id = @row.id
-      @profiles = self.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').
+      @profiles1 = self.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').
                        where('pkeywords.keyword_id =?', @keyword_id ).all || []
+
        @row1=Status.where('status.code =?', 'ACTIVE').first
-       @row2=User.where('users.status_id=?', @row1.id).first
        
-       @profiles=Profile.where('profiles.user_id=?',@row2.id ) and @profiles
+         @row2=User.where('users.status_id=?', @row1.id).all
+         @profiles2 = []
+       @row2.each do |r2|  
+         @profiles2+=Profile.where('profiles.user_id=?',r2.id )|| []
+         
+         end
+      
+       @profiles=@profiles1 & @profiles2
        
- # @profiles=Profile.where('profiles.user_id=?',@row2.id )  Profile.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').where('pkeywords.keyword_id =?', @keyword_id ).all || []
-  
-  #@profiles=Profile.where('profiles.user_id=?',@row2.id ).joins('JOIN  Profile.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id')').where('pkeywords.keyword_id =?', @keyword_id ).all || []
+ 
     end
     return @profiles
   end
