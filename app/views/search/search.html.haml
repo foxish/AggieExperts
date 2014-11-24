@@ -14,7 +14,6 @@
     %div{:class=> "results"}
     
       - @profiles.take(5).each do |profile|
-        
         - @profiles_count=@profiles_count-1
         %a.div_link{:href => user_path(profile.user_id)}
           %div{:class=> "result" }

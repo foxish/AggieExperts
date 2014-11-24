@@ -21,6 +21,7 @@ class SearchController < ApplicationController
       end
       
       @profiles=@profiles.uniq  
+      #@profiles=@profiles.paginate(page: params[:search], per_page: 5)
       @profiles_count=@profiles.count      
       @keywords = {}
       @profiles.each do |profile|

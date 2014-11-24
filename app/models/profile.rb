@@ -18,7 +18,13 @@ class Profile < ActiveRecord::Base
   def self.get_profiles_by_name(term)
   @term=term;
   @profiles=[]
-  @profiles=Profile.where('profiles.name LIKE ?','%'+term+'%').all || []
+  
+  #@profiles=Profile.where('profiles.name LIKE ?','%'+term+'%').all || []
+  
+  @row1=Status.where('status.code =?', 'ACTIVE').first
+  @row2=User.where('users.status_id=?', @row1.id).first
+  
+  @profiles=Profile.where('profiles.name LIKE ?','%'+term+'%') and Profile.where('profiles.user_id=?',@row2.id ).all || []
   return @profiles
   end
   
