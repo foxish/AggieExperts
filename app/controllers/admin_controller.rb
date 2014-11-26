@@ -4,6 +4,8 @@ class AdminController < ApplicationController
 		@status = Status.all
 		urole = Urole.find_by_code('USER')
 		@users = urole.users
+		@susers = Suser.all
+		@suser_status = Status.find_by_code('PACT')
 	end
 
 	def approve_all
@@ -15,7 +17,7 @@ class AdminController < ApplicationController
 
 	def add_users
 		email = params[:userEmail]
-		User.add_user(email)
+		Suser.insert_suser(email)
 		redirect_to("/admin/main")
 	end
 
@@ -25,6 +27,12 @@ class AdminController < ApplicationController
 
 	def delete_user
 		user = User.find_by_id(params[:delete_user])
+		user.destroy
+		redirect_to("/admin/main")
+	end
+
+	def delete_suser
+		user = Suser.find_by_id(params[:delete_suser])
 		user.destroy
 		redirect_to("/admin/main")
 	end

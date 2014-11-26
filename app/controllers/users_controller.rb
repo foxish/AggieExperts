@@ -1,3 +1,4 @@
+require 'debugger'
 class UsersController < Clearance::UsersController
 skip_before_filter :authorize, only: [:create, :new]
   before_filter :avoid_sign_in, only: [:create, :new], if: :signed_in?
@@ -9,13 +10,16 @@ skip_before_filter :authorize, only: [:create, :new]
 
   def create
     @user = user_from_params
-
-    if @user.save
-      sign_in @user
-      redirect_back_or url_after_create
+    if params[:password] != params[:re_password]
+      flash[:notice] = "Passwords do not match"
     else
-      render template: 'users/new'
+      debugger
+      if @user.save
+        sign_in @user
+        redirect_back_or url_after_create
+      end
     end
+    redirect_to "/sign_up"
   end
 
   private
@@ -34,9 +38,10 @@ skip_before_filter :authorize, only: [:create, :new]
     
     
     Clearance.configuration.user_model.new(user_params).tap do |user|
-      user.email = email
+      user.email = 'sp.prithvi@gmail.com'
       user.password = password
       user.urole_id = User.get_user_role
+      user.status_id = Status.find_by_code('PAPP').id
     end
   end
 
