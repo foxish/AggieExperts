@@ -26,6 +26,13 @@
                           %td
                             %textarea.contact{:name=> 'user[email]', :id => 'email'}
                               #{@profile[:email]}
+                        %tr
+                          %td
+                            .bold_3
+                              Website:
+                          %td
+                            %textarea.contact{:name=> 'user[website]', :id => 'website'}
+                              #{@profile[:website]}
               %td
                 .right_column
                   .box#name
@@ -42,6 +49,31 @@
                           %td
                             %textarea.bold_1{:name=> 'user[name]', :id => 'name'}
                               #{@profile[:name]}
+                  .box#keywords
+                    .bold_2#heading
+                      Keywords
+                    %table#keywords
+                      %thead
+                        %td
+                          .bold_3
+                            Key
+                        %td
+                          .bold_3
+                            Delete
+                      %tbody
+                        -(0..5).each do |index|
+                          %tr
+                            -if @keywords.length > index
+                              %td
+                                %textarea.keywords{:name => "keyword[#{index}][key]", :id => "keyword[#{index}][key]"}
+                                  #{@keywords[index]['key'].capitalize}
+                              %td.center
+                                %input{:type=>'checkbox',:name => "keyword[#{index}][check]"}
+                            -else
+                              %td
+                                %textarea.keywords{:name => "keyword[#{index}][key]", :id => "keyword[#{index}][key]"}
+                              %td.center
+                                %input{:type=>'checkbox',:name => "keyword[#{index}][check]", :id => "keyword[#{index}][check]", :disabled => ''}
                   .box#description
                     .bold_2#heading
                       Bio
@@ -80,29 +112,4 @@
                                 %textarea.publication{:name => "pub[new][#{index}][data][url]", :id => "pub[new][#{index}][data][url]"}
                               %td.center
                                 %input{:type=>'checkbox',:name=> "pub[new][#{index}][check]", :id => "pub[new][#{index}][check]", :disabled => ""}
-                  .box#keywords
-                    .bold_2#heading
-                      Keywords
-                    %table#keywords
-                      %thead
-                        %td
-                          .bold_3
-                            Key
-                        %td
-                          .bold_3
-                            Delete
-                      %tbody
-                        -(0..5).each do |index|
-                          %tr
-                            -if @keywords.length > index
-                              %td
-                                %textarea.keywords{:name => "keyword[#{index}][key]", :id => "keyword[#{index}][key]"}
-                                  #{@keywords[index]['key'].capitalize}
-                              %td.center
-                                %input{:type=>'checkbox',:name => "keyword[#{index}][check]"}
-                            -else
-                              %td
-                                %textarea.keywords{:name => "keyword[#{index}][key]", :id => "keyword[#{index}][key]"}
-                              %td.center
-                                %input{:type=>'checkbox',:name => "keyword[#{index}][check]", :id => "keyword[#{index}][check]", :disabled => ''}
       = submit_tag 'Save Changes'

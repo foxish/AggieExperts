@@ -21,10 +21,16 @@
                       .bold_3
                         Email:
                     %td #{@profile[:email]}
+              =link_to 'Personal Website', @profile[:website]
           %td
             .box#name
               .bold_1
                 #{@profile[:title]} #{@profile[:name]}
+            .box#keywords
+              .bold_2#heading
+                Keywords
+              - @keywords.each do |k|
+                #{link_to(k.key.capitalize, search_path(:term => k.key)) + ";"}
             .box#description
               .bold_2#heading
                 Bio
@@ -38,9 +44,4 @@
                     - @publications.each do |pub|
                       %tr
                         %td= link_to(pub[:title], pub[:url])
-            .box#keywords
-              .bold_2#heading
-                Keywords
-              - @keywords.each do |k|
-                #{link_to(k.key.capitalize, search_path(:term => k.key)) + ";"}
     = link_to 'Edit info', edit_user_path(@user)
