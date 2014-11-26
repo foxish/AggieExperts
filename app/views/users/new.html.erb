@@ -1,15 +1,16 @@
-<div id="clearance" class="sign-up">
-  <h2><%= t('.title') %></h2>
+<div class="content">
+  <div class="content_resize">
+    <div id="clearance" class="sign-up">
+      <h2>Enter Password</h2>
 
-  <%= form_for @user do |form| %>
-    <%= render :partial => '/users/form', :object => form %>
+      <%= form_for @user,:html=>{:class=>'pure-form'} do |form| %>
+        <%= render :partial => '/users/form', :object => form %>
+        <br/>
+        <div class="submit-field">
+          <%= form.submit "Submit", :class=>"pure-button pure-button-active button-large"%>
+        </div>
 
-    <div class="submit-field">
-      <%= form.submit %>
+      <% end %>
     </div>
-
-    <div class="other-links">
-      <%= link_to t('.sign_in'), sign_in_path %>
-    </div>
-  <% end %>
+  </div>
 </div>

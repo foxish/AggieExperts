@@ -10,4 +10,5 @@ class Suser < ActiveRecord::Base
    	Suser.create!(:email => email,:activation_link => random_token, :active_till => Time.now+10.days)
    	random_token[10]
    end
+
 end

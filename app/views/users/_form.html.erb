@@ -1,9 +1,7 @@
-<div class="text-field">
-  <%= form.label :email %>
-  <%= form.text_field :email, :type => 'email' %>
+<div id="password" class="password-field">
+  <%= form.password_field :password,:placeholder=>'Password' %>
 </div>
-
-<div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
+<br/>
+<div id="re-password" class="password-field">
+  <%= form.password_field :re_password,:placeholder=>'Re-type Password' %>
 </div>
