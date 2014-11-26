@@ -85,12 +85,17 @@
                           .bold_3
                             Delete
                       %tbody
-                        -@keywords.each do |key|
+                        -(0..5).each do |index|
                           %tr
                             %td
-                              %textarea.keywords{:name => "key[#{key['id']}][data][key]", :id => "key[#{key['id']}][data][key]"}
-                                #{key['key']}
+                              -if @keywords.length > index
+                                %textarea.keywords{:name => "key[#{@keywords[index]['id']}][data][key]", :id => "key[#{@keywords[index]['id']}][data][key]"}
+                                  #{@keywords[index]['key']}
+                              -else
+                                %textarea.keywords{:name => "", :id => ""}
                             %td.center
-                              %input{:type=>'checkbox',:name => "key[#{key['id']}][check]"}
-
+                              -if @keywords.length > index
+                                %input{:type=>'checkbox',:name => "key[#{@keywords[index]['id']}][check]"}
+                              -else
+                                %input{:type=>'checkbox',:name => ""}
       = submit_tag 'Save Changes'
