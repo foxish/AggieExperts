@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2931315412">
+  <component name="DataSourceManagerImpl" format="xml" hash="1193003343">
     <data-source source="LOCAL" name="Rails AggieExperts: development" uuid="ceb4089a-4a9e-4fb9-92e8-7b4cf7784e4b">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
@@ -17,8 +17,6 @@
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:aggieexperts_prod</jdbc-url>
-      <user-name>aggieexperts</user-name>
-      <user-password>dfc9dfc6dfc5dfdfdfcedfd9dfdedfcbdfc9dfc1df89</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails AggieExperts: cucumber" uuid="0bfa9df3-f2a8-4a78-b06e-7fc922cc1cec">
@@ -29,4 +27,3 @@
     </data-source>
   </component>
 </project>
-

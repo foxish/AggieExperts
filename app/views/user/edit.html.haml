@@ -25,60 +25,59 @@
                         %textarea.contact{:rows=> '2', :name=> 'user[email]', :id => 'email'}
                           #{@profile[:email]}
             %td
-              .box#name
-                %textarea.bold_1{:rows=> '1', :name=> 'user[fname]', :id => 'fname'}
-                  #{@profile[:fname]}
-                %textarea.bold_1{:rows=> '1', :name=> 'user[lname]', :id => 'lname'}
-                  #{@profile[:lname]}
-              .box#description
-                .bold_2#heading
-                  Bio
-                %textarea.bio{:rows=> '10', :name=> 'user[description]', :id => 'bio'}
-                  #{@profile[:description]}
-              .box#publications
-                .bold_2#heading
-                  Publications
-                %table#publications
-                  %thead
-                    %td
-                      .bold_3
-                        Title
-                    %td
-                      .bold_3
-                        URL
-                    %td
-                      .bold_3
-                        Delete
-                  %tbody
-                    - @publications.each do |pub|
-                      %tr
-                        %td.pub
-                          %textarea.publication{:rows=> '2', :name => "pub[#{pub[:id]}][data][title]", :id => "pub[#{pub[:id]}][data][title]"}
-                            #{pub[:title]}
-                        %td.pub
-                          %textarea.publication{:rows=> '2', :name => "pub[#{pub[:id]}][data][url]", :id => "pub[#{pub[:id]}][data][url]"}
-                            #{pub[:url]}
-                        %td.center
-                          %input{:type=>'checkbox',:name=>"#{pub[:url]}#{pub[:title]}", :name => "pub[#{pub[:id]}][check]"}
+              .right_column
+                .box#name
+                  %textarea.bold_1{:rows=> '1', :name=> 'user[fname]', :id => 'name'}
+                    #{@profile[:name]}
+                .box#description
+                  .bold_2#heading
+                    Bio
+                  %textarea.bio{:rows=> '10', :name=> 'user[description]', :id => 'bio'}
+                    #{@profile[:description]}
+                .box#publications
+                  .bold_2#heading
+                    Publications
+                  %table#publications
+                    %thead
+                      %td
+                        .bold_3
+                          Title
+                      %td
+                        .bold_3
+                          URL
+                      %td
+                        .bold_3
+                          Delete
+                    %tbody
+                      - @publications.each do |pub|
+                        %tr
+                          %td.pub
+                            %textarea.publication{:rows=> '2', :name => "pub[#{pub[:id]}][data][title]", :id => "pub[#{pub[:id]}][data][title]"}
+                              #{pub[:title]}
+                          %td.pub
+                            %textarea.publication{:rows=> '2', :name => "pub[#{pub[:id]}][data][url]", :id => "pub[#{pub[:id]}][data][url]"}
+                              #{pub[:url]}
+                          %td.center
+                            %input{:type=>'checkbox',:name=>"#{pub[:url]}#{pub[:title]}", :name => "pub[#{pub[:id]}][check]"}
 
-              .box#keywords
-                .bold_2#heading
-                  Keywords
-                %table#keywords
-                  %thead
-                    %td
-                      .bold_3
-                        Key
-                    %td
-                      .bold_3
-                        Delete
-                  %tbody
-                    -@keywords.each do |key|
-                      %tr
-                        %td
-                          %textarea.publication{:rows=> '1', :name => "key[#{key['id']}][data][key]", :id => "key[#{key['id']}][data][key]"}
-                            #{key['key']}
-                        %td.center
-                          %input{:type=>'checkbox',:name => "key[#{key['id']}][check]"}
+                .box#keywords
+                  .bold_2#heading
+                    Keywords
+                  %table#keywords
+                    %thead
+                      %td
+                        .bold_3
+                          Key
+                      %td
+                        .bold_3
+                          Delete
+                    %tbody
+                      -@keywords.each do |key|
+                        %tr
+                          %td
+                            %textarea.publication{:rows=> '1', :name => "key[#{key['id']}][data][key]", :id => "key[#{key['id']}][data][key]"}
+                              #{key['key']}
+                          %td.center
+                            %input{:type=>'checkbox',:name => "key[#{key['id']}][check]"}
 
       = submit_tag 'Save Changes'

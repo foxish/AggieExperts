@@ -119,6 +119,10 @@ input {
     text-align: center;
 }
 
+.right_column {
+    width: 550px;
+}
+
 textarea.contact {
     height: 45%;
     width: 100%;
@@ -126,8 +130,8 @@ textarea.contact {
 }
 
 textarea.bold_1 {
-    width: 48.749%;
-    height: 50%;
+    width: 100%;
+    height: 40px;
     resize: none;
 }
 
