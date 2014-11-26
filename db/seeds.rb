@@ -33,15 +33,15 @@ end
 
 
 
-seed_keywords = [{:key => "Antiquity"},
-                 {:key => "Medieval"},
-                 {:key => "Enlightenment"},
-                 {:key => "Modern"},
-                 {:key => "Communism"},
-                 {:key => "Democracy"},
-                 {:key => "Democratic"},
-                 {:key => "Republican"},
-                 {:key => "Libertarian"}]
+seed_keywords = [{:key => "antiquity"},
+                 {:key => "medieval"},
+                 {:key => "enlightenment"},
+                 {:key => "modern"},
+                 {:key => "communism"},
+                 {:key => "democracy"},
+                 {:key => "democratic"},
+                 {:key => "republican"},
+                 {:key => "libertarian"}]
 
 seed_keywords.each do |keyword|
     Keyword.create!(keyword)
