@@ -9,9 +9,12 @@ class Pkeyword < ActiveRecord::Base
 
   def self.update(params)
     keywords = []
+    key_id = {}
     params[:data].each do |id, keys|
       if keys['key'] != ''
-        keywords.push(Keyword.find_or_create_by_key(:key => keys['key']).id)
+        k = Keyword.find_or_create_by_key(:key => keys['key'])
+        keywords.push(k.id)
+        key_id[k.key] = k.id
       end
     end
 
@@ -19,11 +22,19 @@ class Pkeyword < ActiveRecord::Base
       Pkeyword.find_or_create_by_keyword_id(:user_id => params[:id], :keyword_id => id)
     end
 
-    self.where(:user_id => params[:id]).each do |key|
-      # if key.
-      if ((params[:data][key.id.to_s]).key?("check"))
-        key.destroy
+    params[:data].each do |id, key|
+      if(key['check'])
+        self.where(:user_id => params[:id], :keyword_id => key_id[key['key']]).each do |r|
+          r.destroy
+        end
       end
     end
+
+    # self.where(:user_id => params[:id]).each do |key|
+    #   # if key.
+    #   if ((params[:data][key.id.to_s]).key?("check"))
+    #     key.destroy
+    #   end
+    # end
   end
 end
