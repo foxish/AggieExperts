@@ -29,14 +29,15 @@
               .bold_2#heading
                 Bio
               #{@profile[:description]}
-            .box#publications
-              .bold_2#heading
-                Publications
-              %table#publications
-                %tbody
-                  - @publications.each do |pub|
-                    %tr
-                      %td= link_to(pub[:title], pub[:url])
+            -if @publications.length > 0
+              .box#publications
+                .bold_2#heading
+                  Publications
+                %table#publications
+                  %tbody
+                    - @publications.each do |pub|
+                      %tr
+                        %td= link_to(pub[:title], pub[:url])
             .box#keywords
               .bold_2#heading
                 Keywords

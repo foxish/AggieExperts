@@ -62,16 +62,25 @@
                           .bold_3
                             Delete
                       %tbody
-                        - @publications.each do |pub|
-                          %tr
-                            %td.pub
-                              %textarea.publication{:name => "pub[#{pub[:id]}][data][title]", :id => "pub[#{pub[:id]}][data][title]"}
-                                #{pub[:title]}
-                            %td.pub
-                              %textarea.publication{:name => "pub[#{pub[:id]}][data][url]", :id => "pub[#{pub[:id]}][data][url]"}
-                                #{pub[:url]}
-                            %td.center
-                              %input{:type=>'checkbox',:name=>"#{pub[:url]}#{pub[:title]}", :name => "pub[#{pub[:id]}][check]"}
+                        -(0..5).each do |index|
+                          -if @publications.length > index
+                            %tr
+                              %td.pub
+                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][title]", :id => "pub[#{@publications[index][:id]}][data][title]"}
+                                  #{@publications[index][:title]}
+                              %td.pub
+                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][url]", :id => "pub[#{@publications[index][:id]}][data][url]"}
+                                  #{@publications[index][:url]}
+                              %td.center
+                                %input{:type=>'checkbox',:name=> "pub[#{@publications[index][:id]}][check]", :id => "pub[#{@publications[index][:id]}][check]"}
+                          -else
+                            %tr
+                              %td.pub
+                                %textarea.publication{:name => "pub[new][#{index}][data][title]", :id => "pub[new][#{index}][data][title]"}
+                              %td.pub
+                                %textarea.publication{:name => "pub[new][#{index}][data][url]", :id => "pub[new][#{index}][data][url]"}
+                              %td.center
+                                %input{:type=>'checkbox',:name=> "pub[new][#{index}][check]", :name => "pub[new][#{index}][check]", :disabled => ""}
 
                   .box#keywords
                     .bold_2#heading
@@ -88,14 +97,10 @@
                         -(0..5).each do |index|
                           %tr
                             %td
-                              -if @keywords.length > index
-                                %textarea.keywords{:name => "key[#{@keywords[index]['id']}][data][key]", :id => "key[#{@keywords[index]['id']}][data][key]"}
+                              %textarea.keywords{:name => "keyword[#{index}][key]", :id => "keyword[#{index}][key]"}
+                                -if @keywords.length > index
                                   #{@keywords[index]['key']}
-                              -else
-                                %textarea.keywords{:name => "", :id => ""}
                             %td.center
                               -if @keywords.length > index
-                                %input{:type=>'checkbox',:name => "key[#{@keywords[index]['id']}][check]"}
-                              -else
-                                %input{:type=>'checkbox',:name => ""}
+                                %input{:type=>'checkbox',:name => "keyword[#{index}][key][check]"}
       = submit_tag 'Save Changes'
