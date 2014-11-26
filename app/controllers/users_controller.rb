@@ -36,7 +36,7 @@ skip_before_filter :authorize, only: [:create, :new]
     Clearance.configuration.user_model.new(user_params).tap do |user|
       user.email = email
       user.password = password
-      user.urole_id = User.get_default_role
+      user.urole_id = User.get_user_role
     end
   end
 
