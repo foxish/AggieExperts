@@ -1,11 +1,15 @@
 class AdminController < ApplicationController
 	helper AdminHelper
 	def main
-		@status = Status.all
-		urole = Urole.find_by_code('USER')
-		@users = urole.users
-		@susers = Suser.all
-		@suser_status = Status.find_by_code('PACT')
+		if !current_user.nil? && (current_user.urole_id == User.get_admin_role)
+			@status = Status.all
+			urole = Urole.find_by_code('USER')
+			@users = urole.users
+			@susers = Suser.all
+			@suser_status = Status.find_by_code('PACT')
+		else
+			redirect_to ("/")
+		end
 	end
 
 	def approve_all
