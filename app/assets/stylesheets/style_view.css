@@ -1,25 +1,22 @@
 .box#photo {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 .profile_pic {
     border: none;
 }
 .box#contact_info {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .box#name {
-    padding-top: 0px;
+    padding-top: 0;
 }
 
 .box {
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-.box#bio {
 }
 
 table#parent {
@@ -40,10 +37,6 @@ table#publications {
     margin:0;
     padding:0;
     width: 100%;
-}
-
-table#publication td, tr {
-    align: center;
 }
 
 .box#contact_info tr {
@@ -84,22 +77,19 @@ div {
 
 textarea.bio {
     resize: none;
-    width: 99%;
-    height: auto;
+    width: 100%;
+    height: 150px;
+    padding-top: 5px;
 }
 
 input.publication {
-    width: 99%;
+    width: 100%;
     height: auto;
     border: none;
 }
 
 td.pub {
     width: 50%;
-}
-
-input#key {
-    border:1px solid gray;
 }
 
 input {
@@ -123,19 +113,50 @@ input {
     width: 550px;
 }
 
+.left_column {
+    width: 220px;
+}
+
 textarea.contact {
-    height: 45%;
+    height: 15px;
     width: 100%;
     resize: none;
+    white-space: nowrap;
 }
 
 textarea.bold_1 {
     width: 100%;
     height: 40px;
     resize: none;
+    white-space: nowrap;
 }
 
 textarea.publication {
     resize: none;
     width: 95%;
+    height: 50px;
+    padding-top: 5px;
+}
+
+#edit_content textarea.keywords {
+    resize: none;
+    height: 20px;
+    margin: 0;
+    width: 250px;
+    padding-top: 5px;
+}
+
+td.left {
+    text-align: left;
+}
+
+.box#keywords {
+    width: 400px;
+}
+
+#edit_content textarea {
+    border-radius: 5px;
+    border-color: #d3d3d3;
+    padding-left: 5px;
+    overflow:hidden;
 }
