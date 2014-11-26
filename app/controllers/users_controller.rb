@@ -35,9 +35,16 @@ skip_before_filter :authorize, only: [:create, :new]
     email = user_params.delete(:email)
     password = user_params.delete(:password)
     user_params.delete(:re_password)
+    if !params[:aid].nil?
+      session[:email] = Suser.find_by_activation_link(params[:aid]).email
+    end
     
     Clearance.configuration.user_model.new(user_params).tap do |user|
-      user.email = Suser.find_by_activation_link('694fd13b52d7622f66ce61ffe12f2c3747087059f14e3523dd').email
+      if session[:email].nil? ## bad...need to change this
+        user.email = email
+      else
+        user.email = session[:email]
+      end
       user.password = password
       user.urole_id = User.get_user_role
       user.status_id = Status.find_by_code('PAPP').id

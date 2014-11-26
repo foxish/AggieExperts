@@ -18,6 +18,7 @@ AggieExperts::Application.routes.draw do
   post  '/admin/disable_user'    => 'admin#disable_user'
   post  '/admin/resend_act_user' => 'admin#resend_activation'
   post  '/admin/approve_user'    => 'admin#approve_user'
-  post  '/admin/delete_suser'     => 'admin#delete_suser'
+  post  '/admin/delete_suser'    => 'admin#delete_suser'
+  get   'activate'           => 'users#new'
   resources :user
 end
