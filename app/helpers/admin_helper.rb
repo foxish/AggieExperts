@@ -4,6 +4,15 @@ module AdminHelper
 		s.description
 	end
 
+	def getUserName(userId)
+		user = User.find_by_id(userId)
+		if user.profile.nil?
+			return trim_email(user.email)
+		else
+			return user.profile.name
+		end
+	end
+
 	def delete_enabled(statusId)
 		return true
 	end
