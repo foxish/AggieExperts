@@ -57,7 +57,7 @@
 							- @users.each do |user|
 								%tr
 									%td{:align=>'center'}= link_to getUserName(user['id']), user_path(user['id'])
-									%td{:align=>'center'}= link_to user.email, ("/")
+									%td{:align=>'center'}= link_to user.email, ("mailto:#{user.email}")
 									%td{:align=>'center'}= status_description(user.status_id)
 									%td{:align=>'justify'}
 										%div{:id=>"action_container", :style=>'overflow: hidden; position: relative; white-space: nowrap;'}
