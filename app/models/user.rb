@@ -1,12 +1,14 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :status_id, :urole_id
+include Clearance::User
+  attr_accessible :email, :password, :status_id, :urole_id, :encrypted_password
+  attr_accessor :id
   has_many :pkeywords
   has_one :profile
   has_many :ppublications
   has_one :ppic
   belongs_to :urole
   belongs_to :status
-  validates :email, presence: true,uniqueness: {:message => "email already exists"}
+  validates :email, presence: true, uniqueness: {:message => "email already exists"}
   validates :urole_id, presence: true
 
   def self.update_status(fromStatusId, toStatusId)
@@ -23,5 +25,17 @@ class User < ActiveRecord::Base
   	statusId = Status.where(code: 'PACT').first
     uroleId = Urole.find_by_code('USER')
   	User.create!(:email  => email, :status_id => statusId.id, :urole_id => uroleId.id)
+  end
+  
+  def self.get_admin_role()
+    1
+  end
+  
+  def self.get_user_role()
+    2
+  end
+  
+  def get_role()
+    self.urole_id
   end
 end

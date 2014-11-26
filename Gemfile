@@ -38,6 +38,9 @@ gem 'jquery-rails'
 # use Haml for templates
 gem 'haml'
 
+# use Clearance for authentication
+gem 'clearance'
+
 # instructions for dev/test
 group :development, :test do
   # gem 'debugger'

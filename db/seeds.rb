@@ -18,12 +18,13 @@ seed_uroles.each do |urole|
     Urole.create!(urole)
 end
 
-seed_users = [{:email=>'xavier@tamu.edu', :password =>'Temp123', :status_id=>4, :urole_id=> 2},
-{:email=>'samuel@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
-{:email=>'singh@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
-{:email=>'patterson@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
-{:email=>'fox@tamu.edu',:password =>'Temp123', :status_id=>4, :urole_id=> 2},
-{:email=>'saisujithreddy@tamu.edu',:password =>'Temp123',  :urole_id=> 1}
+seed_users = [
+{:email=>'xavier@tamu.edu', :encrypted_password =>'$2a$10$4nxeKbBQIUJsNMBvXW6MaehP9X2ewwXr6YU7.HDMagqe8s3.PpVrm', :status_id=>4, :urole_id=> 2},
+{:email=>'samuel@tamu.edu',:encrypted_password =>'$2a$10$XqWFr8Omw4OTh9PQfVLau.oujuzBU.mYhUsC/S6ko.SR7cc2mmOm6', :status_id=>4, :urole_id=> 2},
+{:email=>'singh@tamu.edu',:encrypted_password =>'$2a$10$wLaDs5v1oSeFHtvf8lI78OOE1KrOcThwhkiggn3nzPHnh2ktgBNlS', :status_id=>4, :urole_id=> 2},
+{:email=>'patterson@tamu.edu',:encrypted_password =>'$2a$10$L/8mSlxCIZhpfZGM8P9IVOyxV3trjS.dm01xzZrwoBVUAtyLVQy22', :status_id=>4, :urole_id=> 2},
+{:email=>'fox@tamu.edu',:encrypted_password =>'$2a$10$fMwSit9vogMTQpQAEPUeDOSuEqu83h2EkjE9V7qHtq28PYP1/Gw/G', :status_id=>4, :urole_id=> 2},
+{:email=>'saisujithreddy@tamu.edu',:encrypted_password =>'$2a$10$T0bSc7g8QyT1MMWEPTjf5.DvFxdWmGzkn5uPDJ2AL3v27YERsDFaG',  :urole_id=> 1}
 ]
 
 

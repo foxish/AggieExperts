@@ -1,0 +1,8 @@
+%a{:href => '#', :id => 'loginButton'}
+  %span= current_user.email
+  
+.clearboth
+%div{:id =>'loginBox'}
+  %ul{:id => 'loginForm'}
+    %span= link_to 'My Profile', user_path(current_user['id']), method: :get
+    %span= link_to 'Sign out', sign_out_path, method: :delete
