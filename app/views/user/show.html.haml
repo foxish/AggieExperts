@@ -42,5 +42,5 @@
               .bold_2#heading
                 Keywords
               - @keywords.each do |k|
-                #{link_to(k.key,'/search?term=' + k.key) + ";"}
+                #{link_to(k.key.capitalize,'/search?term=' + k.key) + ";"}
     = link_to 'Edit info', edit_user_path(@user)

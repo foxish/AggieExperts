@@ -12,8 +12,10 @@ class Ppublication < ActiveRecord::Base
       end
     end
 
-    params[:data]['new'].each do |key, pub|
-      self.create(:user_id => params[:id], :title => pub['data']['title'], :url => pub['data']['url'])
+    if params[:data].key?("new")
+      params[:data]['new'].each do |key, pub|
+        self.create(:user_id => params[:id], :title => pub['data']['title'], :url => pub['data']['url'])
+      end
     end
   end
 end
