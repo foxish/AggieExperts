@@ -20,9 +20,8 @@ skip_before_filter :authorize, only: [:create, :new]
         render template: 'users/new'
       else
         if @user.save
-          Suser.find_by_id(session[:id]).delete
-          session[:id]=@user.id
-          session[:role]=@user.role_id
+          Suser.destroy(session[:id])
+          session[:id]=nil
           sign_in @user
           redirect_back_or url_after_create
         end

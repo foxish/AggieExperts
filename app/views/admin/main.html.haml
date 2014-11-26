@@ -63,7 +63,7 @@
 										%div{:id=>"action_container", :style=>'overflow: hidden; position: relative; white-space: nowrap;'}
 											%div{:id => 'disable_container',:style => 'float: left'}
 												%form{:controller => :admin, :action => :disable_user, :method => "post"}
-													%input{:name=>'disable_user', :value=>user.id, :hidden=>"true"}
+													%input{:name=>'disable_user', :value=>user['id'], :hidden=>"true"}
 													- if disable_enabled(user.status_id) == 1
 														%input{:type=>"image", :src=>"/assets/disable.png", :alt=>"Submit", :title=>"Disable User",:class=>'img'}
 													- elsif disable_enabled(user.status_id) == 2
@@ -73,14 +73,14 @@
 											%div{:id => 'delete_container',:style => 'float: left'}
 												%form{:controller => :admin, :action => :delete_user, :method =>"post"}
 													- if delete_enabled(user.status_id)
-														%input{:name=>'delete_user', :value=>user.id, :hidden=>"true"}
+														%input{:name=>'delete_user', :value=>user['id'], :hidden=>"true"}
 														%input{:type=>"image", :src=>"/assets/Delete.png", :alt=>"Submit",:title=>"Delete User", :data=>{:confirm=>"Are you sure?"}, :class=>'img'}
 													-else
 														%img{:alt=>"Delete Disabled", :src=>"/assets/delete_disable.png", :title=>"Delete Disabled"}
 											%div{:id => 'approve_container',:style => 'float: left'}	
 												%form{:controller => :admin, :action => :approve_user, :method => "post"}
 													- if approve_enabled(user.status_id)	
-														%input{:name=>'approve_user', :value=>user.id, :hidden=>"true"}
+														%input{:name=>'approve_user', :value=>user['id'], :hidden=>"true"}
 														%input{:type=>"image", :src=>"/assets/approve.jpg", :alt=>"Submit",:title=>"Approve User", :class=>'img'}
 													- else
 														%img{:alt=>"Approve Disabled", :src=>"/assets/approve_disable.jpg", :title=>"Approve Disabled"}	
