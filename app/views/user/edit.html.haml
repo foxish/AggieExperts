@@ -79,8 +79,7 @@
                               %td.pub
                                 %textarea.publication{:name => "pub[new][#{index}][data][url]", :id => "pub[new][#{index}][data][url]"}
                               %td.center
-                                %input{:type=>'checkbox',:name=> "pub[new][#{index}][check]", :name => "pub[new][#{index}][check]", :disabled => ""}
-
+                                %input{:type=>'checkbox',:name=> "pub[new][#{index}][check]", :id => "pub[new][#{index}][check]", :disabled => ""}
                   .box#keywords
                     .bold_2#heading
                       Keywords
@@ -100,10 +99,10 @@
                                 %textarea.keywords{:name => "keyword[#{index}][key]", :id => "keyword[#{index}][key]"}
                                   #{@keywords[index]['key']}
                               %td.center
-                                %input{:type=>'checkbox',:name => "keyword[#{index}][key][check]"}
+                                %input{:type=>'checkbox',:name => "keyword[#{index}][check]"}
                             -else
                               %td
                                 %textarea.keywords{:name => "keyword[#{index}][key]", :id => "keyword[#{index}][key]"}
                               %td.center
-                                %input{:type=>'checkbox',:name => "keyword[#{index}][key][check]", :disabled => ''}
+                                %input{:type=>'checkbox',:name => "keyword[#{index}][check]", :id => "keyword[#{index}][check]", :disabled => ''}
       = submit_tag 'Save Changes'

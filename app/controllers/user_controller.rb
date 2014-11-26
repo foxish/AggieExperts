@@ -17,6 +17,8 @@ class UserController < ApplicationController
     profile = Profile.where(:user_id => params[:id]).first
     Ppublication.update({:id => params[:id], :data => params['pub']})
 
+    Pkeyword.update({:id => params[:id], :data => params['keyword']})
+
     profile.update_attributes(params['user'])
     flash[:notice] = " Profile was successfully updated!"
     redirect_to user_path(params[:id])
