@@ -24,7 +24,7 @@
           %td
             .box#name
               .bold_1
-                #{@profile[:name]}
+                #{@profile[:title]} #{@profile[:name]}
             .box#description
               .bold_2#heading
                 Bio
@@ -40,5 +40,6 @@
             .box#keywords
               .bold_2#heading
                 Keywords
-              #{@keywords.map{|k| k.key}.join(', ')}
+              - @keywords.each do |k|
+                #{link_to(k.key,'/search?term=' + k.key) + ";"}
     = link_to 'Edit info', edit_user_path(@user)

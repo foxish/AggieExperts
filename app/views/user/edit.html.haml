@@ -29,8 +29,19 @@
               %td
                 .right_column
                   .box#name
-                    %textarea.bold_1{:name=> 'user[fname]', :id => 'name'}
-                      #{@profile[:name]}
+                    %table
+                      %tbody
+                        %tr
+                          %td.title
+                            %select.bold_1{:name => 'user[title]'}
+                              -['Dr.', 'Prof.', 'Mr.', 'Mrs.', 'Miss'].each do |title|
+                                -if title == @profile[:title]
+                                  %option{:value => title, :selected => "selected"} #{title}
+                                -else
+                                  %option{:value => title} #{title}
+                          %td
+                            %textarea.bold_1{:name=> 'user[name]', :id => 'name'}
+                              #{@profile[:name]}
                   .box#description
                     .bold_2#heading
                       Bio
