@@ -101,7 +101,7 @@
                                 %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][title]", :id => "pub_title_#{index}"}
                                   #{@publications[index][:title]}
                               %td.pub
-                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validatePhone(this);"}
+                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validateUrl(this);"}
                                   #{@publications[index][:url]}
                               %td.center
                                 %input{:type=>'checkbox',:name=> "pub[#{@publications[index][:id]}][check]", :id => "pub_check_#{index}"}
@@ -109,7 +109,7 @@
                               %td.pub
                                 %textarea.publication{:name => "pub[new][#{index}][data][title]", :id => "pub_title_#{index}"}
                               %td.pub
-                                %textarea.publication{:name => "pub[new][#{index}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validatePhone(this);"}
+                                %textarea.publication{:name => "pub[new][#{index}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validateUrl(this);"}
                               %td.center
                                 %input{:type=>'checkbox',:name=> "pub[new][#{index}][check]", :id => "pub_check_#{index}", :disabled => ""}
       = submit_tag 'Save Changes', :onclick => "return validateForm();"

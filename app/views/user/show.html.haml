@@ -44,5 +44,8 @@
                   %tbody
                     - @publications.each do |pub|
                       %tr
-                        %td= link_to(pub[:title], pub[:url])
+                        -if pub[:url].nil? || pub[:url] == ''
+                          #{pub[:title]}
+                        -else
+                          %td= link_to(pub[:title], pub[:url])
     = link_to 'Edit info', edit_user_path(@user)
