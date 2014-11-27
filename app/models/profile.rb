@@ -22,11 +22,11 @@ class Profile < ActiveRecord::Base
       if j < 2
         phone_num = phone_num + num
       elsif j == 2
-        phone_num = phone_num + num + ') - '
+        phone_num = phone_num + num + ') '
       elsif j < 5
         phone_num = phone_num + num
       elsif j == 5
-        phone_num = phone_num + num + ' - '
+        phone_num = phone_num + num + '-'
       else
         phone_num = phone_num + num
       end
