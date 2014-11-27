@@ -15,12 +15,13 @@
                     %td
                       .bold_3
                         Phone:
-                    %td #{@profile[:phone]}
+                    %td #{@phone_num}
                   %tr
                     %td
                       .bold_3
                         Email:
-                    %td #{@profile[:email]}
+                    %td
+                      =mail_to @profile[:email]
               -unless @profile[:website].nil?
                 =link_to 'Personal Website', @profile[:website]
           %td

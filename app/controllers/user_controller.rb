@@ -4,6 +4,9 @@ class UserController < ApplicationController
     @publications = Ppublication.where(:user_id => params[:id])
     @profile = Profile.where(:user_id => params[:id]).first
     @keywords = Keyword.get_for_user(params[:id])
+
+    @phone_num = Profile.format_phone(@profile[:phone])
+    puts "foo"
   end
 
   def edit

@@ -14,5 +14,26 @@ class Profile < ActiveRecord::Base
     end
     return @profiles
   end
+
+  def self.format_phone(number)
+    phone_num = "("
+    j=0;
+    number.split('').each do |num|
+      if j < 2
+        phone_num = phone_num + num
+      elsif j == 2
+        phone_num = phone_num + num + ') - '
+      elsif j < 5
+        phone_num = phone_num + num
+      elsif j == 5
+        phone_num = phone_num + num + ' - '
+      else
+        phone_num = phone_num + num
+      end
+      j = j+1
+    end
+
+    return phone_num
+  end
 end
 
