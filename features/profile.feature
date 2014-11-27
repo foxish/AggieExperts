@@ -17,6 +17,7 @@ Feature: Viewing Profiles
     And I should see "Keywords Foo"
     And I should see "Bio Y"
     And I should see "John Samuel"
+    And I should see "Personal Website"
     And I should see "Edit info"
 
   Scenario: Clicking on Edit should take me to edit profile
