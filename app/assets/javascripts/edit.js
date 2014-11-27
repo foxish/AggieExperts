@@ -2,6 +2,19 @@ var errorColor = "red";
 var defaultColor = "#d3d3d3";
 
 function validateForm() {
+    var divs = document.getElementsByTagName("textarea"), item;
+    for (var i = 0, len = divs.length; i < len; i++) {
+        item = divs[i];
+        var j = 0;
+        if (item.id && item.id.indexOf("pub_url_") == 0) {
+            j++;
+            if(_validateUrl(item)) {
+                alert('Publication URL ' + j + ' is of wrong format');
+                return false;
+            }
+        }
+    }
+
     if(_validateText(document.getElementById('id_name'))) {
         alert('Name cannot be empty');
         return false;
@@ -10,6 +23,9 @@ function validateForm() {
         return false;
     } else if (_validateEmail(document.getElementById('id_email'))) {
         alert('Email is of wrong format');
+        return false;
+    } else if (_validateUrl(document.getElementById('id_website'))) {
+        alert('Website URL is of wrong format');
         return false;
     } else {
         return true;
