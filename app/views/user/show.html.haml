@@ -21,7 +21,8 @@
                       .bold_3
                         Email:
                     %td #{@profile[:email]}
-              =link_to 'Personal Website', @profile[:website]
+              -unless @profile[:website].nil?
+                =link_to 'Personal Website', @profile[:website]
           %td
             .box#name
               .bold_1
