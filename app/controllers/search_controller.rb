@@ -14,14 +14,15 @@ class SearchController < ApplicationController
       @profiles += Profile.get_profiles_by_desc(@term)
      splitterms=@term.split(" ")
      splitterms.each do |splitterm|
-    
+      
       @profiles+=Profile.get_profiles_by_keyword(splitterm)
       @profiles += Profile.get_profiles_by_name(splitterm)
       @profiles += Profile.get_profiles_by_desc(splitterm)
+      
       end
       
       @profiles=@profiles.uniq  
-      #@profiles=@profiles.paginate(page: params[:search], per_page: 5)
+      
       @profiles_count=@profiles.count      
       @keywords = {}
       @profiles.each do |profile|
