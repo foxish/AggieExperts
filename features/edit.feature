@@ -17,7 +17,7 @@ Feature: Editing Profiles
     And I should see "bar_title http://www.bar.com"
     And I should see "foo_title http://www.foo.com"
     And I should see "baz_title http://www.baz.com"
-    And I should see "Keywords Try to re-use existing keywords Key Delete"
+    And I should see "Keywords Try to re-use existing keywords Key"
     And I should see "foo"
     And I should see the image "default.png"
 
@@ -85,5 +85,54 @@ Feature: Editing Profiles
     And I should see "Email: foobar@email.id"
     And I should see "fooTitle"
     And I should not see "bar_title"
+
+  Scenario: Editing Keywords 1 saves as expected
+    Given I am on the edit page
+    When I fill in "key_word_0" with "fooKeyword"
+    When I press "Save"
+    Then I am on the profile page
+    And I should see "Foo; Fookeyword;"
+
+  Scenario: Editing Keywords 2 saves as expected
+    Given I am on the edit page
+    When I fill in "key_word_1" with "fooKeyword"
+    When I press "Save"
+    Then I am on the profile page
+    And I should see "Bar; Fookeyword;"
+
+  Scenario: Adding 1 new Keyword saves as expected
+    Given I am on the edit page
+    When I fill in "key_word_2" with "fooKeyword_2"
+    When I press "Save"
+    Then I am on the profile page
+    And I should see "Bar; Foo; Fookeyword_2;"
+
+  Scenario: Adding 2 new Keywords saves as expected
+    Given I am on the edit page
+    When I fill in "key_word_2" with "fooKeyword_2"
+    When I fill in "key_word_3" with "fooKeyword_3"
+    When I press "Save"
+    Then I am on the profile page
+    And I should see "Bar; Foo; Fookeyword_2; Fookeyword_3;"
+
+  Scenario: Adding 3 new Keywords saves as expected
+    Given I am on the edit page
+    When I fill in "key_word_2" with "fooKeyword_2"
+    When I fill in "key_word_3" with "fooKeyword_3"
+    When I fill in "key_word_4" with "fooKeyword_4"
+    When I press "Save"
+    Then I am on the profile page
+    And I should see "Bar; Foo; Fookeyword_2; Fookeyword_3; Fookeyword_4;"
+
+  Scenario: Adding 4 new Keywords saves as expected
+    Given I am on the edit page
+    When I fill in "key_word_2" with "fooKeyword_2"
+    When I fill in "key_word_3" with "fooKeyword_3"
+    When I fill in "key_word_4" with "fooKeyword_4"
+    When I fill in "key_word_5" with "fooKeyword_5"
+    When I press "Save"
+    Then I am on the profile page
+    And I should see "Bar; Foo; Fookeyword_2; Fookeyword_3; Fookeyword_4; Fookeyword_5;"
+
 
 

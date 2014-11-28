@@ -14,9 +14,9 @@ Feature: Viewing Profiles
     And I should see "bar_title"
     And I should see "foo_title"
     And I should see "baz_title"
-    And I should see "Keywords Foo"
+    And I should see "Keywords Bar; Foo;"
     And I should see "Bio Y"
-    And I should see "John Samuel"
+    And I should see "Dr. John Samuel"
     And I should see "Personal Website"
     And I should see "Edit info"
 

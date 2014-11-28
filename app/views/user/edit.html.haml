@@ -59,9 +59,6 @@
                         %td
                           .bold_3
                             Key
-                        %td
-                          .bold_3
-                            Delete
                       %tbody
                         -(0..5).each do |index|
                           %tr
@@ -69,13 +66,9 @@
                               %td
                                 %textarea.keywords{:name => "keyword[#{index}][key]", :id => "key_word_#{index}", :onblur => "return validateKeywords();"}
                                   #{@keywords[index]['key'].capitalize}
-                              %td.center
-                                %input{:type=>'checkbox',:name => "key_check_#{index}"}
                             -else
                               %td
                                 %textarea.keywords{:name => "keyword[#{index}][key]", :id => "key_word_#{index}", :onblur => "return validateKeywords();"}
-                              %td.center
-                                %input{:type=>'checkbox',:name => "keyword[#{index}][check]", :id => "key_check_#{index}", :disabled => ''}
                   .box#description
                     .bold_2#heading
                       Bio

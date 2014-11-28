@@ -1,6 +1,6 @@
 class Pkeyword < ActiveRecord::Base
   attr_accessible :user_id, :keyword_id
-  #has_one :profile -- psakuru:wouldn't make sense as we dont have profile_id as a foreign key here 
+  #has_one :profile -- psakuru:wouldn't make sense as we dont have profile_id as a foreign key here
   #Replacing with belongs_to :user
   belongs_to :user
   belongs_to :keyword
@@ -22,7 +22,6 @@ class Pkeyword < ActiveRecord::Base
 
     # Add these new keywords in PKeywords for a particular user
     keywords.each do |id|
-      puts "foo"
       r = Pkeyword.find_or_create_by_keyword_id_and_user_id(:user_id => params[:id], :keyword_id => id)
       r.save
     end
@@ -32,15 +31,6 @@ class Pkeyword < ActiveRecord::Base
     self.where(:user_id => params[:id] ).each do |r|
       unless user_keys.include? r.keyword_id
         r.destroy
-      end
-    end
-
-    # Delete those keywords that have been marked for delete
-    params[:data].each do |id, key|
-      if(key['check'])
-        self.where(:user_id => params[:id], :keyword_id => key_id[key['key'].downcase]).each do |r|
-          r.destroy
-        end
       end
     end
   end

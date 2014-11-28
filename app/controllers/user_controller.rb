@@ -6,7 +6,6 @@ class UserController < ApplicationController
     @keywords = Keyword.get_for_user(params[:id])
 
     @phone_num = Profile.format_phone(@profile[:phone])
-    puts "foo"
   end
 
   def edit
