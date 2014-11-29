@@ -27,11 +27,13 @@ class SearchController < ApplicationController
       @keywords = {}
       @profiles.each do |profile|
           @keywords[profile.user_id] = Keyword.get_for_user(profile.user_id)
-
-      end
-                  
-    end
+            
+         
+    end 
+     
       
+    end
     
+       
   end
 end

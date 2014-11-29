@@ -37,4 +37,4 @@
                         %span.keywords
                           %strong Keywords:
                         - @keywords[profile.user_id].each do |keyword|
-                          = keyword.key + ';'
+                          = keyword.key.capitalize + ';'
