@@ -29,12 +29,16 @@
                 %td            
                   %a.div_link{:href => user_path(profile.user_id)}
                     .result
+                      
                       %img.thumb{:height => "100", :src => asset_path("default.png"), :width => "100"}
                         %strong
                           = profile.name
-                        %p.oflow
-                          = profile.description
-                        %span.keywords
-                          %strong Keywords:
+                          %br
+                       
+                          %strong Keywords:  
                         - @keywords[profile.user_id].each do |keyword|
                           = keyword.key.capitalize + ';'
+                        %p.oflow
+                          = profile.description
+                        
+                        
