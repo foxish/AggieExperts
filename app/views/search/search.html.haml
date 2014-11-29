@@ -1,9 +1,9 @@
 .content
   .content_resize
-    #search_form
+    #search_form.pure-form
       %form{:action => "search", :controller => "index", :method => "get"}
         %input#tb_search{:name => "term", :type => "text", :value => @term}
-        %input#bt_search{:type => "submit", :value => "Search!"}
+        %input#bt_search{:type => "submit", :value => "Search!", :class => "pure-button pure-button-active button-xlarge"}
     %br/
     - if @istermnull==1
       %h3.center No Results Found

@@ -38,6 +38,8 @@
 
 }
 
-.div_link { text-decoration: none;
-    color: #000; }
+.div_link { 
+    text-decoration: none;
+    color: #000 !important; 
+}
 
