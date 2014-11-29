@@ -4,6 +4,10 @@ class UserController < ApplicationController
     @publications = Ppublication.where(:user_id => params[:id])
     @profile = Profile.where(:user_id => params[:id]).first
     @keywords = Keyword.get_for_user(params[:id])
+
+    # if(!@profile.nil? && @profile.key?(:phone))
+    #   @phone_num = Profile.format_phone(@profile[:phone])
+    # end
   end
 
   def edit    
@@ -16,6 +20,8 @@ class UserController < ApplicationController
   def update
     profile = Profile.where(:user_id => params[:id]).first
     Ppublication.update({:id => params[:id], :data => params['pub']})
+
+    Pkeyword.update({:id => params[:id], :data => params['keyword']})
 
     profile.update_attributes(params['user'])
     flash[:notice] = " Profile was successfully updated!"

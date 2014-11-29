@@ -15,30 +15,38 @@
                     %td
                       .bold_3
                         Phone:
-                    %td #{@profile[:phone]}
+                    %td #{@phone_num}
                   %tr
                     %td
                       .bold_3
                         Email:
-                    %td #{@profile[:email]}
+                    %td
+                      =mail_to @profile[:email]
+              -unless @profile[:website].nil?
+                =link_to 'Personal Website', @profile[:website]
           %td
             .box#name
               .bold_1
-                #{@profile[:fname]} #{@profile[:lname]}
+                #{@profile[:title]} #{@profile[:name]}
+            .box#keywords
+              .bold_2#heading
+                Keywords
+              - @keywords.each do |k|
+                #{link_to(k.key.capitalize, search_path(:term => k.key)) + ";"}
             .box#description
               .bold_2#heading
                 Bio
               #{@profile[:description]}
-            .box#publications
-              .bold_2#heading
-                Publications
-              %table#publications
-                %tbody
-                  - @publications.each do |pub|
-                    %tr
-                      %td= link_to(pub[:title], pub[:url])
-            .box#keywords
-              .bold_2#heading
-                Keywords
-              #{@keywords.map{|k| k.key}.join(', ')}
+            -if @publications.length > 0
+              .box#publications
+                .bold_2#heading
+                  Publications
+                %table#publications
+                  %tbody
+                    - @publications.each do |pub|
+                      %tr
+                        -if pub[:url].nil? || pub[:url] == ''
+                          #{pub[:title]}
+                        -else
+                          %td= link_to(pub[:title], pub[:url])
     = link_to 'Edit info', edit_user_path(@user)

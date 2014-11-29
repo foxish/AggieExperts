@@ -4,6 +4,7 @@ user1:
     description: X
     phone: 9790001122
     email: xavier@tamu.edu
+    title: Mr.
     
 user2:
     user_id: 2
@@ -11,3 +12,5 @@ user2:
     description: Y
     phone: 9790002233
     email: samuel@tamu.edu
+    website: http://www.foo.com
+    title: Dr.
