@@ -4,5 +4,8 @@
 .clearboth
 %div{:id =>'loginBox'}
   %ul{:id => 'loginForm'}
-    %span= link_to 'My Profile', user_path(current_user['id']), method: :get
+    - if current_user.urole_id == admin_role
+      %span= link_to 'Administrator Home', admin_path, method: :get
+    -else
+      %span= link_to 'My Profile', user_path(current_user['id']), method: :get
     %span= link_to 'Sign out', sign_out_path, method: :delete
