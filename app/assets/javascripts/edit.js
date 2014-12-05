@@ -1,16 +1,23 @@
 var errorColor = "red";
 var defaultColor = "#d3d3d3";
 var maxLength = 1000;
+var minLength = 3;
 
 function validateForm() {
-    var divs = document.getElementsByTagName("textarea"), item;
+    var divs = document.getElementsByTagName("textarea"), item, j = 0;
     for (var i = 0, len = divs.length; i < len; i++) {
         item = divs[i];
-        var j = 0;
-        if (item.id && item.id.indexOf("pub_url_") == 0) {
+        if (item.id && item.id.indexOf("pub_title_") == 0) {
             j++;
+            if(_validateText(item)) {
+                alert('Publication Title ' + j + ' needs non empty and at least ' + minLength + ' characters long');
+                return false;
+            }
+        }
+
+        if (item.id && item.id.indexOf("pub_url_") == 0) {
             if(_validateUrl(item)) {
-                alert('Publication URL ' + j + ' is of wrong format');
+                alert('Publication URL ' + j + ' needs to be in the format \n\'http(s)://www.url.com\'');
                 return false;
             }
         }
@@ -32,7 +39,7 @@ function validateForm() {
         alert('Website URL is of wrong format');
         return false;
     } else if (_validateKeywords()) {
-        alert('You need to provide at least one keyword');
+        alert('You need to provide at least one keyword with length at least ' + minLength + ' characters long');
         return false;
     } else {
         return true;
@@ -114,7 +121,7 @@ function _validatePhone(x) {
 }
 
 function _validateText(x) {
-    return (x.value==null | /^\s*$/.test(x.value)) ? true : false;
+    return (x.value==null | /^\s*$/.test(x.value)) ? true : x.value.length < minLength;
 }
 
 function _validateUrl(x) {
