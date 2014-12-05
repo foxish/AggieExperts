@@ -15,7 +15,8 @@ include Clearance::User
   	users = User.where(status_id: fromStatusId)
   	users.each do |user|
   		user.update_attributes(:status_id => toStatusId)
-  		user.save
+        user.id = user['id']
+  		user.save(:validate => false)
   	end
   end
   

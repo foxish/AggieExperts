@@ -69,7 +69,8 @@ class AdminController < ApplicationController
 		else
 			flash[:notice] = "Cannot approve user. Not a valid user state to approve!!"
 		end
-		user.save
+        user.id = user['id']
+		user.save(:validate => false)
 		redirect_to("/admin/main")
 	end
 
