@@ -14,7 +14,7 @@ class ProfileController < ApplicationController
   end
 
   def new
-    if !current_user.nil? && current_user['id'].to_s == @user
+    if !current_user.nil? && current_user['id'].to_s == params[:format]
       Profile.create(:user_id => params[:id])
       redirect_to edit_profile_path(params[:format])
     else
@@ -25,7 +25,7 @@ class ProfileController < ApplicationController
 
   def edit
     @user = params[:id]
-    if !current_user.nil? && (current_user.urole_id == User.get_admin_role || current_user['id'].to_s == @user)
+    if !current_user.nil? && current_user['id'].to_s == @user
       @publications = Ppublication.where(:user_id => params[:id])
       @profile = Profile.where(:user_id => params[:id]).first
       @keywords = Keyword.get_for_user(params[:id])
