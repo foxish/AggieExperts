@@ -18,7 +18,8 @@
                               Phone:
                           %td
                             %textarea.contact{:name=> 'user[phone]', :id => 'id_phone', :onblur=>"return validatePhone(this);"}
-                              #{@profile[:phone]}
+                              -unless @profile[:phone].nil?
+                                #{@profile[:phone]}
                         %tr
                           %td
                             .bold_3
@@ -65,7 +66,6 @@
                             -if @keywords.length > index
                               %td
                                 %input.kboxes{:name => "keyword[#{index}][key]", :id => "key_word_#{index}", :onblur => "return validateKeywords();", 'data-autocomplete' => "/keywords/autocomplete_keyword_key", :value =>  "#{@keywords[index]['key'].capitalize}"}
-                                 
                             -else
                               %td
                                 %input.kboxes{:name => "keyword[#{index}][key]", :id => "key_word_#{index}", :onblur => "return validateKeywords();", 'data-autocomplete' => "/keywords/autocomplete_keyword_key"}

@@ -1,16 +1,20 @@
 class ProfileController < ApplicationController
   def show
-    @user = params[:id]
-    @publications = Ppublication.where(:user_id => params[:id])
     @profile = Profile.where(:user_id => params[:id]).first
-    @keywords = Keyword.get_for_user(params[:id])
-
-    unless @profile.nil?
-      @phone_num = Profile.format_phone(@profile[:phone])
+    if @profile.nil?
+      Profile.create(:user_id => params[:id])
+      redirect_to edit_profile_path(params[:id])
+    else
+      @user = params[:id]
+      @publications = Ppublication.where(:user_id => params[:id])
+      @keywords = Keyword.get_for_user(params[:id])
+      unless @profile[:phone].nil?
+        @phone_num = Profile.format_phone(@profile[:phone])
+      end
     end
   end
 
-  def edit    
+  def edit
     @user = params[:id]
     
     @publications = Ppublication.where(:user_id => params[:id])
