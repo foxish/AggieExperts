@@ -15,7 +15,9 @@ class ProfileController < ApplicationController
 
   def new
     if !current_user.nil? && current_user['id'].to_s == params[:format]
-      Profile.create(:user_id => params[:id])
+      @profile = Profile.new
+      @profile.user_id = params[:format]
+      @profile.save
       redirect_to edit_profile_path(params[:format])
     else
       flash[:notice] = "You do not have permission to do that. Please sign in."

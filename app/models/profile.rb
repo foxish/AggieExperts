@@ -76,6 +76,6 @@ class Profile < ActiveRecord::Base
     end
       @profiles=@profiles1 & @profiles2
       return @profiles
-    end
+  end
 end
 
