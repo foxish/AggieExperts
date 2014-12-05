@@ -12,6 +12,7 @@ class ProfileController < ApplicationController
 
   def edit    
     @user = params[:id]
+    
     @publications = Ppublication.where(:user_id => params[:id])
     @profile = Profile.where(:user_id => params[:id]).first
     @keywords = Keyword.get_for_user(params[:id])

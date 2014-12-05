@@ -140,7 +140,7 @@ textarea.publication {
     padding-top: 5px;
 }
 
-#edit_content textarea.keywords {
+#edit_content .kboxes {
     resize: none;
     height: 20px;
     margin: 0;
@@ -157,6 +157,13 @@ td.left {
 }
 
 #edit_content textarea {
+    border-radius: 5px;
+    border-color: #d3d3d3;
+    padding-left: 5px;
+    overflow:hidden;
+}
+
+.kboxes {
     border-radius: 5px;
     border-color: #d3d3d3;
     padding-left: 5px;

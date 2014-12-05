@@ -61,14 +61,14 @@
                             Key
                       %tbody
                         -(0..5).each do |index|
-                          %tr
+                          %tr                                                        
                             -if @keywords.length > index
                               %td
-                                %textarea.keywords{:name => "keyword[#{index}][key]", :id => "key_word_#{index}", :onblur => "return validateKeywords();"}
-                                  #{@keywords[index]['key'].capitalize}
+                                %input.kboxes{:name => "keyword[#{index}][key]", :id => "key_word_#{index}", :onblur => "return validateKeywords();", 'data-autocomplete' => "/keywords/autocomplete_keyword_key", :value =>  "#{@keywords[index]['key'].capitalize}"}
+                                 
                             -else
                               %td
-                                %textarea.keywords{:name => "keyword[#{index}][key]", :id => "key_word_#{index}", :onblur => "return validateKeywords();"}
+                                %input.kboxes{:name => "keyword[#{index}][key]", :id => "key_word_#{index}", :onblur => "return validateKeywords();", 'data-autocomplete' => "/keywords/autocomplete_keyword_key"}
                   .box#description
                     .bold_2#heading
                       Bio

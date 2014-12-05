@@ -88,7 +88,7 @@ function validateBio(x) {
 
 function validateKeywords() {
     if (_validateKeywords()) {
-        var divs = document.getElementsByTagName("textarea"), item;
+        var divs = document.getElementsByTagName("input"), item;
         for (var i = 0, len = divs.length; i < len; i++) {
             item = divs[i];
             if (item.id && item.id.indexOf("key_word_") == 0) {
@@ -96,7 +96,7 @@ function validateKeywords() {
             }
         }
     } else {
-        var divs = document.getElementsByTagName("textarea"), item;
+        var divs = document.getElementsByTagName("input"), item;
         for (var i = 0, len = divs.length; i < len; i++) {
             item = divs[i];
             if (item.id && item.id.indexOf("key_word_") == 0) {
@@ -130,7 +130,7 @@ function _validateUrl(x) {
 }
 
 function _validateKeywords() {
-    var divs = document.getElementsByTagName("textarea"), item;
+    var divs = document.getElementsByTagName("input"), item;
     for (var i = 0, len = divs.length; i < len; i++) {
         item = divs[i];
         if (item.id && item.id.indexOf("key_word_") == 0) {

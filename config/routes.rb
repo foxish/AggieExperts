@@ -21,4 +21,9 @@ AggieExperts::Application.routes.draw do
   post  '/admin/delete_suser'    => 'admin#delete_suser'
   get   'activate'           => 'users#new'
   resources :profile
+  
+  resources :keywords do
+    get :autocomplete_keyword_key, :on => :collection
+  end
+  
 end
