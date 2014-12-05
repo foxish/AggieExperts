@@ -107,5 +107,11 @@ ol li .send { margin:16px 0 0 0;}
     clear: both;
 }
 
-
+.pagebg {
+    background-image: url("centree.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    position:relative;
+    height:100%;
+}
 
