@@ -5,9 +5,9 @@ class ProfileController < ApplicationController
     @profile = Profile.where(:user_id => params[:id]).first
     @keywords = Keyword.get_for_user(params[:id])
 
-    # if(!@profile.nil? && @profile.key?(:phone))
-    #   @phone_num = Profile.format_phone(@profile[:phone])
-    # end
+    unless @profile.nil?
+      @phone_num = Profile.format_phone(@profile[:phone])
+    end
   end
 
   def edit    

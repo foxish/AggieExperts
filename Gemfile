@@ -55,7 +55,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'pry'
-  gem 'debugger'
+  # gem 'debugger'
 end
 
 gem 'simplecov', :require => false, :group => :test
