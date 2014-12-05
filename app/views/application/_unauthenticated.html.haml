@@ -1,0 +1,15 @@
+%a{:href => '#', :id => 'loginButton'}
+  %span Login
+  
+.clearboth
+%div{:id =>'loginBox'}
+  .pure-form
+    =form_for :session, :html=> {:id => 'loginForm'}, :url => session_path do |form|
+      %fieldset{:id => 'body'}
+        %fieldset
+          %label{:for => 'email'} Email
+          %input{:name => 'session[email]', :type => 'text'}
+        %fieldset
+          %label{:for => 'password'} Password
+          %input{:name => 'session[password]', :type => 'password'}
+        %input{:type => "submit", :value => "Sign in!", :class => "pure-button pure-button-active button-xlarge"}

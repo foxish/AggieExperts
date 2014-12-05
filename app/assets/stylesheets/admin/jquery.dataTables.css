@@ -14,6 +14,24 @@ table.dataTable {
    * Body styles
    */
 }
+table.dataTable tbody td a:link {
+    color: #3333FF;
+}
+
+/* visited link */
+table.dataTable tbody td a:visited {
+    color: #990033;
+}
+
+/* mouse over link */
+table.dataTable tbody td a:hover {
+    color: #000066;
+}
+
+/* selected link */
+table.dataTable tbody td a:active {
+    color: #000066;
+}
 table.dataTable thead th,
 table.dataTable tfoot th {
   font-weight: bold;
@@ -495,3 +513,4 @@ table.dataTable td {
     margin-top: 0.5em;
   }
 }
+

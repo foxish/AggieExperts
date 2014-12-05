@@ -1,9 +1,15 @@
 class AdminController < ApplicationController
 	helper AdminHelper
 	def main
-		@status = Status.all
-		urole = Urole.find_by_code('USER')
-		@users = urole.users
+		if !current_user.nil? && (current_user.urole_id == User.get_admin_role)
+			@status = Status.all
+			urole = Urole.find_by_code('USER')
+			@users = urole.users
+			@susers = Suser.all
+			@suser_status = Status.find_by_code('PACT')
+		else
+			redirect_to ("/")
+		end
 	end
 
 	def approve_all
@@ -15,7 +21,11 @@ class AdminController < ApplicationController
 
 	def add_users
 		email = params[:userEmail]
-		User.add_user(email)
+		if User.find_by_email(email).nil? && Suser.find_by_email(email).nil?
+			Suser.insert_suser(email)
+		else
+			flash[:notice] = "User already exists in the system"
+		end
 		redirect_to("/admin/main")
 	end
 
@@ -24,14 +34,19 @@ class AdminController < ApplicationController
 	end
 
 	def delete_user
-		user = User.find_by_id(params[:delete_user])
+		Clearance.configuration.user_model.delete(params[:delete_user])
+		redirect_to("/admin/main")
+	end
+
+	def delete_suser
+		user = Suser.find_by_id(params[:delete_suser])
 		user.destroy
 		redirect_to("/admin/main")
 	end
 
 	def disable_user
-		user = User.find_by_id(params[:disable_user])
-		from_status = Status.find_by_id(user.status_id)
+        user = User.find_user(params[:disable_user])
+        from_status = Status.find_by_id(user.status_id)
 		if from_status.code.eql?'DISABLE' then
 			to_status = Status.where(code: 'ACTIVE').first
 			user.status_id = to_status.id
@@ -41,7 +56,8 @@ class AdminController < ApplicationController
 		else
 			flash[:notice] = "Cannot enable or disable user. Illegal state!!"
 		end
-		user.save
+        user.id = user['id']
+		user.save(:validate => false)
 		redirect_to("/admin/main")
 	end
 
@@ -53,8 +69,13 @@ class AdminController < ApplicationController
 		else
 			flash[:notice] = "Cannot approve user. Not a valid user state to approve!!"
 		end
-		user.save
+        user.id = user['id']
+		user.save(:validate => false)
 		redirect_to("/admin/main")
 	end
 
+	def resend_activation
+		user = User.find_by_id(params[:resend_act_suser])
+		user.re_send_act
+	end
 end

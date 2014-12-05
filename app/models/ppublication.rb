@@ -11,5 +11,11 @@ class Ppublication < ActiveRecord::Base
         pub.update_attributes!((params[:data][pub.id.to_s])['data'])
       end
     end
+
+    if params[:data].key?("new")
+      params[:data]['new'].each do |key, pub|
+        self.create(:user_id => params[:id], :title => pub['data']['title'], :url => pub['data']['url'])
+      end
+    end
   end
 end

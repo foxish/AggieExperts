@@ -13,4 +13,8 @@ class Keyword < ActiveRecord::Base
                        where('pkeywords.user_id = ?', user_id).all
       return keywords
     end
+    
+    def capitalize
+      return self.key.to_str.capitalize
+    end
 end

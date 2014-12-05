@@ -1,71 +1,29 @@
 AggieExperts::Application.routes.draw do
-  match '/' => 'home#index'
-  match '/search' => 'search#search'
+  resources :passwords, controller: 'passwords', only: [:create, :new]
+  resource :session, controller: 'sessions', only: [:create]
+  resources :users, controller: 'users', only: [:create] do
+    resource :password,
+      controller: 'passwords',
+      only: [:create, :edit, :update]
+  end
 
-  get '/admin/main' => 'admin#main'
-  post '/admin/approve_all' => 'admin#approve_all'
-  post '/admin/add_user' => 'admin#add_users'
-  post '/admin/delete_user' => 'admin#delete_user'
-  post '/admin/disable_user' => 'admin#disable_user'
-  post '/admin/resend_act_user' => 'admin#resend_activation'
-  post '/admin/approve_user' => 'admin#approve_user'
-
-  resources :user
-
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+  delete '/sign_out'             => 'sessions#destroy', as: 'sign_out'
+  get    '/sign_up'              => 'users#new',        as: 'sign_up'
+  root  :to                      => "home#index"
+  get   '/search'                => 'search#search'
+  get   '/admin/main'            => 'admin#main'
+  post  '/admin/approve_all'     => 'admin#approve_all'
+  post  '/admin/add_user'        => 'admin#add_users'
+  post  '/admin/delete_user'     => 'admin#delete_user'
+  post  '/admin/disable_user'    => 'admin#disable_user'
+  post  '/admin/resend_act_user' => 'admin#resend_activation'
+  post  '/admin/approve_user'    => 'admin#approve_user'
+  post  '/admin/delete_suser'    => 'admin#delete_suser'
+  get   'activate'           => 'users#new'
+  resources :profile
+  
+  resources :keywords do
+    get :autocomplete_keyword_key, :on => :collection
+  end
+  
 end

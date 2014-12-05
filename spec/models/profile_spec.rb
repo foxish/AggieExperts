@@ -7,7 +7,7 @@ describe Profile do
       end
 
       it 'should correctly return single matches' do
-        Profile.get_profiles_by_keyword("bar").should == [profiles(:user1)]
+        Profile.get_profiles_by_keyword("bar").should == [profiles(:user2), profiles(:user1)]
       end
 
       it 'should correctly return empty matches' do

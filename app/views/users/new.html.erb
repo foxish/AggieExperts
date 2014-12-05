@@ -1,0 +1,16 @@
+<div class="content">
+  <div class="content_resize">
+    <div id="clearance" class="sign-up">
+      <h3>Enter Password</h3>
+
+      <%= form_for @user,:html=>{:class=>'pure-form'} do |form| %>
+        <%= render :partial => '/users/form', :object => form %>
+        <br/>
+        <div class="submit-field">
+          <%= form.submit "Submit", :class=>"pure-button pure-button-active button-large"%>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

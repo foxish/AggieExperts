@@ -1,21 +1,40 @@
-%div{:class=> "content"}
-  %div{:class=> "content_resize"}
-
-    %div{:id => "search_form"}
-      %form{:controller => 'index', :action => 'search', :method => 'get'}
-        %input{:name => "term", :type => "text", :id => "tb_search", :value => @term}
-        %input{:type => "submit", :value => "Search!", :id => "bt_search"}
-    %br
-    
-    %h3{:class => "center"} Results
-    %div{:class=> "results"}
-      - @profiles.each do |profile|
-        %a.div_link{:href => user_path(profile.user_id)}
-          %div{:class=> "result" }
-            %img{:class => "thumb", :height => "100", :width => "100", :src => asset_path("default.png")}
-              %strong= profile.name
-              %p.oflow= profile.description
-              %span.keywords
-                %strong Keywords:
-              - @keywords[profile.user_id].each do |keyword|
-                =keyword.key + ';'
+.content
+  .content_resize
+    #search_form.pure-form
+      %form{:action => "search", :controller => "index", :method => "get"}
+        %input#tb_search{:name => "term", :type => "text", :value => @term}
+        %input#bt_search{:type => "submit", :value => "Search!", :class => "pure-button pure-button-active button-xlarge"}
+    %br/
+    - if @istermnull==1
+      %h3.center No Results Found
+    - else
+      %h3.center Results
+      .results
+        :javascript
+          $(function(){
+            $("#res").dataTable( );
+          })
+                    
+        %table#res
+          %thead
+            %tr
+              %th 
+          %tbody
+            
+            - @profiles.each do |profile|
+              %tr  
+                %td            
+                  %a.div_link{:href => profile_path(profile.user_id)}
+                    .result
+                      
+                      %img.thumb{:height => "100", :src => asset_path("default.png"), :width => "100"}
+                        %strong
+                          = profile.name
+                          %br
+                       
+                          %strong Keywords:  
+                        - @keywords[profile.user_id].each do |keyword|
+                          = keyword.key.capitalize + ';'
+                        %br
+                        %p.oflow
+                          = profile.description

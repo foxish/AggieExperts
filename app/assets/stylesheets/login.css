@@ -5,7 +5,7 @@ a { text-decoration:none }
 #loginButton {
     display:inline-block;
     float:right;
-    background:#d2e0ea url(../images/buttonbg.png) repeat-x;
+    background:#d2e0ea;
     border:1px solid #899caa;
     border-radius:3px;
     -moz-border-radius:3px;
@@ -25,9 +25,10 @@ a { text-decoration:none }
 #loginButton {
     display:inline-block;
     float:right;
-    background:#d2e0ea url(../images/buttonbg.png) repeat-x;
-    border:1px solid #899caa;
+    background-color:#500000;
+    border:1px solid #fff;
     border-radius:3px;
+    /*background: url('/assets/a_down.png') no-repeat 53px 7px;*/
     -moz-border-radius:3px;
     position:relative;
     z-index:30;
@@ -36,19 +37,17 @@ a { text-decoration:none }
 
 /* Login Button Text */
 #loginButton span {
-    color:#445058;
+    color:#fff;
     font-size:14px;
     font-weight:bold;
-    text-shadow:1px 1px #fff;
-    padding:7px 29px 9px 10px;
-    background:url(../images/loginArrow.png) no-repeat 53px 7px;
-    display:block
+    padding:7px 10px 9px 10px;
+    display:block;
 }
 
 /* Login Box */
 #loginBox {
     position:absolute;
-    top:34px;
+    top:39px;
     right:0;
     display:none;
     z-index:29;
@@ -57,6 +56,8 @@ a { text-decoration:none }
 /* If the Login Button has been clicked */
 #loginButton.active {
     border-radius:3px 3px 0 0;
+    /*background: url('/assets/a_up.png') no-repeat 53px 7px;*/
+    border-bottom: 0px;    
 }
 
 #loginButton.active span {
@@ -74,19 +75,19 @@ a { text-decoration:none }
 
 /* Login Form */
 #loginForm {
-    width:248px;
-    border:1px solid #899caa;
+    width:230px;
+    border:1px solid #fff;
     border-radius:3px 0 3px 3px;
     -moz-border-radius:3px 0 3px 3px;
     margin-top:-1px;
-    background:#d2e0ea;
+    background:#500000;
     padding:6px;
 }
+
 
 #loggedInForm {
     width:100px;
     text-align: center;
-    border:1px solid #899caa;
     border-radius:3px 0 3px 3px;
     -moz-border-radius:3px 0 3px 3px;
     margin-top:-1px;
@@ -106,7 +107,7 @@ a { text-decoration:none }
 }
 
 fieldset#body {
-    background:#fff;
+    background:#500000;
     border-radius:3px;
     -moz-border-radius:3px;
     padding:10px 13px;
@@ -123,7 +124,7 @@ fieldset#body {
 }
 
 #body label {
-    color:#3a454d;
+    color:#fff;
     margin:9px 0 0 0;
     display:block;
     float:left;
@@ -154,7 +155,6 @@ fieldset#body {
 #loginForm #login {
     width:auto;
     float:left;
-    background:#339cdf url(../images/loginbuttonbg.png) repeat-x;
     color:#fff;
     padding:7px 10px 8px 10px;
     text-shadow:0px -1px #278db8;
@@ -175,9 +175,8 @@ fieldset#body {
 }
 
 #loginForm span a {
-    color:#3a454d;
-    text-shadow:1px 1px #fff;
-    font-size:12px;
+    color:#fff;
+    font-size:14px;
 }
 
 input:focus {

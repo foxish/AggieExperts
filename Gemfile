@@ -23,6 +23,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -38,9 +40,13 @@ gem 'jquery-rails'
 # use Haml for templates
 gem 'haml'
 
+# use Clearance for authentication
+gem 'clearance'
+
 # instructions for dev/test
 group :development, :test do
   # gem 'debugger'
+  gem 'will_paginate'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
@@ -49,6 +55,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'pry'
+  # gem 'debugger'
 end
 
 gem 'simplecov', :require => false, :group => :test
+gem 'rails3-jquery-autocomplete'
+
