@@ -33,7 +33,7 @@ class ProfileController < ApplicationController
       @keywords = Keyword.get_for_user(params[:id])
     else
       flash[:notice] = "You do not have permission to do that. Please sign in."
-      redirect_to profile_path(params[:id])
+      redirect_to '/'
     end
   end
 
