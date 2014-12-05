@@ -45,8 +45,8 @@ class AdminController < ApplicationController
 	end
 
 	def disable_user
-		user = User.find_by_id(params[:disable_user])
-		from_status = Status.find_by_id(user.status_id)
+        user = User.find_user(params[:disable_user])
+        from_status = Status.find_by_id(user.status_id)
 		if from_status.code.eql?'DISABLE' then
 			to_status = Status.where(code: 'ACTIVE').first
 			user.status_id = to_status.id
@@ -56,7 +56,8 @@ class AdminController < ApplicationController
 		else
 			flash[:notice] = "Cannot enable or disable user. Illegal state!!"
 		end
-		user.save
+        user.id = user['id']
+		user.save(:validate => false)
 		redirect_to("/admin/main")
 	end
 

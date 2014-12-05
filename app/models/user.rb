@@ -18,6 +18,10 @@ include Clearance::User
   		user.save
   	end
   end
+  
+  def self.find_user(user_id)
+    return User.where(id: user_id).first
+  end
 
   def self.add_user(email)
   	tempPass = Suser.insert_suser(email)

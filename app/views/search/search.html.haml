@@ -27,7 +27,7 @@
             - @profiles.each do |profile|
               %tr  
                 %td            
-                  %a.div_link{:href => user_path(profile.user_id)}
+                  %a.div_link{:href => profile_path(profile.user_id)}
                     .result
                       
                       %img.thumb{:height => "100", :src => asset_path("default.png"), :width => "100"}

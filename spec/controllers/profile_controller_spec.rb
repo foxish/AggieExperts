@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'spec_helper'
 
-describe UserController do
+describe ProfileController do
   describe 'Checking show controller' do
     it 'should call correct model methods and render correct page' do
 

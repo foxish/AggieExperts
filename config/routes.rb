@@ -20,5 +20,5 @@ AggieExperts::Application.routes.draw do
   post  '/admin/approve_user'    => 'admin#approve_user'
   post  '/admin/delete_suser'    => 'admin#delete_suser'
   get   'activate'           => 'users#new'
-  resources :user
+  resources :profile
 end

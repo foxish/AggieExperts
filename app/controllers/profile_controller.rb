@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class ProfileController < ApplicationController
   def show
     @user = params[:id]
     @publications = Ppublication.where(:user_id => params[:id])
@@ -25,7 +25,7 @@ class UserController < ApplicationController
 
     profile.update_attributes(params['user'])
     flash[:notice] = " Profile was successfully updated!"
-    redirect_to user_path(params[:id])
+    redirect_to profile_path(params[:id])
 
   end
 end
