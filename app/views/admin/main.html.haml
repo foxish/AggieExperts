@@ -12,6 +12,11 @@
 				});
 		%script
 			:plain
+				$(document).ready( function () {
+					$('#inv_susers').DataTable({})
+				});
+		%script
+			:plain
 				$(document).ready(function() {
 					$( "#tabs" ).tabs();
 				});
@@ -34,6 +39,8 @@
 						%a{:href=>'#tabs-1'} Registered Users
 					%li
 						%a{:href=>'#tabs-2'} Pending Users
+					%li
+						%a{:href=>'#tabs-3'} Requesting Users
 				%div{:id => 'tabs-1'}
 					%form{:style => 'float: left', :class=>'pure-form '}
 						%label{:for=>'filter', :id=> 'filter_id', :class=>'label'}
@@ -96,10 +103,10 @@
 								%th{:align=>'center'} Email
 								%th{:align=>'center'} Actions
 						%tbody
-							- @susers.each do |user|
+							- @pact_susers.each do |user|
 								%tr
-									%td{:align=>'center'}= link_to trim_email(user.email), profile_path(user['id'])
-									%td{:align=>'center'}= link_to user.email, ("/")
+									%td{:align=>'center'}= getSuserName(user['id'])
+									%td{:align=>'center'}= link_to user.email, ("mailto:#{user.email}")
 									%td{:align=>'justify'}
 										%div{:id=>"action_container", :style=>'overflow: hidden; position: relative; white-space: nowrap;'}
 											%div{:id => 'delete_container',:style => 'float: left'}
@@ -118,6 +125,33 @@
 														%input{:type=>"image", :src=>"/assets/Email.png", :alt=>"Submit",:title=>"Resend Activation Link", :class=>'img'}
 													- else
 														%img{:alt=>"Resend Activation Disabled", :src=>"/assets/Email_disable.png", :title=>"Resend Activation Disabled"}
+				%div{:id => 'tabs-3'}
+					%table#inv_susers	
+						%thead
+							%tr
+								%th{:align=>'center'} Name
+								%th{:align=>'center'} Email
+								%th{:align=>'center'} Actions
+						%tbody
+							- @invite_susers.each do |user|
+								%tr
+									%td{:align=>'center'}= getSuserName(user['id'])
+									%td{:align=>'center'}= link_to user.email, ("mailto:#{user.email}")
+									%td{:align=>'justify'}
+										%div{:id=>"action_container", :style=>'overflow: hidden; position: relative; white-space: nowrap;'}
+											%div{:id => 'delete_container',:style => 'float: left'}
+												%form{:controller => :admin, :action => :delete_inv_suser, :method =>"post"}
+													- if delete_enabled(@inv_status)
+														%input{:name=>'delete_inv_suser', :value=>user['id'], :hidden=>"true"}
+														%input{:name=>'authenticity_token', :value=>form_authenticity_token, :hidden=>"true"}
+														%input{:type=>"image", :src=>"/assets/Delete.png", :alt=>"Submit",:title=>"Delete User", :data=>{:confirm=>"Are you sure?"}, :class=>'img'}
+													-else
+														%img{:alt=>"Delete Disabled", :src=>"/assets/delete_disable.png", :title=>"Delete Disabled"}
+											%div{:id => 'approve_container',:style => 'float: left'}	
+												%form{:controller => :admin, :action => :approve_suser, :method => "post"}
+													%input{:name=>'approve_suser', :value=>user['id'], :hidden=>"true"}
+													%input{:name=>'authenticity_token', :value=>form_authenticity_token, :hidden=>"true"}
+													%input{:type=>"image", :src=>"/assets/approve.jpg", :alt=>"Submit",:title=>"Invite User", :class=>'img'}
 		%br
 
 

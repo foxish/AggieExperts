@@ -2,13 +2,14 @@ require 'securerandom'
 require 'mailgun'
 
 class Suser < ActiveRecord::Base
-   attr_accessible :email, :activation_link, :active_till
+   attr_accessible :email, :activation_link, :active_till, :status_id, :name, :department, :message
    validates :email, presence: true,uniqueness: {:message => "already exist"}
    validates :activation_link, uniqueness: true
+   belongs_to :status
 
    def self.insert_suser(email,host)
    	random_token = SecureRandom.hex(50)
-   	suser = Suser.create!(:email => email,:activation_link => random_token, :active_till => Time.now+10.days)
+   	suser = Suser.create!(:email => email,:activation_link => random_token, :active_till => Time.now+10.days, :status_id => Status.find_by_code('PACT').id)
     suser.sendActivationLink(host)
    	random_token[10]
    end
@@ -133,10 +134,13 @@ Or<br/>Copy and past this link in the browser<br/>"+http_activation_link+"
       mg_client.send_message "sandboxc665c980e8404ecf8d9f037580207b14.mailgun.org", message_params
    end
 
-   def re_send_act(host)
-      email = self.email
-      Suser.destroy(self.id)
-      Suser.insert_suser(email,host)
-   end
     
+   def re_send_act(host)
+    random_token = SecureRandom.hex(50)
+    self.activation_link = random_token
+    self.active_till = Time.now+10.days
+    self.status_id = Status.find_by_code('PACT').id
+    self.save!
+    self.sendActivationLink(host)
+   end
 end

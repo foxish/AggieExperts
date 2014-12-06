@@ -33,4 +33,13 @@ class ProfileController < ApplicationController
     redirect_to profile_path(params[:id])
 
   end
+
+  def request_invite
+    render template: ("users/invite")
+  end
+
+  def invite_suser
+    Suser.create!(:name=> params[:suser][:name], :department=>params[:suser][:department], :email=>params[:suser][:email], :status_id => Status.find_by_code('REQ').id, :message => params[:suser][:message])
+    redirect_to root_path
+  end
 end

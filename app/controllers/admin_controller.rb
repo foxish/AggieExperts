@@ -5,8 +5,10 @@ class AdminController < ApplicationController
 			@status = Status.where(entity: 'USER')
 			urole = Urole.find_by_code('USER')
 			@users = urole.users
-			@susers = Suser.all
+			@pact_susers = Status.find_by_code('PACT').susers
+			@invite_susers = Status.find_by_code('REQ').susers
 			@suser_status = Status.find_by_code('PACT')
+			@inv_status = Status.find_by_code('REQ')
 		else
 			redirect_to ("/")
 		end
@@ -45,6 +47,12 @@ class AdminController < ApplicationController
 		redirect_to("/admin/main")
 	end
 
+	def delete_inv_suser
+		user = Suser.find_by_id(params[:delete_inv_suser])
+		user.destroy
+		redirect_to("/admin/main")
+	end
+
 	def disable_user
         user = User.find_user(params[:disable_user])
         from_status = Status.find_by_id(user.status_id)
@@ -78,6 +86,18 @@ class AdminController < ApplicationController
 	def resend_activation
 		resend_user = Suser.find_by_id(params[:resend_suser])
 		resend_user.re_send_act(request.host_with_port)
+		redirect_to("/admin/main")
+	end
+
+	def approve_suser
+		suser = Suser.find_by_id(params[:approve_suser])
+		email = suser.email
+		if User.find_by_email(email).nil?
+			suser.re_send_act(request.host_with_port)
+		else
+			flash[:notice] = "User already exists in the system"
+			suser.destroy!
+		end
 		redirect_to("/admin/main")
 	end
 end

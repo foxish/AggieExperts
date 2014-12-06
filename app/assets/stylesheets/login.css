@@ -201,3 +201,8 @@ input:focus {
 .clear-both {
    clear: both;
 }
+
+#loginInvite{
+    width: auto;
+    float: right;
+}
