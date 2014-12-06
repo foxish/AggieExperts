@@ -34,6 +34,7 @@ class AdminController < ApplicationController
 	end
 
 	def delete_user
+		User.destroy(params[:delete_user])
 		Clearance.configuration.user_model.delete(params[:delete_user])
 		redirect_to("/admin/main")
 	end

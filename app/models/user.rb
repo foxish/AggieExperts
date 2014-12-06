@@ -2,10 +2,10 @@ class User < ActiveRecord::Base
 include Clearance::User
   attr_accessible :email, :password, :status_id, :urole_id, :encrypted_password
   attr_accessor :id
-  has_many :pkeywords
-  has_one :profile
-  has_many :ppublications
-  has_one :ppic
+  has_many :pkeywords, :dependent => :destroy
+  has_one :profile, :dependent => :destroy
+  has_many :ppublications, :dependent => :destroy
+  has_one :ppic, :dependent => :destroy
   belongs_to :urole
   belongs_to :status
   validates :email, presence: true, uniqueness: {:message => "email already exists"}
@@ -33,11 +33,11 @@ include Clearance::User
   end
   
   def self.get_admin_role()
-    1
+    Urole.find_by_code('ADMIN').id
   end
   
   def self.get_user_role()
-    2
+    Urole.find_by_code('USER').id
   end
   
   def get_role()
