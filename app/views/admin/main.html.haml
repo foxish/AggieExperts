@@ -115,7 +115,7 @@
 											%div{:id => image_tag("/images/Resend.png"),:style => 'float: left',}
 												%form{:controller => :admin, :action => :resend_act_suser, :method => "post"}
 													- if resend_enabled(@suser_status)
-														%input{:name=>'resend_suser', :value=>user.id, :hidden=>"true"}
+														%input{:name=>'resend_suser', :value=>user['id'], :hidden=>"true"}
 														%input{:name=>'authenticity_token', :value=>form_authenticity_token, :hidden=>"true"}
 														%input{:type=>"image", :src=>"/assets/Email.png", :alt=>"Submit",:title=>"Resend Activation Link", :class=>'img'}
 													- else

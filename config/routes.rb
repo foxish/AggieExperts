@@ -16,7 +16,7 @@ AggieExperts::Application.routes.draw do
   post  '/admin/add_user'        => 'admin#add_users'
   post  '/admin/delete_user'     => 'admin#delete_user'
   post  '/admin/disable_user'    => 'admin#disable_user'
-  post  '/admin/resend_act_user' => 'admin#resend_activation'
+  post  '/admin/resend_act_suser' => 'admin#resend_activation'
   post  '/admin/approve_user'    => 'admin#approve_user'
   post  '/admin/delete_suser'    => 'admin#delete_suser'
   get   'activate'           => 'users#new'

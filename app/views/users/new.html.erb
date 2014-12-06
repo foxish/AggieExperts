@@ -1,14 +1,55 @@
 <div class="content">
   <div class="content_resize">
+    <script>
+    function checkForm(form)
+    {
+      if(form.user_password.value != "" && form.user_password.value == form.user_re_password.value) {
+        if(form.user_password.value.length < 6) {
+          alert("Error: Password must contain at least six characters!");
+          $document.getElementById("user_password").style.borderColor = "red";
+          form.user_password.focus();
+          return false;
+        }
+        re = /[0-9]/;
+        if(!re.test(form.user_password.value)) {
+          alert("Error: password must contain at least one number (0-9)!");
+          form.user_password.focus();
+          return false;
+        }
+        re = /[a-z]/;
+        if(!re.test(form.user_password.value)) {
+          alert("Error: password must contain at least one lowercase letter (a-z)!");
+          form.user_password.focus();
+          return false;
+        }
+        re = /[A-Z]/;
+        if(!re.test(form.user_password.value)) {
+          alert("Error: password must contain at least one uppercase letter (A-Z)!");
+          form.user_password.focus();
+          return false;
+        }
+      } else {
+        alert("Error: Please check that you've entered and confirmed your password!");
+        form.user_password.focus();
+        return false;
+      }
+      return true;
+    }
+    </script>
     <div id="clearance" class="sign-up">
       <h3>Enter Password</h3>
 
-      <%= form_for @user,:html=>{:class=>'pure-form'} do |form| %>
-        <%= render :partial => '/users/form', :object => form %>
+      <%= form_for @user,:html=>{:class=>'pure-form', :onSubmit=>'return checkForm(this)'} do |form| %>
+      <div id="password" class="password-field" >
+        <%= form.password_field :password,:placeholder=>'Password' %>
         <br/>
-        <div class="submit-field">
-          <%= form.submit "Submit", :class=>"pure-button pure-button-active button-large"%>
-        </div>
+        <br/>
+        <%= form.password_field :re_password,:placeholder=>'Re-type Password' %>
+      </div>
+      <br/>
+      <div class="submit-field">
+        <%= form.submit "Submit", :class=>"pure-button pure-button-active button-large"%>
+      </div>
 
       <% end %>
     </div>

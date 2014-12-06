@@ -75,7 +75,8 @@ class AdminController < ApplicationController
 	end
 
 	def resend_activation
-		user = User.find_by_id(params[:resend_act_suser])
-		user.re_send_act
+		resend_user = Suser.find_by_id(params[:resend_suser])
+		resend_user.re_send_act
+		redirect_to("/admin/main")
 	end
 end
