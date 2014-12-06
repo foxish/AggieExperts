@@ -1,7 +1,9 @@
 class Profile < ActiveRecord::Base
   has_many :pkeywords
   belongs_to :user
-  attr_accessible :user_id, :name, :description, :phone, :email, :title, :website
+  attr_accessible :user_id, :name, :description, :phone, :email, :title, :website, :pic
+  has_attached_file :pic, :styles => { :medium => "300x300>", :thumb => "110x100>" }, :default_url => "/assets/default.png"
+  validates_attachment_content_type :pic, :content_type => /\Aimage\/.*\Z/
 
   def self.get_profiles_by_keyword(term)
     @row = Keyword.get_match(term)

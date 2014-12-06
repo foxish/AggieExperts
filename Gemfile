@@ -61,3 +61,5 @@ end
 gem 'simplecov', :require => false, :group => :test
 gem 'rails3-jquery-autocomplete'
 
+gem 'paperclip'
+# gem 'aws-sdk'

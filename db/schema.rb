@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141128020356) do
+ActiveRecord::Schema.define(:version => 20141206195111) do
 
   create_table "keywords", :force => true do |t|
     t.string   "key",        :null => false
@@ -49,10 +49,14 @@ ActiveRecord::Schema.define(:version => 20141128020356) do
     t.text     "description"
     t.string   "phone"
     t.string   "email"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "title"
     t.string   "website"
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
   end
 
   create_table "status", :force => true do |t|

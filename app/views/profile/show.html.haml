@@ -5,7 +5,7 @@
         %tr
           %td
             .box#photo
-              %img.profile_pic{:alt => "", :height => "200", :src => asset_path("default.png"), :width => "200", :id => "profile_pic"}
+              =image_tag @profile.pic.url(:medium), :height => '220', :width => '200'
             .box#contact_info
               %table#contact_info
                 %tbody
