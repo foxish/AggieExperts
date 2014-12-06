@@ -17,7 +17,7 @@ skip_before_filter :authorize, only: [:create, :new]
     @user = user_from_params
       if !passcheck
         flash[:notice] = "Passwords do not match!!"
-        render template: 'users/new'
+        redirect_to ("/activate?aid="+Suser.find_by_id(session[:id]).activation_link)
       else
         if @user.save
           Suser.destroy(session[:id])

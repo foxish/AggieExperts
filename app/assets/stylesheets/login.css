@@ -186,3 +186,23 @@ fieldset#body {
 input:focus {
     outline:none;
 }
+
+#clearance{
+    width: 40%;
+    float: left !important;
+}
+
+#note{
+    padding:40px 10px 8px 10px;
+    width: 50%;
+    float: right !important;
+}
+
+.clear-both {
+   clear: both;
+}
+
+#loginInvite{
+    width: auto;
+    float: right;
+}
