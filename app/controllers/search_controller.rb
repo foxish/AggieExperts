@@ -5,7 +5,7 @@ class SearchController < ApplicationController
     @istermnull = 0
     
     
-    if @term.length <=3
+    if @term.length <=2
       @istermnull = 1    
     else
       @profiles=Profile.get_profiles_by_keyword(@term)
