@@ -20,7 +20,7 @@ class ProfileController < ApplicationController
       @profile.save
       redirect_to edit_profile_path(params[:format])
     else
-      flash[:notice] = "You do not have permission to do that. Please sign in."
+      flash[:notice] = "You do not have permission to do that."
       redirect_to '/'
     end
   end
@@ -34,7 +34,7 @@ class ProfileController < ApplicationController
       @publications = Ppublication.where(:user_id => params[:id])
       @keywords = Keyword.get_for_user(params[:id])
     else
-      flash[:notice] = "You do not have permission to do that. Please sign in."
+      flash[:notice] = "You do not have permission to do that"
       redirect_to '/'
     end
   end
