@@ -6,7 +6,7 @@ module AdminHelper
 
 	def getUserName(userId)
 		user = User.find_by_id(userId)
-		if user.profile.nil?
+		if user.profile.nil? || user.profile.name = "" || user.profile.name.nil?
 			return trim_email(user.email)
 		else
 			return user.profile.name
