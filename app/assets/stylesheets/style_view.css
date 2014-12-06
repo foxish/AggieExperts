@@ -196,3 +196,9 @@ td.left {
     font-style: italic;
     font-size:xx-small;
 }
+
+input.file_upload {
+    border-radius: 5px;
+    border-color: #d3d3d3;
+    width: 193px;
+}

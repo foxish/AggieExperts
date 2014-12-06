@@ -9,7 +9,7 @@
                 .left_column
                   .box#photo
                     =image_tag @profile.pic.url(:medium), :height => '220', :width => '200'
-                    =file_field :user, :pic
+                    =file_field :user, :pic, :class => 'file_upload'
                   .box#contact_info
                     %table#contact_info
                       %tbody
