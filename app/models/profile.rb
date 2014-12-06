@@ -42,8 +42,10 @@ class Profile < ActiveRecord::Base
         end
         j = j+1
       end
+      return phone_num
+    else
+      return ''
     end
-    return phone_num || ""
   end
   
   def self.get_profiles_by_name(term)
