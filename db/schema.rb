@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141128020356) do
+ActiveRecord::Schema.define(:version => 20141206070950) do
 
   create_table "keywords", :force => true do |t|
     t.string   "key",        :null => false
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20141128020356) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "entity"
   end
 
   create_table "susers", :force => true do |t|

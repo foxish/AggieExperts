@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-seed_status = [{:code => 'PACT',:description => 'Pending Activation'},{:code => 'DISABLE', :description => 'Disabled'},
-{:code => 'PAPP',:description => 'Pending Approval'},{:code => 'ACTIVE',:description =>'Active'}]
+seed_status = [{:code => 'PACT', :description => 'Pending Activation', :entity => 'SUSER'},{:code => 'DISABLE', :description => 'Disabled', :entity => 'USER'},
+{:code => 'PAPP', :description => 'Pending Approval', :entity => 'USER'},{:code => 'ACTIVE', :description =>'Active', :entity => 'USER'},{:code => 'REQ', :description =>'Request Invite', :entity => 'SUSER'}]
 
 seed_status.each do |status|
     Status.create!(status)

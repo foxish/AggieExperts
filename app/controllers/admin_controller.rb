@@ -2,7 +2,7 @@ class AdminController < ApplicationController
 	helper AdminHelper
 	def main
 		if !current_user.nil? && (current_user.urole_id == User.get_admin_role)
-			@status = Status.all
+			@status = Status.where(entity: 'USER')
 			urole = Urole.find_by_code('USER')
 			@users = urole.users
 			@susers = Suser.all
