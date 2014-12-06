@@ -6,16 +6,16 @@ class Suser < ActiveRecord::Base
    validates :email, presence: true,uniqueness: {:message => "already exist"}
    validates :activation_link, uniqueness: true
 
-   def self.insert_suser(email)
+   def self.insert_suser(email,host)
    	random_token = SecureRandom.hex(50)
    	suser = Suser.create!(:email => email,:activation_link => random_token, :active_till => Time.now+10.days)
-    suser.sendActivationLink
+    suser.sendActivationLink(host)
    	random_token[10]
    end
 
-   def sendActivationLink
+   def sendActivationLink(host)
       mg_client = Mailgun::Client.new "key-039e5cae20d25dcfcfbbc191df4d99c6"
-      http_activation_link = "http://localhost:3000/activate?aid="+self.activation_link
+      http_activation_link = "http://"+host+"/activate?aid="+self.activation_link
       body = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns=\"http://www.w3.org/1999/xhtml\" style=\"font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;\">
 <head>
@@ -133,10 +133,10 @@ Or<br/>Copy and past this link in the browser<br/>"+http_activation_link+"
       mg_client.send_message "sandboxc665c980e8404ecf8d9f037580207b14.mailgun.org", message_params
    end
 
-   def re_send_act
+   def re_send_act(host)
       email = self.email
       Suser.destroy(self.id)
-      Suser.insert_suser(email)
+      Suser.insert_suser(email,host)
    end
     
 end

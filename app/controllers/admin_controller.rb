@@ -22,7 +22,7 @@ class AdminController < ApplicationController
 	def add_users
 		email = params[:userEmail]
 		if User.find_by_email(email).nil? && Suser.find_by_email(email).nil?
-			Suser.insert_suser(email)
+			Suser.insert_suser(email,request.host_with_port)
 		else
 			flash[:notice] = "User already exists in the system"
 		end
@@ -77,7 +77,7 @@ class AdminController < ApplicationController
 
 	def resend_activation
 		resend_user = Suser.find_by_id(params[:resend_suser])
-		resend_user.re_send_act
+		resend_user.re_send_act(request.host_with_port)
 		redirect_to("/admin/main")
 	end
 end
