@@ -3,7 +3,6 @@ var defaultColor = "#d3d3d3";
 var maxLength = 1000;
 
 function validateForm() {
-    return true;
     var divs = document.getElementsByTagName("input"), item, j = 0;
     for (var i = 0, len = divs.length; i < len; i++) {
         item = divs[i];
