@@ -13,11 +13,12 @@
         %input#tb_search{:name => "term", :type => "text", :value => @term}
         %input#bt_search{:type => "submit", :value => "Search!", :class => "pure-button pure-button-active button-xlarge"}
     %br/
-    - if @istermnull==1
-      %h3.center No Results Found
-    - else
-      %h3.center Results
-      .results
+    
+    .results
+      - if @profiles.empty?
+        %h3.center No Results Found
+      - else 
+        %h3.center Results 
         :javascript
           $(function(){
             $("#res").dataTable( );
