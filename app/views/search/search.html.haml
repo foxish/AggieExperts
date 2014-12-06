@@ -15,8 +15,10 @@
     %br/
     
     .results
+       
       - if @profiles.empty?
-        %h3.center No Results Found
+        %h3.center No Results Found.Enter Atleast 3 characters to search
+      
       - else 
         %h3.center Results 
         :javascript
