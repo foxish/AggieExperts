@@ -78,7 +78,7 @@ seed_profiles = [{:user_id => 1,
                   :title=> 'Miss'},
                  {:user_id => 5, 
                   :name =>'David Fox', 
-                  :description=>' et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed',
+                  :description=>'et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed',
                   :phone=> 9790001122,
                   :email=> 'fox@tamu.edu',
                   :title=> 'Mrs.'}]

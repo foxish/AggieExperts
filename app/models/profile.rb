@@ -4,9 +4,10 @@ class Profile < ActiveRecord::Base
   attr_accessible :user_id, :name, :description, :phone, :email, :title, :website, :pic
   has_attached_file :pic, :styles => { :medium => "300x300>", :thumb => "110x100>" }, :default_url => "/assets/default.png"
   validates_attachment_content_type :pic, :content_type => /\Aimage\/.*\Z/
-  validates :name, format: { with: /^\w{4}/,
+
+  validates :name, format: { with: /\w{4}/,
      message: "name should be atleast 4 characters long" }
-  validates :description, format: { with: /^\w{4}/,
+  validates :description, format: { with: /\w{4}/,
      message: "bio should be atleast 4 characters long" }
 
   validates :phone, format: { with: /^\d{10}$/,
@@ -19,7 +20,6 @@ class Profile < ActiveRecord::Base
     message: "Email is not of the correct format" }
 
   validates_attachment :pic,
-     :content_type => { :content_type => "image/jpeg" },
      :less_than => 1.megabytes, :message => "Photo has to be a jpeg image of size < 1 MB"
 
   def self.get_profiles_by_keyword(term)
