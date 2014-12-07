@@ -38,8 +38,10 @@ class ProfileController < ApplicationController
     render template: ("users/invite")
   end
 
-  def invite_suser
-    Suser.create!(:name=> params[:suser][:name], :department=>params[:suser][:department], :email=>params[:suser][:email], :status_id => Status.find_by_code('REQ').id, :message => params[:suser][:message])
+  def invite_suser    
+    Suser.create(:name=> params[:suser][:name], :department=>params[:suser][:department], :email=>params[:suser][:email], :status_id => Status.find_by_code('REQ').id, :message => params[:suser][:message])
+    
+    flash[:notice] = "Thank you. An email will be sent to you once your request is approved"
     redirect_to root_path
   end
 end
