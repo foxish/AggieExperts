@@ -1,4 +1,5 @@
 class ProfileController < ApplicationController
+
   def show
     @profile = Profile.where(:user_id => params[:id]).first
     if @profile.nil?

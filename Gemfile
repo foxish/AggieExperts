@@ -56,6 +56,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'pry'
   # gem 'debugger'
+  gem 'factory_girl'
 end
 
 gem 'simplecov', :require => false, :group => :test
@@ -63,3 +64,4 @@ gem 'rails3-jquery-autocomplete'
 
 gem 'paperclip'
 # gem 'aws-sdk'
+
