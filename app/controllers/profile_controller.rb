@@ -54,9 +54,8 @@ class ProfileController < ApplicationController
     profile.update_attributes(params['user'])
 
     error_message = profile.errors.values.join(' + ')
-    error_message = error_message == '' ?
-        Ppublication.update({:id => params[:id], :data => params['pub']}) :
-        error_message + ' + ' + Ppublication.update({:id => params[:id], :data => params['pub']})
+    model_error = Ppublication.update({:id => params[:id], :data => params['pub']})
+    error_message = error_message == '' ? model_error : model_error =='' ? error_message: error_message + ' + ' + model_error
 
     Pkeyword.update({:id => params[:id], :data => params['keyword']})
 
