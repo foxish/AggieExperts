@@ -81,5 +81,10 @@ class Profile < ActiveRecord::Base
       @profiles=@profiles1 & @profiles2
       return @profiles
   end
+
+  def remove_pic
+    self.pic = nil;
+  end
+
 end
 

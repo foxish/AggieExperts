@@ -9,6 +9,14 @@
                 .left_column
                   .box#photo
                     =image_tag @profile.pic.url(:medium), :height => '220', :width => '200'
+                    %table#contact_info
+                      %tbody
+                        %tr
+                          %td
+                            .bold_3
+                              Remove Pic
+                          %td
+                            %input.remove_pic{:type => 'checkbox', :name => 'user[picture_check]'}
                     =file_field :user, :pic, :class => 'file_upload'
                   .box#contact_info
                     %table#contact_info

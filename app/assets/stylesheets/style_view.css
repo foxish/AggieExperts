@@ -1,6 +1,6 @@
 .box#photo {
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 10px;
 }
 .profile_pic {
     border: none;

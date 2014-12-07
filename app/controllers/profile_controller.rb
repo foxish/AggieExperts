@@ -45,6 +45,11 @@ class ProfileController < ApplicationController
 
     Pkeyword.update({:id => params[:id], :data => params['keyword']})
 
+    if params['user'].key?('picture_check') && params['user']['picture_check']
+      profile.remove_pic
+    end
+    params['user'].delete('picture_check')
+
     profile.update_attributes(params['user'])
     flash[:notice] = "Profile was successfully updated!"
     redirect_to profile_path(params[:id])
