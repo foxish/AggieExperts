@@ -13,7 +13,7 @@ class SessionsController < Clearance::SessionsController
         else
           raise 'No such role'
         end
-        
+        flash[:notice] = "Logged in as #{@user.email}"
       else
         flash.notice = status.failure_message
         redirect_to request.referer
@@ -23,6 +23,7 @@ class SessionsController < Clearance::SessionsController
   
   def destroy
     sign_out
+    flash[:notice] = "Logged out successfully"
     redirect_to url_after_destroy
   end
   
