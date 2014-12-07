@@ -18,6 +18,8 @@
                           %td
                             %input.remove_pic{:type => 'checkbox', :name => 'user[picture_check]'}
                     =file_field :user, :pic, :class => 'file_upload'
+                    .italic_small
+                      Choose an image file < 1MB
                   .box#contact_info
                     %table#contact_info
                       %tbody
@@ -47,6 +49,13 @@
                 .right_column
                   .box#name
                     %table
+                      %thead
+                        %td
+                          .italic_small
+                            Title
+                        %td
+                          .italic_small
+                            Full name should be at least 3 characters long
                       %tbody
                         %tr
                           %td.title
@@ -63,7 +72,7 @@
                     .bold_2#heading
                       Keywords
                     .italic_small
-                      Try to re-use existing keywords
+                      Try to re-use existing keywords. At least 1 keyword is necessary
                     %table#keywords
                       %thead
                         %td
@@ -81,6 +90,8 @@
                   .box#description
                     .bold_2#heading
                       Bio
+                    .italic_small
+                      A bio is required and needs to be between 3-1000 characters
                     %textarea.bio{:name=> 'user[description]', :id => 'id_bio', :onblur=>"return validateBio(this);"}
                       #{@profile[:description]}
                   .box#publications
@@ -91,9 +102,13 @@
                         %td
                           .bold_3
                             Title
+                          .italic_small
+                            Title should be at least 3 characters long
                         %td
                           .bold_3
                             URL
+                          .italic_small
+                            URL should be of format http(s)://www.example_url.com
                         %td
                           .bold_3
                             Delete
