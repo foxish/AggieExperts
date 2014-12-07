@@ -54,7 +54,7 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'sqlite3'
-  gem 'pry'
+  gem 'pry-debugger'
   gem 'debugger'
 end
 

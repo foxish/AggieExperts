@@ -8,4 +8,6 @@
       %span= link_to 'Administrator Home', admin_path, method: :get
     -else
       %span= link_to 'My Profile', profile_path(current_user['id']), method: :get
+      
+    %span= link_to 'Reset Password', reset_path, method: :get
     %span= link_to 'Sign out', sign_out_path, method: :delete

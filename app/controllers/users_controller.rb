@@ -11,13 +11,33 @@ skip_before_filter :authorize, only: [:create, :new]
       render template: 'users/new'
     end
   end
+  
+  def update
+    if validatePassword
+        current_user.change_password(user_params.delete(:password))
+        flash[:notice] = "Updated password successfully"
+        redirect_to root_path
+    else
+        flash[:notice] = "Passwords do not match!!"
+        redirect_to(:back)
+    end
+  end
+  
+  def reset
+    if signed_in?
+      @user = current_user
+      @url = "#{users_path}/#{current_user['id']}"
+    else
+      
+    end
+  end
 
   def create
     passcheck = validatePassword();
     @user = user_from_params
       if !passcheck
         flash[:notice] = "Passwords do not match!!"
-        redirect_to ("/activate?aid="+Suser.find_by_id(session[:id]).activation_link)
+        redirect_to ("/activate?aid=" + Suser.find_by_id(session[:id]).activation_link)
       else
         if @user.save
           Suser.destroy(session[:id])
@@ -27,7 +47,7 @@ skip_before_filter :authorize, only: [:create, :new]
         end
       end
   end
-
+  
   private
 
   def avoid_sign_in
@@ -45,6 +65,7 @@ skip_before_filter :authorize, only: [:create, :new]
     if !(params[:aid].nil?) && !(Suser.find_by_activation_link(params[:aid]).nil?)
       session[:id] = Suser.find_by_activation_link(params[:aid]).id
     end
+    
     Clearance.configuration.user_model.new(user_params).tap do |user|
       if session[:id].nil?
         user.email = email

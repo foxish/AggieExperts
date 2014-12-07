@@ -5,7 +5,6 @@ class SessionsController < Clearance::SessionsController
   def create
     @user = authenticate(params)
     sign_in(@user) do |status|
-      #binding.pry
       if status.success?
         if current_user.get_role == User.get_user_role
           redirect_back_or url_after_create

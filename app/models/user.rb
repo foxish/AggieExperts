@@ -43,4 +43,10 @@ include Clearance::User
   def get_role()
     self.urole_id
   end
+  
+  def change_password(new_pwd)
+    update_password new_pwd
+    @id = self['id']
+    save!(:validate => false)
+  end
 end
