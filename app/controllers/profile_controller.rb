@@ -40,6 +40,7 @@ class ProfileController < ApplicationController
   end
 
   def update
+    message = "Profile was successfully updated!"
     profile = Profile.where(:user_id => params[:id]).first
     Ppublication.update({:id => params[:id], :data => params['pub']})
 
@@ -51,7 +52,10 @@ class ProfileController < ApplicationController
     params['user'].delete('picture_check')
 
     profile.update_attributes(params['user'])
-    flash[:notice] = "Profile was successfully updated!"
+
+    error_message = profile.errors.values.join(' + ')
+
+    flash[:notice] = error_message == '' ? message : error_message
     redirect_to profile_path(params[:id])
 
   end

@@ -20,7 +20,7 @@
                         Email:
                     %td
                       =mail_to @profile[:email]
-              -unless @profile[:website].nil?
+              -unless @profile[:website].nil? || @profile[:website] == ''
                 =link_to 'Personal Website', @profile[:website]
           %td
             .box#name
