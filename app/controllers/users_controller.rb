@@ -1,6 +1,9 @@
+require 'securerandom'
+
 class UsersController < Clearance::UsersController
-skip_before_filter :authorize, only: [:create, :new]
-  before_filter :avoid_sign_in, only: [:create, :new], if: :signed_in?
+skip_before_filter :verify_authenticity_token, only: [:forgot_action]
+skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_action]
+  before_filter :avoid_sign_in, only: [:create, :new, :forgot_password, :forgot_action], if: :signed_in?
 
   def new
     session[:id] = nil
@@ -28,8 +31,36 @@ skip_before_filter :authorize, only: [:create, :new]
       @user = current_user
       @url = "#{users_path}/#{current_user['id']}"
     else
-      
+      if !(params[:aid].nil?) && !(Suser.find_by_activation_link(params[:aid]).nil?)
+         email = Suser.find_by_activation_link(params[:aid]).email
+         @user = User.find_by_email(email)
+         sign_in @user
+         redirect_to reset_path
+      else 
+        flash[:notice] = "Invalid reset link"
+        redirect_to root_path
+      end
+
     end
+  end
+  
+  def forgot_password  
+  end
+  
+  def forgot_action
+    email = params[:user][:email]
+    suser = Suser.find_by_email(email)
+    if User.find_by_email(email).nil?
+      flash[:notice] = "Invalid email address"
+    else
+      if suser.nil?
+        Suser.insert_suser(email, request.host_with_port)
+      else
+        suser.re_send_reset(request.host_with_port)
+      end
+      flash[:notice] = "An email was sent to you with further instructions"
+    end
+    redirect_to root_path
   end
 
   def create

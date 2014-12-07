@@ -88,7 +88,7 @@ class AdminController < ApplicationController
 		resend_user.re_send_act(request.host_with_port)
 		redirect_to("/admin/main")
 	end
-
+    
 	def approve_suser
 		suser = Suser.find_by_id(params[:approve_suser])
 		email = suser.email

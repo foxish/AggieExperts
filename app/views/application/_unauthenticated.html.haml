@@ -13,4 +13,5 @@
           %label{:for => 'password'} Password
           %input{:name => 'session[password]', :type => 'password'}
         %input{:type => "submit", :value => "Sign in!", :class => "pure-button pure-button-active button-xlarge"}
-      = link_to "Request Invite", {:controller=>:profile, :action=> :request_invite}, :class=>'loginInvite'
+      = link_to "Request Invite", {:controller=>:profile, :action=> :request_invite}, :class=>'cenlink'
+      = link_to "Forgot Password", {:controller=>:users, :action=> :forgot_password}, :class=>'cenlink'
