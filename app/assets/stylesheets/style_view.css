@@ -120,7 +120,7 @@ input {
 
 textarea.contact {
     height: 15px;
-    width: 100%;
+    width: 125px;
     resize: none;
     white-space: nowrap;
 }
