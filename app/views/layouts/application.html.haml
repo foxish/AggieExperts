@@ -33,10 +33,11 @@
               
     %div{:class=> "clear"}
     - flash.each do |key, value|
-      .alert{ :class => "alert-#{key}", :style => 'background-color: yellow; text-align: center ' }
-        %strong
-          = value
-        %img.close{ :data => { :dismiss => "alert" }, :src => asset_path('close.png')}
+      .centr
+        .alert{ :class => "alert-#{key}", :style => 'background-color: yellow; text-align: center; display:inline' }
+          %strong
+            = value
+          %img.close{ :data => { :dismiss => "alert" }, :src => asset_path('close.png')}
 
     
     = yield
