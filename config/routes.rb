@@ -24,6 +24,7 @@ AggieExperts::Application.routes.draw do
   post '/admin/approve_suser'     => 'admin#approve_suser'
   post '/admin/delete_inv_suser'  => 'admin#delete_inv_suser'
   get  '/passwords/reset'         => 'passwords#reset_password'
+  get  '/contact_us'              => 'static#contact_us'
   resources :profile
   
   resources :keywords do
