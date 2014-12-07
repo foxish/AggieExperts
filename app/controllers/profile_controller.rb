@@ -31,7 +31,8 @@ class ProfileController < ApplicationController
     @profile = Profile.where(:user_id => params[:id]).first
     if(@profile.nil?)
       redirect_to new_profile_path(params[:id])
-    elsif !current_user.nil? && current_user['id'].to_s == @user
+    # elsif !current_user.nil? && current_user['id'].to_s == @user
+    elsif true
       @publications = Ppublication.where(:user_id => params[:id])
       @keywords = Keyword.get_for_user(params[:id])
     else
