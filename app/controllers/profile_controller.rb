@@ -57,11 +57,11 @@ class ProfileController < ApplicationController
     model_error = Ppublication.update({:id => params[:id], :data => params['pub']})
     error_message = error_message == '' ? model_error : model_error =='' ? error_message: error_message + ' + ' + model_error
 
-    Pkeyword.update({:id => params[:id], :data => params['keyword']})
+    model_error = Pkeyword.update({:id => params[:id], :data => params['keyword']})
+    error_message = error_message == '' ? model_error : model_error =='' ? error_message: error_message + ' + ' + model_error
 
     flash[:notice] = error_message == '' ? message : error_message
     redirect_to profile_path(params[:id])
-
 
   end
 end

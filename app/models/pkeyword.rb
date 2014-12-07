@@ -9,11 +9,15 @@ class Pkeyword < ActiveRecord::Base
 
   def self.update(params)
     # Create new keywords if it doesn't exist
+    errors = ''
     keywords = []
     key_id = {}
     params[:data].each do |id, keys|
       if keys['key'] != ''
         k = Keyword.find_or_create_by_key(:key => keys['key'].downcase)
+        errors = errors == ''?
+            k.errors.messages.values.join(' + ') :
+            errors + " + " + k.errors.messages.values.join(' + ')
         k.save
         keywords.push(k.id)
         key_id[k.key] = k.id
@@ -33,5 +37,7 @@ class Pkeyword < ActiveRecord::Base
         r.destroy
       end
     end
+
+    return errors
   end
 end
