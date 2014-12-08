@@ -19,6 +19,10 @@ include Clearance::User
   		user.save(:validate => false)
   	end
   end
+
+  def self.update_role(fromRoleId,toRoleId)
+
+  end
   
   def self.find_user(user_id)
     return User.where(id: user_id).first
@@ -48,5 +52,9 @@ include Clearance::User
     update_password new_pwd
     @id = self['id']
     save!(:validate => false)
+  end
+
+  def self.find_reg_users(id)
+    users = User.where("status_id is not null and id <> ?",id)
   end
 end

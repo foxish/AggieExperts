@@ -39,9 +39,13 @@ class ProfileController < ApplicationController
   end
 
   def invite_suser    
-    Suser.create(:name=> params[:suser][:name], :department=>params[:suser][:department], :email=>params[:suser][:email], :status_id => Status.find_by_code('REQ').id, :message => params[:suser][:message])
-    
-    flash[:notice] = "Thank you. An email will be sent to you once your request is approved"
+    email = params[:suser][:email]
+    if User.find_by_email(email).nil? && Suser.find_by_email(email).nil?
+      Suser.create(:name=> params[:suser][:name], :department=>params[:suser][:department], :email=>params[:suser][:email], :status_id => Status.find_by_code('REQ').id, :message => params[:suser][:message])
+      flash[:notice] = "Thank you. An email will be sent to you once your request is approved"
+    else
+      flash[:notice] = "Sorry. The email already exists in the system. Use 'Forgot Password' to set a new password"
+    end
     redirect_to root_path
   end
 end

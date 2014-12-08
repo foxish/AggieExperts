@@ -4,7 +4,7 @@ class AdminController < ApplicationController
 		if !current_user.nil? && (current_user.urole_id == User.get_admin_role)
 			@status = Status.where(entity: 'USER')
 			urole = Urole.find_by_code('USER')
-			@users = urole.users
+			@users = User.find_reg_users(current_user['id'])
 			@pact_susers = Status.find_by_code('PACT').susers
 			@invite_susers = Status.find_by_code('REQ').susers
 			@suser_status = Status.find_by_code('PACT')
@@ -12,6 +12,18 @@ class AdminController < ApplicationController
 		else
 			redirect_to ("/")
 		end
+	end
+
+	def make_admin
+		user = User.find_by_id(params[:make_admin_user])
+		if Urole.find_by_id(user.urole_id).code.eql?'USER' then
+			user.urole_id = Urole.find_by_code('ADMIN').id
+			user.id = user['id']
+			user.save(:validate => false)
+		else
+			flash[:notice] = "Cannot make user admin. Illegal state!!"
+		end
+		redirect_to ("/admin/main")
 	end
 
 	def approve_all

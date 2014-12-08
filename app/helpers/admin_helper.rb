@@ -55,4 +55,13 @@ module AdminHelper
 		end
 	end
 
+	def make_admin_enabled(roleId,statusId)
+		role = Urole.find_by_id(roleId).code
+		s=Status.find_by_id(statusId).code
+		if role.eql?'USER'  then
+			return true
+		else
+			return false
+		end
+	end
 end

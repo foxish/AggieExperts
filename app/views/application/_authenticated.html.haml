@@ -6,7 +6,7 @@
   %ul{:id => 'loginForm'}
     - if current_user.urole_id == admin_role
       %span= link_to 'Administrator Home', admin_path, method: :get
-    -else
+    - if !current_user.status_id.nil?
       %span= link_to 'My Profile', profile_path(current_user['id']), method: :get
       
     %span= link_to 'Reset Password', reset_path, method: :get
