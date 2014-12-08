@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141206195111) do
+ActiveRecord::Schema.define(:version => 20141208235355) do
 
   create_table "keywords", :force => true do |t|
     t.string   "key",        :null => false
@@ -26,13 +26,6 @@ ActiveRecord::Schema.define(:version => 20141206195111) do
     t.integer  "keyword_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "ppics", :force => true do |t|
-    t.integer  "user_id"
-    t.binary   "pic",        :limit => 10485760
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
   end
 
   create_table "ppublications", :force => true do |t|
