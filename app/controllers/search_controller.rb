@@ -4,9 +4,9 @@ class SearchController < ApplicationController
     @profiles = []
     @istermnull = 0
     
-     if @term ==" "
+     if @term.nil?
       @istermnull = 1   
-    elsif @term.length <=2
+    elsif @term.length<=2
       @istermnull = 1
       
     else

@@ -48,6 +48,6 @@
                         #{link_to(keyword.key.capitalize, search_path(:term => keyword.key)) + ";"}
                       %br
                         
-                      %a.div_link{:href => profile_path(profile.user_id)}
+                      %a.div_linkdes{:href => profile_path(profile.user_id)}
                         %div{:class => 'ellipsis'}
                           = profile.description
