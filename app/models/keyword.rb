@@ -1,7 +1,7 @@
 class Keyword < ActiveRecord::Base
     attr_accessible :key
   	has_many :pkeywords
-    validates :key, uniqueness: true, format: { with: /\w+\s*?\w+?\s*?\w+/,
+    validates :key, uniqueness: true, format: { with: /\s*\w+\s*?\w+?\s*?\w+/,
        message: "Keyword should be atleast 3 characters long" }
 
     def self.get_match(term)

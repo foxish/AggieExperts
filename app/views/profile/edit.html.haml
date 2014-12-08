@@ -66,7 +66,7 @@
                                 -else
                                   %option{:value => title} #{title}
                           %td
-                            %textarea.bold_1{:name=> 'user[name]', :id => 'id_name', :onblur=>"return validateText(this);"}
+                            %textarea.bold_1{:name=> 'user[name]', :id => 'id_name', :onblur=>"return validateName(this);"}
                               #{@profile[:name]}
                   .box#keywords
                     .bold_2#heading
@@ -117,18 +117,18 @@
                           %tr
                             -if @publications.length > index
                               %td.pub
-                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][title]", :id => "pub_title_#{index}"}
+                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][title]", :id => "pub_title_#{index}", :onblur=>"return validatePublications();"}
                                   #{@publications[index][:title]}
                               %td.pub
-                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validateUrl(this);"}
+                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validatePublications();"}
                                   #{@publications[index][:url]}
                               %td.center
                                 %input{:type=>'checkbox',:name=> "pub[#{@publications[index][:id]}][check]", :id => "pub_check_#{index}"}
                             -else
                               %td.pub
-                                %textarea.publication{:name => "pub[new][#{index}][data][title]", :id => "pub_title_#{index}"}
+                                %textarea.publication{:name => "pub[new][#{index}][data][title]", :id => "pub_title_#{index}", :onblur=>"return validatePublications();"}
                               %td.pub
-                                %textarea.publication{:name => "pub[new][#{index}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validateUrl(this);"}
+                                %textarea.publication{:name => "pub[new][#{index}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validatePublications();"}
                               %td.center
                                 %input{:type=>'checkbox',:name=> "pub[new][#{index}][check]", :id => "pub_check_#{index}", :disabled => ""}
       = submit_tag 'Save Changes', :onclick => "return validateForm();"

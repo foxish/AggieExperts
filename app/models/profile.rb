@@ -5,9 +5,9 @@ class Profile < ActiveRecord::Base
   has_attached_file :pic, :styles => { :medium => "300x300>", :thumb => "110x100>" }, :default_url => "/assets/default.png"
   validates_attachment_content_type :pic, :content_type => /\Aimage\/.*\Z/
 
-  validates :name, format: { with: /\w+\s*?\w+?\s*?\w+/,
+  validates :name, format: { with: /\s*\w+\s*?\w+?\s*?\w+/,
      message: "name should be atleast 3 characters long" }
-  validates :description, format: { with: /\w+\s*?\w+?\s*?\w+/,
+  validates :description, format: { with: /\s*\w+\s*?\w+?\s*?\w+/,
      message: "bio should be atleast 3 characters long" }
 
   validates :phone, format: { with: /^\d{10}$/,
