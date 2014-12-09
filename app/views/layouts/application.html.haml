@@ -21,9 +21,11 @@
             %div{:class => "nav_menu"}
               %ul
                 %li
-                  %a{:href => root_path} Home
+                  %a.home{:href => root_path} Home
                 %li
+
                   %a{:href => contact_us_path} Contact Us
+
             %div{:id => "container"}
               %div{:id => "loginContainer"}
                 - if signed_in?

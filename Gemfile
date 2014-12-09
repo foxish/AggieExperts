@@ -65,4 +65,7 @@ gem 'rails3-jquery-autocomplete'
 
 gem 'paperclip'
 # gem 'aws-sdk'
+<<<<<<< HEAD
 
+=======
+>>>>>>> search_page_it2

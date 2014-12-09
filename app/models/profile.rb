@@ -102,4 +102,5 @@ class Profile < ActiveRecord::Base
       return @profiles1
     end
 
+
 end
