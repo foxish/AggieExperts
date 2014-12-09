@@ -5,7 +5,6 @@ include Clearance::User
   has_many :pkeywords, :dependent => :destroy
   has_one :profile, :dependent => :destroy
   has_many :ppublications, :dependent => :destroy
-  has_one :ppic, :dependent => :destroy
   belongs_to :urole
   belongs_to :status
   validates :email, presence: true, uniqueness: {:message => "email already exists"}
