@@ -79,7 +79,7 @@ class Profile < ActiveRecord::Base
           @row1 = Status.where('status.code = ?', 'ACTIVE').first
           @rowid = @row1.id
           
-        @profiles1= self.joins('JOIN users ON profiles.user_id = users.id').where( "profiles.name LIKE ?",'%'+ term +'%').where(" users.status_id= ?",@rowid).all(:order=>'profiles.name') || []
+        @profiles1= self.joins('JOIN users ON profiles.user_id = users.id').where( "profiles.name ILIKE ?",'%'+ term +'%').where(" users.status_id= ?",@rowid).all(:order=>'profiles.name') || []
         
       
     return @profiles1
@@ -97,7 +97,7 @@ class Profile < ActiveRecord::Base
     @row1=Status.where('status.code = ?', 'ACTIVE').first
 
     @rowid=@row1.id
-    @profiles1=self.joins('JOIN users ON profiles.user_id = users.id').where("profiles.description LIKE ?",'%'+ term +'%').where("users.status_id= ?",@rowid).all(:order=> 'profiles.name') || []
+    @profiles1=self.joins('JOIN users ON profiles.user_id = users.id').where("profiles.description ILIKE ?",'%'+ term +'%').where("users.status_id= ?",@rowid).all(:order=> 'profiles.name') || []
     
       return @profiles1
     end
