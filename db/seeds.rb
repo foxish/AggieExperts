@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 seed_status = [{:code => 'PACT', :description => 'Pending Activation', :entity => 'SUSER'},{:code => 'DISABLE', :description => 'Disabled', :entity => 'USER'},
 {:code => 'PAPP', :description => 'Pending Approval', :entity => 'USER'},{:code => 'ACTIVE', :description =>'Active', :entity => 'USER'},{:code => 'REQ', :description =>'Request Invite', :entity => 'SUSER'}]
 
@@ -24,7 +17,7 @@ seed_users = [
 {:email=>'singh@tamu.edu',:encrypted_password =>'$2a$10$wLaDs5v1oSeFHtvf8lI78OOE1KrOcThwhkiggn3nzPHnh2ktgBNlS', :status_id=>4, :urole_id=> 2},
 {:email=>'patterson@tamu.edu',:encrypted_password =>'$2a$10$L/8mSlxCIZhpfZGM8P9IVOyxV3trjS.dm01xzZrwoBVUAtyLVQy22', :status_id=>4, :urole_id=> 2},
 {:email=>'fox@tamu.edu',:encrypted_password =>'$2a$10$fMwSit9vogMTQpQAEPUeDOSuEqu83h2EkjE9V7qHtq28PYP1/Gw/G', :status_id=>4, :urole_id=> 2},
-{:email=>'saisujithreddy@tamu.edu',:encrypted_password =>'$2a$10$T0bSc7g8QyT1MMWEPTjf5.DvFxdWmGzkn5uPDJ2AL3v27YERsDFaG',  :urole_id=> 1}
+{:email=>'admin@tamu.edu',:encrypted_password =>'$2a$10$tkUo0TBvOI5nWaYnpHWNXeBAYCKkX8YTyQEgyN4gJrgp2lhfxWx6u',  :urole_id=> 1}
 ]
 
 
@@ -82,7 +75,7 @@ seed_profiles = [{:user_id => 1,
                   :phone=> 9790001122,
                   :email=> 'fox@tamu.edu',
                   :title=> 'Mrs.'}]
-                  
+
 i = 1
 seed_profiles.each do |profile|
     p = Profile.new(profile)
@@ -90,7 +83,8 @@ seed_profiles.each do |profile|
     p.pic = File.open(path)
     p.save!
     i = i + 1
-end
+end                  
+
 
 seed_pkeywords = [
                    {:user_id => 1, :keyword_id => 1},
