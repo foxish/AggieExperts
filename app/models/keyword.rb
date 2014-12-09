@@ -1,8 +1,8 @@
 class Keyword < ActiveRecord::Base
     attr_accessible :key
-    validates :key, presence: true
-  	validates :key, uniqueness: true
   	has_many :pkeywords
+    validates :key, uniqueness: true, format: { with: /\s*\w+\s*?\w+?\s*?\w+/,
+       message: "Keyword should be atleast 3 characters long" }
 
     def self.get_match(term)
         @row = Keyword.where("keywords.key LIKE ?", '%'+ term +'%').first
@@ -15,6 +15,6 @@ class Keyword < ActiveRecord::Base
     end
     
     def capitalize
-      return self.key.to_str.capitalize
+      self.key.to_str.capitalize
     end
 end

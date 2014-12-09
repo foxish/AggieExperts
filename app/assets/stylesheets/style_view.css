@@ -1,6 +1,6 @@
 .box#photo {
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 10px;
 }
 .profile_pic {
     border: none;
@@ -120,7 +120,7 @@ input {
 
 textarea.contact {
     height: 15px;
-    width: 100%;
+    width: 125px;
     resize: none;
     white-space: nowrap;
 }
@@ -195,4 +195,10 @@ td.left {
     color: maroon;
     font-style: italic;
     font-size:xx-small;
+}
+
+input.file_upload {
+    border-radius: 5px;
+    border-color: #d3d3d3;
+    width: 193px;
 }

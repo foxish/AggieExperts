@@ -1,3 +1,28 @@
+class ClearanceBackDoor
+  def initialize(app)
+    @app = app
+  end
+
+  def call(env)
+    @env = env
+    sign_in_through_the_back_door
+    @app.call(@env)
+  end
+
+  private
+
+  def sign_in_through_the_back_door
+    if user_id = params['as']
+      user = User.find(user_id)
+      @env[:clearance].sign_in(user)
+    end
+  end
+
+  def params
+    Rack::Utils.parse_query(@env['QUERY_STRING'])
+  end
+end
+
 AggieExperts::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -34,4 +59,7 @@ AggieExperts::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  config.middleware.use ClearanceBackDoor
+
 end

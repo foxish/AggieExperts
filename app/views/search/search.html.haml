@@ -34,13 +34,12 @@
                 %td            
                   %a.div_link{:href => profile_path(profile.user_id)}
                     .result
-                      
-                      %img.thumb{:height => "100", :src => asset_path("default.png"), :width => "100"}
+                      .thumb
+                        =image_tag profile.pic.url(:thumb), :height => '110', :width => '100', :class => 'thumb'
                         %strong
                           = profile.name
                           %br
-                       
-                          %strong Keywords:  
+                          %strong Keywords:
                         - @keywords[profile.user_id].each do |keyword|
                           = keyword.key.capitalize + ';'
                         %br

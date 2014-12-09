@@ -1,6 +1,6 @@
 .content
   .content_resize
-    = form_tag profile_path(@user), :method => :put, :id => 'edit_form' do
+    = form_tag profile_path(@user), :method => :put, :id => 'edit_form', :multipart => true do
       #edit_content
         %table#parent
           %tbody
@@ -8,7 +8,18 @@
               %td
                 .left_column
                   .box#photo
-                    %img.profile_pic{:alt => "", :height => "200", :src => asset_path("default.png"), :width => "200"}
+                    =image_tag @profile.pic.url(:medium), :height => '220', :width => '200'
+                    %table#contact_info
+                      %tbody
+                        %tr
+                          %td
+                            .bold_3
+                              Remove Picture
+                          %td
+                            %input.remove_pic{:type => 'checkbox', :name => 'user[picture_check]'}
+                    =file_field :user, :pic, :class => 'file_upload'
+                    .italic_small
+                      Choose an image file < 1MB
                   .box#contact_info
                     %table#contact_info
                       %tbody
@@ -38,6 +49,13 @@
                 .right_column
                   .box#name
                     %table
+                      %thead
+                        %td
+                          .italic_small
+                            Title
+                        %td
+                          .italic_small
+                            Full name should be at least 3 characters long
                       %tbody
                         %tr
                           %td.title
@@ -48,13 +66,13 @@
                                 -else
                                   %option{:value => title} #{title}
                           %td
-                            %textarea.bold_1{:name=> 'user[name]', :id => 'id_name', :onblur=>"return validateText(this);"}
+                            %textarea.bold_1{:name=> 'user[name]', :id => 'id_name', :onblur=>"return validateName(this);"}
                               #{@profile[:name]}
                   .box#keywords
                     .bold_2#heading
                       Keywords
                     .italic_small
-                      Try to re-use existing keywords
+                      Try to re-use existing keywords. At least one keyword is necessary
                     %table#keywords
                       %thead
                         %td
@@ -72,6 +90,8 @@
                   .box#description
                     .bold_2#heading
                       Bio
+                    .italic_small
+                      A bio is required and needs to be between 3-1000 characters
                     %textarea.bio{:name=> 'user[description]', :id => 'id_bio', :onblur=>"return validateBio(this);"}
                       #{@profile[:description]}
                   .box#publications
@@ -82,9 +102,13 @@
                         %td
                           .bold_3
                             Title
+                          .italic_small
+                            Title should be at least 3 characters long
                         %td
                           .bold_3
                             URL
+                          .italic_small
+                            URL should be of format http(s)://www.example_url.com
                         %td
                           .bold_3
                             Delete
@@ -93,18 +117,18 @@
                           %tr
                             -if @publications.length > index
                               %td.pub
-                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][title]", :id => "pub_title_#{index}"}
+                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][title]", :id => "pub_title_#{index}", :onblur=>"return validatePublications();"}
                                   #{@publications[index][:title]}
                               %td.pub
-                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validateUrl(this);"}
+                                %textarea.publication{:name => "pub[#{@publications[index][:id]}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validatePublications();"}
                                   #{@publications[index][:url]}
                               %td.center
                                 %input{:type=>'checkbox',:name=> "pub[#{@publications[index][:id]}][check]", :id => "pub_check_#{index}"}
                             -else
                               %td.pub
-                                %textarea.publication{:name => "pub[new][#{index}][data][title]", :id => "pub_title_#{index}"}
+                                %textarea.publication{:name => "pub[new][#{index}][data][title]", :id => "pub_title_#{index}", :onblur=>"return validatePublications();"}
                               %td.pub
-                                %textarea.publication{:name => "pub[new][#{index}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validateUrl(this);"}
+                                %textarea.publication{:name => "pub[new][#{index}][data][url]", :id => "pub_url_#{index}", :onblur=>"return validatePublications();"}
                               %td.center
                                 %input{:type=>'checkbox',:name=> "pub[new][#{index}][check]", :id => "pub_check_#{index}", :disabled => ""}
       = submit_tag 'Save Changes', :onclick => "return validateForm();"
