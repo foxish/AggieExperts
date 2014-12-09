@@ -65,4 +65,3 @@ gem 'rails3-jquery-autocomplete'
 
 gem 'paperclip'
 # gem 'aws-sdk'
-

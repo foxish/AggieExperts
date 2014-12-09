@@ -1,6 +1,7 @@
 class Profile < ActiveRecord::Base
   has_many :pkeywords
   belongs_to :user
+
   attr_accessible :user_id, :name, :description, :phone, :email, :title, :website, :pic
   has_attached_file :pic, :styles => { :medium => "300x300>", :thumb => "110x100>" }, :default_url => "/assets/default.png"
   validates_attachment_content_type :pic, :content_type => /\Aimage\/.*\Z/
@@ -22,24 +23,26 @@ class Profile < ActiveRecord::Base
   validates_attachment :pic,
      :less_than => 1.megabytes, :message => "Photo has to be a jpeg image of size < 1 MB"
 
+
+ @profiles = []
+
   def self.get_profiles_by_keyword(term)
     @row = Keyword.get_match(term)
     @row = Keyword.get_match(term)
     @profiles = []
     @profiles2 = []
     @profiles1 = []
+    @row1 = []
+    @row2 = []
     unless @row.nil?
       @keyword_id = @row.id
-      @profiles1 = self.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id').
-          where('pkeywords.keyword_id =?', @keyword_id).all || []
-
       @row1 = Status.where('status.code = ?', 'ACTIVE').first
-      @row2 = User.where('users.status_id = ?', @row1['id']).all
-      @profiles2 = []
-      @row2.each do |r2|
-        @profiles2 += Profile.where('profiles.user_id = ?', r2['id']) || []
-      end
-      @profiles = @profiles1 & @profiles2
+      @rowid = @row1.id
+      
+      @profiles1 = self.joins('JOIN pkeywords ON profiles.user_id = pkeywords.user_id JOIN users on profiles.user_id = users.id').
+          where('pkeywords.keyword_id =?', @keyword_id).where("users.status_id= ?",@rowid).all( :order => 'profiles.name') || []
+         
+      
     end
     return @profiles1
   end
@@ -70,39 +73,34 @@ class Profile < ActiveRecord::Base
   
   def self.get_profiles_by_name(term)
     @term=term;
-    @profiles=[]
-    @profiles2 = []
+    
     @profiles1 = []
     
-    @profiles1=Profile.where('profiles.name LIKE ?','%'+ term +'%').all || []
-    @row1=Status.where('status.code = ?', 'ACTIVE').first
-    @row2=User.where('users.status_id = ?', @row1['id']).all
- 
-    @row2.each do |r2|  
-      @profiles2 +=  Profile.where('profiles.user_id = ?', r2['id']) || []
-    end
-    @profiles=@profiles1 & @profiles2
-    return @profiles
+          @row1 = Status.where('status.code = ?', 'ACTIVE').first
+          @rowid = @row1.id
+          
+        @profiles1= self.joins('JOIN users ON profiles.user_id = users.id').where( "profiles.name LIKE ?",'%'+ term +'%').where(" users.status_id= ?",@rowid).all(:order=>'profiles.name') || []
+        
+      
+    return @profiles1
   end
   
-  def self.get_profiles_by_desc(term)
-    @profiles=[]
-    @profiles1 = []
-    @profiles2 = []
-    @profiles1=Profile.where('profiles.description LIKE ?', '%'+ term +'%').all || []
-    @row1=Status.where('status.code = ?', 'ACTIVE').first
-    @row2=User.where('users.status_id = ?', @row1['id']).all
-
-    @row2.each do |r2|
-      @profiles2+= Profile.where('profiles.user_id=?',r2['id'] ).all || []
-    end
-      @profiles=@profiles1 & @profiles2
-      return @profiles
-  end
-
   def remove_pic
     self.pic = nil;
   end
+  
+  def self.get_profiles_by_desc(term)
+   # @profiles=[]
+    @profiles1 = []
+    @profiles2 = []
+    
+    @row1=Status.where('status.code = ?', 'ACTIVE').first
+
+    @rowid=@row1.id
+    @profiles1=self.joins('JOIN users ON profiles.user_id = users.id').where("profiles.description LIKE ?",'%'+ term +'%').where("users.status_id= ?",@rowid).all(:order=> 'profiles.name') || []
+    
+      return @profiles1
+    end
+
 
 end
-

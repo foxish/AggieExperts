@@ -13,14 +13,18 @@
         %input#tb_search{:name => "term", :type => "text", :value => @term}
         %input#bt_search{:type => "submit", :value => "Search!", :class => "pure-button pure-button-active button-xlarge"}
     %br/
-    - if @istermnull==1
-      %h3.center No Results Found
-    - else
-      %h3.center Results
-      .results
+    
+    .results
+      -if @istermnull==1
+        %h3.center No Results Found.Enter Atleast 3 characters to search 
+      - elsif @profiles.empty?
+        %h3.center No Results Found
+      
+      - else 
+        %h3.center Results 
         :javascript
           $(function(){
-            $("#res").dataTable( );
+            $("#res").dataTable( {"language": { "sSearch": "Search within results:" } } );
           })
                     
         %table#res
@@ -33,15 +37,17 @@
               %tr  
                 %td            
                   %a.div_link{:href => profile_path(profile.user_id)}
-                    .result
-                      .thumb
-                        =image_tag profile.pic.url(:thumb), :height => '110', :width => '100', :class => 'thumb'
+                    .result       
+                      %img.thumb{:height => "100", :src => asset_path("default.png"), :width => "100"}
                         %strong
                           = profile.name
                           %br
-                          %strong Keywords:
-                        - @keywords[profile.user_id].each do |keyword|
-                          = keyword.key.capitalize + ';'
-                        %br
+                      
+                      %strong Keywords:  
+                      - @keywords[profile.user_id].each do |keyword|
+                        #{link_to(keyword.key.capitalize, search_path(:term => keyword.key)) + ";"}
+                      %br
+                        
+                      %a.div_linkdes{:href => profile_path(profile.user_id)}
                         %div{:class => 'ellipsis'}
                           = profile.description
