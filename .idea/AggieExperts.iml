@@ -159,13 +159,11 @@
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.2.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="factory_girl (v4.5.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="gherkin (v2.12.2, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="haml (v4.0.5, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.11, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="journey (v1.0.4, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v3.1.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.8.1, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.5.4, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mailgun-ruby (v1.0.3, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="method_source (v0.8.2, rbenv: 1.9.3-p547) [gem]" level="application" />
@@ -195,12 +193,11 @@
     <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.8.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="slop (v3.6.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v2.2.3, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.9, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.1, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.15, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.42, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.5.3, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.6.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.0.7, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v2.0.0, rbenv: 1.9.3-p547) [gem]" level="application" />
   </component>

@@ -55,7 +55,7 @@
                             Title
                         %td
                           .italic_small
-                            Full name should be at least 3 characters long
+                            Full name should be within 3-30 characters in length
                       %tbody
                         %tr
                           %td.title
@@ -72,7 +72,8 @@
                     .bold_2#heading
                       Keywords
                     .italic_small
-                      Try to re-use existing keywords. At least one keyword is necessary
+                      Try to re-use existing keywords. At least one keyword is necessary.
+                      %br A keyword can be multi-word within 3-30 characters in length
                     %table#keywords
                       %thead
                         %td
@@ -80,7 +81,7 @@
                             Key
                       %tbody
                         -(0..5).each do |index|
-                          %tr                                                        
+                          %tr
                             -if @keywords.length > index
                               %td
                                 %input.kboxes{:name => "keyword[#{index}][key]", :id => "key_word_#{index}", :onblur => "return validateKeywords();", 'data-autocomplete' => "/keywords/autocomplete_keyword_key", :value =>  "#{@keywords[index]['key'].capitalize}"}
@@ -103,7 +104,7 @@
                           .bold_3
                             Title
                           .italic_small
-                            Title should be at least 3 characters long
+                            Title should be within 3-300 characters in length
                         %td
                           .bold_3
                             URL

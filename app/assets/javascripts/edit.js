@@ -1,10 +1,11 @@
 var errorColor = "red";
 var defaultColor = "#d3d3d3";
 var maxLengthBio = 1000;
+var maxLengthPub = 300;
+var maxLengthWord = 30;
 var default_regex = /\s*\w+\s*?\w+?\s*?\w+/;
 var phone_num_regex = /^\d{10}$/;
 var email_regex = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
-var maxLengthWord = 30;
 var url_regex = /^$|http(s?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/;
 
 function validateBio(x) {
@@ -57,7 +58,7 @@ function validatePublications() {
     for (var i = 0, len = pub.length; i < len; i++) {
         flag = flag || validateUrl(url[i]);
         if(!(url[i].value == '' && pub[i].value == '')) {
-            flag = validateName(pub[i]) || flag;
+            flag = setElementBorder(!(default_regex.test(pub[i].value) && pub[i].value.length <= maxLengthPub), pub[i])|| flag;
         } else {
             setElementBorder(false, pub[i]);
         }
@@ -88,7 +89,7 @@ function validateForm() {
         alert('Publications is of wrong format');
         return false;
     } else {
-       return true;
+        return true;
     }
 }
 
@@ -96,4 +97,3 @@ function setElementBorder(error, elem) {
     elem.style.borderColor = error ? errorColor : defaultColor;
     return error;
 }
-
