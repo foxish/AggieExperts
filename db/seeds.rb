@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-seed_status = [{:code => 'PACT',:description => 'Pending Activation'},{:code => 'DISABLE', :description => 'Disabled'},
-{:code => 'PAPP',:description => 'Pending Approval'},{:code => 'ACTIVE',:description =>'Active'}]
+seed_status = [{:code => 'PACT', :description => 'Pending Activation', :entity => 'SUSER'},{:code => 'DISABLE', :description => 'Disabled', :entity => 'USER'},
+{:code => 'PAPP', :description => 'Pending Approval', :entity => 'USER'},{:code => 'ACTIVE', :description =>'Active', :entity => 'USER'},{:code => 'REQ', :description =>'Request Invite', :entity => 'SUSER'}]
 
 seed_status.each do |status|
     Status.create!(status)
@@ -83,8 +83,13 @@ seed_profiles = [{:user_id => 1,
                   :email=> 'fox@tamu.edu',
                   :title=> 'Mrs.'}]
                   
+i = 1
 seed_profiles.each do |profile|
-    Profile.create!(profile)
+    p = Profile.new(profile)
+    path = Rails.root.to_s + "/app/assets/images/profile_photo#{i.to_s}.jpg"
+    p.pic = File.open(path)
+    p.save!
+    i = i + 1
 end
 
 seed_pkeywords = [

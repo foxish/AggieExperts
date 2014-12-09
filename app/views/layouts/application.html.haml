@@ -21,21 +21,24 @@
             %div{:class => "nav_menu"}
               %ul
                 %li
-                  %a{:href => root_path} Home
+                  %a.home{:href => root_path} Home
                 %li
-                  %a{:href => '#'} Contact Us
+
+                  %a{:href => contact_us_path} Contact Us
+
             %div{:id => "container"}
               %div{:id => "loginContainer"}
                 - if signed_in?
                   = render :partial => "authenticated"
                 - else
                   = render :partial => "unauthenticated"
-              
     %div{:class=> "clear"}
     - flash.each do |key, value|
-      .alert{ :class => "alert-#{key}", :style => 'background-color: yellow;' }
-        %button.close{ :data => { :dismiss => "alert" } } x
-        %strong
-          = value
+      .centr
+        .alert{ :class => "alert-#{key}", :style => 'background-color: yellow; text-align: center; display:inline' }
+          %strong
+            = value
+          %img.close{ :data => { :dismiss => "alert" }, :src => asset_path('close.png')}
+
     
     = yield

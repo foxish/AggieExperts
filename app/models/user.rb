@@ -2,10 +2,10 @@ class User < ActiveRecord::Base
 include Clearance::User
   attr_accessible :email, :password, :status_id, :urole_id, :encrypted_password
   attr_accessor :id
-  has_many :pkeywords
-  has_one :profile
-  has_many :ppublications
-  has_one :ppic
+  has_many :pkeywords, :dependent => :destroy
+  has_one :profile, :dependent => :destroy
+  has_many :ppublications, :dependent => :destroy
+  has_one :ppic, :dependent => :destroy
   belongs_to :urole
   belongs_to :status
   validates :email, presence: true, uniqueness: {:message => "email already exists"}
@@ -18,6 +18,10 @@ include Clearance::User
         user.id = user['id']
   		user.save(:validate => false)
   	end
+  end
+
+  def self.update_role(fromRoleId,toRoleId)
+
   end
   
   def self.find_user(user_id)
@@ -33,14 +37,24 @@ include Clearance::User
   end
   
   def self.get_admin_role()
-    1
+    Urole.find_by_code('ADMIN').id
   end
   
   def self.get_user_role()
-    2
+    Urole.find_by_code('USER').id
   end
   
   def get_role()
     self.urole_id
+  end
+  
+  def change_password(new_pwd)
+    update_password new_pwd
+    @id = self['id']
+    save!(:validate => false)
+  end
+
+  def self.find_reg_users(id)
+    users = User.where("status_id is not null and id <> ?",id)
   end
 end

@@ -138,36 +138,39 @@
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.7.3, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v2.4.4, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="clearance (v1.5.0, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="climate_control (v0.0.3, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cocaine (v0.5.4, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v3.2.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.3.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.8.0, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="columnize (v0.9.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber (v1.3.17, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-rails (v1.4.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-rails-training-wheels (v1.0.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="database_cleaner (v1.3.0, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debugger (v1.6.8, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debugger-linecache (v1.2.0, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debugger-ruby_core_source (v1.3.7, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.5, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="docile (v1.1.5, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="email_validator (v1.4.0, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="email_validator (v1.5.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.2.2, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="factory_girl (v4.5.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="gherkin (v2.12.2, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="haml (v4.0.5, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.11, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="journey (v1.0.4, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v3.1.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.8.1, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.5.4, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mailgun-ruby (v1.0.3, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="method_source (v0.8.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.25.1, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mini_portile (v0.6.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.10.1, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_test (v0.1.1, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="netrc (v0.8.0, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.6.3.1, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="paperclip (v4.2.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.17.1, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.5, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.10.1, rbenv: 1.9.3-p547) [gem]" level="application" />
@@ -178,7 +181,6 @@
     <orderEntry type="library" scope="PROVIDED" name="rails (v3.2.19, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails3-jquery-autocomplete (v1.0.14, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v3.2.19, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rake (v10.3.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v3.12.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rest-client (v1.7.2, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.1.7, rbenv: 1.9.3-p547) [gem]" level="application" />
@@ -186,18 +188,16 @@
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.1.3, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v3.1.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.1.2, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sass (v3.4.6, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v3.2.6, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.9.1, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.8.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="slop (v3.6.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v2.2.3, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.9, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.1, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.15, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.42, rbenv: 1.9.3-p547) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.5.3, rbenv: 1.9.3-p547) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.6.0, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.0.7, rbenv: 1.9.3-p547) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v2.0.0, rbenv: 1.9.3-p547) [gem]" level="application" />
   </component>

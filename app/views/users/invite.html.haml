@@ -1,0 +1,14 @@
+%div{:class => "content"}
+	%div{:class => "content_resize"}
+		%div{:id => "invite_form", :align=>'center'}
+			%form{:class=>'pure-form pure-form-stacked', :controller => :profile, :action => :invite_suser, :method => 'post'}
+				= label :suser, :name, "Name:"
+				= text_field :suser, :name
+				= label :suser, :email, "Email:"
+				= text_field :suser, :email, :onBlur=>"return validateEmail(this);"
+				= label :suser, :department, "Department:"
+				= text_field :suser, :department
+				= label :suser, :message, "Message:"
+				= text_area :suser, :message
+				%br
+				%input{:type => "submit", :value => "Request Invite", :class=>"pure-button pure-button-active button-large"}

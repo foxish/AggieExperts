@@ -1,10 +1,12 @@
-%div{:class=> "content pagebg"}
+%div{:class=> "content"}
   %div{:class=> "content_resize"}
+    %div.centr
+      %img{:src => asset_path('centree.png'), :height => '200px', :width => '900px'}
+    
     %h3 Welcome to Aggie Experts!
     %span Texas A&M is a comprehensive research university with world-leading expertise in agriculture, business, engineering, humanities, natural sciences, public policy, and social sciences. Use the box below to search faculty-created research profiles to identify and connect with Texas A&M experts.
     
-    %br
-    %br
+    
     %br
     %br
     
@@ -12,3 +14,4 @@
       %form{:controller => 'index', :action => 'search', :method => 'get', :class=>'pure-form'}
         %input{:name => "term", :type => "text", :id => "tb_search"}
         %input{:type => "submit", :value => "Search!", :id => "bt_search", :class=>'pure-button pure-button-active button-xlarge'}
+    

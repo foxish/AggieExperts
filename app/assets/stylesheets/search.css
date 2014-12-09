@@ -2,13 +2,9 @@
     display: inline;
     float: left;
     padding-right: 10px;
-    height: 110px;
+    clear:right;
 }
 
-.results {
-
-
-}
 .center {
     text-align:center;
     margin:0px auto;
@@ -16,21 +12,11 @@
 
 .result {
     border: 1px solid #dbdbdb;
-    margin: 10px;
     padding: 20px;
-    height: 110px;
-    overflow: hidden;
+    height: 100px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-}
-
-.oflow {
-    display       : inline;
-    text-overflow : ellipsis;
-    height        : 60px;
-    width         : 700px;
-    overflow      : hidden;
 }
 
 .keywords {
@@ -38,8 +24,14 @@
 
 }
 
+
+
 .div_link { 
     text-decoration: none;
     color: #000 !important; 
 }
 
+.div_linkdes { 
+    text-decoration: none;
+    color: #000 !important; 
+}

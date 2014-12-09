@@ -1,11 +1,14 @@
 %a{:href => '#', :id => 'loginButton'}
   %span= current_user.email
-  
+
 .clearboth
 %div{:id =>'loginBox'}
   %ul{:id => 'loginForm'}
     - if current_user.urole_id == admin_role
       %span= link_to 'Administrator Home', admin_path, method: :get
-    -else
-      %span= link_to 'My Profile', profile_path(current_user['id']), method: :get
+    - if !current_user.status_id.nil?
+      -unless Profile.where(:user_id => current_user['id']).first.nil?
+        %span= link_to 'View my Profile', profile_path(current_user['id']), method: :get
+      %span= link_to 'Edit my Profile', edit_profile_path(current_user['id']), method: :get
+    %span= link_to 'Reset Password', reset_path, method: :get
     %span= link_to 'Sign out', sign_out_path, method: :delete
