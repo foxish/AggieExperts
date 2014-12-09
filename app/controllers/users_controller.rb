@@ -54,7 +54,7 @@ skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_a
       flash[:notice] = "Invalid email address"
     else
       if suser.nil?
-        Suser.insert_suser(email, request.host_with_port)
+        Suser.reset_suser(email, request.host_with_port)
       else
         suser.re_send_reset(request.host_with_port)
       end
