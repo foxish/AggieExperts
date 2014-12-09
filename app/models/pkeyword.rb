@@ -1,5 +1,43 @@
 class Pkeyword < ActiveRecord::Base
   attr_accessible :user_id, :keyword_id
-  has_one :profile
-  
+  #has_one :profile -- psakuru:wouldn't make sense as we dont have profile_id as a foreign key here
+  #Replacing with belongs_to :user
+  belongs_to :user
+  belongs_to :keyword
+  validates :user_id, presence: true
+  validates :keyword_id , presence: true
+
+  def self.update(params)
+    # Create new keywords if it doesn't exist
+    errors = ''
+    keywords = []
+    key_id = {}
+    params[:data].each do |id, keys|
+      if keys['key'] != ''
+        k = Keyword.find_or_create_by_key(:key => keys['key'].downcase)
+        errors = errors == ''?
+            k.errors.messages.values.join(' + ') :
+            errors + " + " + k.errors.messages.values.join(' + ')
+        k.save
+        keywords.push(k.id)
+        key_id[k.key] = k.id
+      end
+    end
+
+    # Add these new keywords in PKeywords for a particular user
+    keywords.each do |id|
+      r = Pkeyword.find_or_create_by_keyword_id_and_user_id(:user_id => params[:id], :keyword_id => id)
+      r.save
+    end
+
+    # Delete those keywords that have been removed by the user
+    user_keys = params[:data].values.map {|k| key_id[k['key'].downcase] unless k['key'] == ''}
+    self.where(:user_id => params[:id] ).each do |r|
+      unless user_keys.include? r.keyword_id
+        r.destroy
+      end
+    end
+
+    return errors
+  end
 end

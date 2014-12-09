@@ -14,11 +14,23 @@ Scenario: Search field and button
   Then I press "bt_search"
   Then I should be on the search page
 
-Scenario: Visiting profile
+Scenario: Visiting profile using keyword
   Given I am on the search page
-  When I fill in "tb_search" with "foo" 
+  When I fill in "tb_search" with "Modern" 
   Then I press "bt_search"
   When I click first link of type ".div_link"
   Then I should be on the profile page
+  
+Scenario: Visiting profile using name
+  Given I am on the search page
+  When I fill in "tb_search" with "Charles" 
+  Then I press "bt_search"
+  When I click first link of type ".div_link"
+  Then I should be on the profile page  
 
-
+Scenario: Visiting profile using description
+  Given I am on the search page
+  When I fill in "tb_search" with "Sed" 
+  Then I press "bt_search"
+  When I click first link of type ".div_link"
+  Then I should be on the profile page

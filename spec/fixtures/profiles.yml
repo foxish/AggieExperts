@@ -1,15 +1,16 @@
 user1:
     user_id: 1 
-    fname: Charles
-    lname: Xavier
-    description: X
+    name: Charles Xavier 
+    description: this is a description
     phone: 9790001122
     email: xavier@tamu.edu
+    title: Mr.
     
 user2:
     user_id: 2
-    fname: John 
-    lname: Samuel 
-    description: Y
+    name: John Samuel
+    description: this is another description
     phone: 9790002233
     email: samuel@tamu.edu
+    website: http://www.foo.com
+    title: Dr.

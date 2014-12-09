@@ -5,10 +5,14 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
     %title= content_for?(:title) ? yield(:title) : "AggieExperts"
     %meta{:content => content_for?(:description) ? yield(:description) : "AggieExperts", :name => "Portfolio for TAMU Faculty"}
+    %script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    %script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+    
     = stylesheet_link_tag :application, :media => "all"
     = javascript_include_tag :application
     = csrf_meta_tags
     = yield(:head)
+    
   %body
     %div{:class => "main"}      
       %div{:class => "header"}
@@ -16,9 +20,25 @@
           %div{:class => "header_resize"}
             %div{:class => "nav_menu"}
               %ul
-                %li Home    
-                %li Contact Us
+                %li
+                  %a.home{:href => root_path} Home
+                %li
+
+                  %a{:href => contact_us_path} Contact Us
+
             %div{:id => "container"}
               %div{:id => "loginContainer"}
+                - if signed_in?
+                  = render :partial => "authenticated"
+                - else
+                  = render :partial => "unauthenticated"
     %div{:class=> "clear"}
+    - flash.each do |key, value|
+      .centr
+        .alert{ :class => "alert-#{key}", :style => 'background-color: yellow; text-align: center; display:inline' }
+          %strong
+            = value
+          %img.close{ :data => { :dismiss => "alert" }, :src => asset_path('close.png')}
+
+    
     = yield

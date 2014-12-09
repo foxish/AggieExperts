@@ -9,3 +9,7 @@ pkey2:
 pkey3:
     user_id: 2
     keyword_id: 1
+
+pkey4:
+    user_id: 2
+    keyword_id: 2

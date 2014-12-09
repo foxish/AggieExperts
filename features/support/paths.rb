@@ -18,9 +18,9 @@ module NavigationHelpers
     when /^the search page$/
       '/search'
     when /^the profile page$/
-      "/user/2"
+      "/profile/2"
     when /^the edit page$/
-      "/user/2/edit"
+      "/profile/2/edit"
     when /^the admin page$/
     '/admin/main'
 

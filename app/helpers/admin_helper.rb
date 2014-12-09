@@ -4,6 +4,15 @@ module AdminHelper
 		s.description
 	end
 
+	def getUserName(userId)
+		user = User.find_by_id(userId)
+		if user.profile.nil? || user.profile.name.nil? || user.profile.name.gsub(/\s+/, "").nil?
+			return trim_email(user.email)
+		else
+			return user.profile.name
+		end
+	end
+
 	def delete_enabled(statusId)
 		return true
 	end
@@ -37,4 +46,22 @@ module AdminHelper
 		end
 	end
 
+	def getSuserName(userId)
+		suser = Suser.find_by_id(userId)
+		if suser.name.nil? || suser.name.nil? || suser.name.gsub(/\s+/, "").nil?
+			return trim_email(suser.email)
+		else
+			return suser.name
+		end
+	end
+
+	def make_admin_enabled(roleId,statusId)
+		role = Urole.find_by_id(roleId).code
+		s=Status.find_by_id(statusId).code
+		if role.eql?'USER'  then
+			return true
+		else
+			return false
+		end
+	end
 end

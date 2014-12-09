@@ -1,0 +1,35 @@
+
+.img{
+	 border:0 !important;
+}
+.addUserForm{
+	width: 280px;
+}
+
+.addTokenForm{
+  visibility: hidden !important;
+  width:2px;  
+}
+
+.password-form{
+  margin: 0 auto; 
+  width:230px;
+}
+
+.admin_action{
+	position: relative;
+	margin: 0 auto; 
+	padding-left: 5px;
+	float:none;
+	width: 70%;
+}
+
+.action_3col{
+	width: 75%;
+	margin: 0 auto; 
+}
+
+.action_col{
+	width: 76px;
+	margin: 0 auto; 
+}
