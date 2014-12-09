@@ -83,15 +83,6 @@ seed_profiles = [{:user_id => 1,
                   :email=> 'fox@tamu.edu',
                   :title=> 'Mrs.'}]
                   
-i = 1
-seed_profiles.each do |profile|
-    p = Profile.new(profile)
-    path = Rails.root.to_s + "/app/assets/images/profile_photo#{i.to_s}.jpg"
-    p.pic = File.open(path)
-    p.save!
-    i = i + 1
-end
-
 seed_pkeywords = [
                    {:user_id => 1, :keyword_id => 1},
                    {:user_id => 1, :keyword_id => 2},
