@@ -18,7 +18,7 @@ class ProfileController < ApplicationController
     if !current_user.nil? && current_user['id'].to_s == params[:format]
       @profile = Profile.new
       @profile.user_id = params[:format]
-      @profile.save
+      @profile.save(:validate => false)
       redirect_to edit_profile_path(params[:format])
     else
       flash[:notice] = "You do not have permission to do that."
