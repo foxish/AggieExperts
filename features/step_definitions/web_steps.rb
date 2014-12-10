@@ -263,7 +263,6 @@ end
 
 
 When(/^I click on first search result$/) do
-  debugger
   page.all(:xpath, '//*[@class="results"]').find('//*[@class="dataTables_wrapper"]').find('//*[@id="search_results"]').first.click
 end
 
