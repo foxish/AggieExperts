@@ -24,7 +24,10 @@
         %h3.center Results 
         :javascript
           $(function(){
-            $("#res").dataTable( {"language": { "sSearch": "Search within results:" } } );
+            $("#res").dataTable( { "bSort" : false,                                    
+                                   "language": { "sSearch": "Search within results:" }                                               
+                                                 
+                                  }            );
           })
                     
         %table#res
@@ -41,6 +44,7 @@
                       .thumb
                         = image_tag profile.pic.url(:thumb), :height => '110', :width => '100', :class => 'thumb'
                       %strong
+                        = profile.title
                         = profile.name
                         %br
                       %strong Keywords:  
