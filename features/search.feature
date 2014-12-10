@@ -25,7 +25,7 @@ Scenario: Visiting profile using name
   Given I am on the search page
   When I fill in "tb_search" with "Charles" 
   Then I press "bt_search"
-  When I click first link of type ".div_link"
+  When I click on first search result
   Then I should be on the profile page  
 
 Scenario: Visiting profile using description

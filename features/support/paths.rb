@@ -20,7 +20,7 @@ module NavigationHelpers
     when /^the profile page$/
       "/profile/2"
     when /^the edit page$/
-      "/profile/2/edit"
+      "/profile/"+User.find_by_email("admin@tamu.edu")['id'].to_s+"/edit"
     when /^the admin page$/
     '/admin/main'
 

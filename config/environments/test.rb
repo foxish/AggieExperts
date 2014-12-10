@@ -12,10 +12,8 @@ class ClearanceBackDoor
   private
 
   def sign_in_through_the_back_door
-    if user_id = params['as']
-      user = User.find(user_id)
+      user = Clearance.configuration.user_model.find_by_email("admin@tamu.edu")
       @env[:clearance].sign_in(user)
-    end
   end
 
   def params

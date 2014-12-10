@@ -15,12 +15,7 @@ Feature: Viewing Profiles
     And I should see "foo_title"
     And I should see "baz_title"
     And I should see "Keywords Bar; Foo;"
-    And I should see "Bio Y"
+    And I should see "Bio"
     And I should see "Dr. John Samuel"
     And I should see "Personal Website"
-    And I should see "Edit info"
 
-  Scenario: Clicking on Edit should take me to edit profile
-    Given I am on the profile page
-    When I follow "Edit info"
-    Then I should be on the edit page

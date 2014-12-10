@@ -1,0 +1,9 @@
+urole1:
+    id: 2
+    code: USER
+    description: USER
+    
+urole2:
+    id: 1
+    code: ADMIN
+    description: ADMIN

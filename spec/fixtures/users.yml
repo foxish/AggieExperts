@@ -1,14 +1,20 @@
 user1:
-    email: foo@abc.com
-    encrypted_password: foopass
+    id: 2
+    email: admin@tamu.edu
+    encrypted_password: admin
     status_id: 1
+    urole_id: 1
     
 user2:
+    id: 1
     email: foo2@abc.com
     encrypted_password: foo2pass
     status_id: 2
+    urole_id: 2
     
 user3:
+    id: 3
     email: foo3@abc.com
     encrypted_password: foo3pass
     status_id: 3
+    urole_id: 2

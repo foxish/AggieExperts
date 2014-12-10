@@ -1,20 +1,30 @@
 status1:
     id: 1
     code: PACT
+    entity: SUSER
     description: PACT
     
 status2:
     id: 2
     code: DISABLE
+    entity: USER
     description: DISABLE
     
 status3:
     id: 3
     code: PAPP
+    entity: USER
     description: PAPP
     
 status4:
     id: 4
     code: ACTIVE
+    entity: USER
     description: ACTIVE
+
+status5:
+    id: 5
+    code: REQ
+    entity: SUSER
+    description: REQ
 

@@ -48,9 +48,17 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+Given(/^I am signed in as "(.*?)"$/) do |username|
+      visit 'sign_in'
+      fill_in 'email', :with => username
+      click 'Sign In'
+end
+
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
+
+
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
@@ -253,6 +261,13 @@ Then /^show me the page$/ do
   save_and_open_page
 end
 
+
+When(/^I click on first search result$/) do
+  debugger
+  page.all(:xpath, '//*[@class="results"]').find('//*[@class="dataTables_wrapper"]').find('//*[@id="search_results"]').first.click
+end
+
+
 When /^(?:|I )click first link of type "([^"]*)"$/ do |link|
   first(link).click
 end
@@ -260,3 +275,4 @@ end
 Then /^I should see the image "(.+)"$/ do |image|
   page.should have_xpath("//img[contains(@src, \"#{image}\")]")
 end
+
