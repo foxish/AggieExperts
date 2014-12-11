@@ -42,6 +42,7 @@ a { color:#0588c6; text-decoration:underline;}
 }
 .header .nav_menu ul li a:hover, .header .nav_menu ul li.active a { color:#bbb;}
 .header img.hbgimg { margin:0; padding:2px 2px 0 0;}
+
 .header .logo { background:url("assets/primary.png") no-repeat center 24px;  width: 14%; height: 150%; float: left; position: relative; left: -3px; bottom: 5px;}
 
 /* content */
