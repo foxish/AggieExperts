@@ -11,12 +11,12 @@ a { color:#0588c6; text-decoration:underline;}
 
 
 .sticky {
-	position: fixed;
-	width: 100%;
-	left: 0;
-	top: 0;
-	z-index: 100;
-	border-top: 0;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
 }
 
 
@@ -32,7 +32,7 @@ a { color:#0588c6; text-decoration:underline;}
     font-weight:bold; 
     padding:9px 9px 9px 10px;
     border: 1px solid #fff;
-    margin-left: 40px;
+    margin-left: 5px;
     color: #fff;
     border-radius:3px;
  }
@@ -42,7 +42,7 @@ a { color:#0588c6; text-decoration:underline;}
 }
 .header .nav_menu ul li a:hover, .header .nav_menu ul li.active a { color:#bbb;}
 .header img.hbgimg { margin:0; padding:2px 2px 0 0;}
-.header .logo { background:url(images/hbg_img.png) no-repeat center 24px; height:180px; padding-top:120px;}
+.header .logo { background:url("assets/primary.png") no-repeat center 24px; height:180px; width: 180px; height:48px; float: left; position: relative; left: -3px; bottom: 5px;}
 
 /* content */
 .content { margin-top: 10px;}
