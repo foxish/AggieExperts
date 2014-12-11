@@ -85,7 +85,6 @@ seed_profiles.each do |profile|
     i = i + 1
 end                  
 
-
 seed_pkeywords = [
                    {:user_id => 1, :keyword_id => 1},
                    {:user_id => 1, :keyword_id => 2},
