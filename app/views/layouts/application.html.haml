@@ -17,7 +17,7 @@
     %div{:class => "main"}      
       %div{:class => "header"}
         %div{:id => "bar"}
-          %img{:src=>"/assets/primary.png", :class=>"logo"}
+          %div.logo
           %div{:class => "header_resize"}
             %div{:class => "nav_menu"}
               %ul
@@ -26,14 +26,13 @@
                 %li
 
                   %a{:href => contact_us_path} Contact Us
-
             %div{:id => "container"}
               %div{:id => "loginContainer"}
                 - if signed_in?
                   = render :partial => "authenticated"
                 - else
                   = render :partial => "unauthenticated"
-    %div{:class=> "clear"}
+    %div{:class=> "clear-both"}
     - flash.each do |key, value|
       .centr
         .alert{ :class => "alert-#{key}", :style => 'background-color: yellow; text-align: center; display:inline' }
