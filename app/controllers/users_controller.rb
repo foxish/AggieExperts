@@ -127,7 +127,7 @@ class UsersController < Clearance::UsersController
     elsif !(password.match(/[a-z]+/))
       flash[:notice] = "Password must contain atleast one lower case letter"
       return false
-    elsif !(password.match(/[\d]+/))
+    elsif !(password.match(/[\d]+/)) 
       flash[:notice] = "Password must contain atleast one numeric character"
       return false      
     else
