@@ -16,7 +16,7 @@ class Suser < ActiveRecord::Base
    
    def self.reset_suser(email,host)
    	random_token = SecureRandom.hex(50)
-   	suser = Suser.create!(:email => email,:activation_link => random_token, :active_till => Time.now+10.days, :status_id => Status.find_by_code('PACT').id)
+   	suser = Suser.create!(:email => email,:activation_link => random_token, :active_till => Time.now+10.days, :status_id => Status.find_by_code('RESET').id)
     suser.sendResetLink(host)
    end
    
@@ -274,7 +274,7 @@ Or<br/>Copy and past this link in the browser<br/>"+http_activation_link+"
     random_token = SecureRandom.hex(50)
     self.activation_link = random_token
     self.active_till = Time.now+10.days
-    self.status_id = Status.find_by_code('PACT').id
+    self.status_id = Status.find_by_code('RESET').id
     self.save!
     self.sendResetLink(host)
    end

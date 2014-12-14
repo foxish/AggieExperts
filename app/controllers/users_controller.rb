@@ -33,7 +33,9 @@ skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_a
     else
       if !(params[:aid].nil?) && !(Suser.find_by_activation_link(params[:aid]).nil?)
          email = Suser.find_by_activation_link(params[:aid]).email
+         id = Suser.find_by_activation_link(params[:aid]).id
          @user = User.find_by_email(email)
+         Suser.destroy(id)
          sign_in @user
          redirect_to reset_path
       else 
