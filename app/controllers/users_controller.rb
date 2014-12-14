@@ -58,7 +58,7 @@ skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_a
       else
         suser.re_send_reset(request.host_with_port)
       end
-      flash[:notice] = "An email was sent to you with further instructions"
+      flash[:notice] = "An email will be sent to you with further instructions"
     end
     redirect_to root_path
   end
