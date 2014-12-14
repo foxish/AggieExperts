@@ -1,14 +1,15 @@
 require 'securerandom'
 
 class UsersController < Clearance::UsersController
-skip_before_filter :verify_authenticity_token, only: [:forgot_action]
-skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_action]
+  skip_before_filter :verify_authenticity_token, only: [:forgot_action]
+  skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_action]
   before_filter :avoid_sign_in, only: [:create, :new, :forgot_password, :forgot_action], if: :signed_in?
 
   def new
     session[:id] = nil
     @user = user_from_params
     if session[:id].nil?
+      flash[:notice] = "The Activation link provided is either expired or invalid"
       redirect_to ("/")
     else
       render template: 'users/new'
@@ -17,12 +18,11 @@ skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_a
   
   def update
     if validatePassword
-        current_user.change_password(user_params.delete(:password))
-        flash[:notice] = "Updated password successfully"
-        redirect_to root_path
+      current_user.change_password(user_params.delete(:password))
+      flash[:notice] = "Updated password successfully"
+      redirect_to root_path
     else
-        flash[:notice] = "Passwords do not match!!"
-        redirect_to(:back)
+      redirect_to(:back)
     end
   end
   
@@ -67,7 +67,6 @@ skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_a
     passcheck = validatePassword();
     @user = user_from_params
       if !passcheck
-        flash[:notice] = "Passwords do not match!!"
         redirect_to ("/activate?aid=" + Suser.find_by_id(session[:id]).activation_link)
       else
         if @user.save
@@ -94,9 +93,7 @@ skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_a
     password = user_params.delete(:password)
     user_params.delete(:re_password)
     if !(params[:aid].nil?) && !(Suser.find_by_activation_link(params[:aid]).nil?)
-      session[:id] = Suser.find_by_activation_link(params[:aid]).id
-    else 
-      flash[:notice] = "The Activation link provided is either expired or invalid"
+      session[:id] = Suser.find_by_activation_link(params[:aid]).id   
     end
     
     Clearance.configuration.user_model.new(user_params).tap do |user|
@@ -115,9 +112,24 @@ skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_a
     params[:user] || Hash.new
   end
 
-  def validatePassword()
-    if user_params[:password] != user_params[:re_password]
+  def validatePassword()  
+    password = user_params[:password]
+    re_password = user_params[:re_password]
+    if password != re_password
+      flash[:notice] = "The passwords do not match."
       return false
+    elsif password.length < 6
+      flash[:notice] = "Password must contain atleast six characters."
+      return false
+    elsif !(password.match(/[A-Z]+/))
+      flash[:notice] = "Password must contain atleast one upper case letter"
+      return false
+    elsif !(password.match(/[a-z]+/))
+      flash[:notice] = "Password must contain atleast one lower case letter"
+      return false
+    elsif !(password.match(/[\d]+/))
+      flash[:notice] = "Password must contain atleast one numeric character"
+      return false      
     else
       return true
     end
