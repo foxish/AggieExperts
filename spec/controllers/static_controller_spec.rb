@@ -1,5 +1,5 @@
 require 'rails_helper'
-describe HomeController do
+describe StaticController do
   describe 'Home Page tests' do
     it 'should render the index page' do
         get :index
