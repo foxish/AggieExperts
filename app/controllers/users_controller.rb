@@ -95,6 +95,8 @@ skip_before_filter :authorize, only: [:create, :new, :forgot_password, :forgot_a
     user_params.delete(:re_password)
     if !(params[:aid].nil?) && !(Suser.find_by_activation_link(params[:aid]).nil?)
       session[:id] = Suser.find_by_activation_link(params[:aid]).id
+    else 
+      flash[:notice] = "The Activation link provided is either expired or invalid"
     end
     
     Clearance.configuration.user_model.new(user_params).tap do |user|
