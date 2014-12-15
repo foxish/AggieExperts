@@ -7,8 +7,9 @@ include Clearance::User
   has_many :ppublications, :dependent => :destroy
   belongs_to :urole
   belongs_to :status
-  validates :email, presence: true, uniqueness: {:message => "email already exists"}
   validates :urole_id, presence: true
+  validates :email, presence: true, uniqueness: {:message => "email already exists"}, format: { with: /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/,
+    message: "Email is not of the correct format" }
 
   def self.update_status(fromStatusId, toStatusId)
   	users = User.where(status_id: fromStatusId)
