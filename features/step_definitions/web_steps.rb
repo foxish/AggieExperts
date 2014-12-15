@@ -263,7 +263,10 @@ end
 
 
 When(/^I click on first search result$/) do
+  save_and_open_page
+
   page.all(:xpath, '//*[@class="results"]').find('//*[@class="dataTables_wrapper"]').find('//*[@id="search_results"]').first.click
+  
 end
 
 

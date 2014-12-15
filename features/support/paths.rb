@@ -17,8 +17,8 @@ module NavigationHelpers
       '/'
     when /^the search page$/
       '/search'
-    when /^the profile page$/
-      "/profile/2"
+    when /^the first user's profile page$/
+      "/profile/1"
     when /^the edit page$/
       "/profile/"+User.find_by_email("admin@tamu.edu")['id'].to_s+"/edit"
     when /^the admin page$/

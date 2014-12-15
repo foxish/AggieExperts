@@ -12,8 +12,6 @@ Scenario: Home link in the header
   Given I am on the home page
   When I click first link of type ".home"
   Then I should be on the home page  
-  
- 
 
 Scenario: Search field and button
   Given I am on the home page
