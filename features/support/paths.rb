@@ -19,10 +19,18 @@ module NavigationHelpers
       '/search'
     when /^the profile page$/
       "/profile/2"
+    when /^the first user's profile page$/
+      "/profile/1"
     when /^the edit page$/
       "/profile/"+User.find_by_email("admin@tamu.edu")['id'].to_s+"/edit"
     when /^the admin page$/
     '/admin/main'
+    when /^the invite page$/
+      "/request_invite"
+    when /^the forgot password page$/
+      "/forgot_password"
+    when /^sign_out$/
+      "/sign_out"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

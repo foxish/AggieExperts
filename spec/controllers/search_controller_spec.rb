@@ -20,7 +20,7 @@ describe SearchController do
         mocked_profile.should_receive(:user_id).twice.and_return(1)
         
         fake_results = [mocked_profile]
-        Profile.should_receive(:get_profiles_by_keyword).with(search_term).and_return(fake_results)
+        Profile.should_receive(:get_profiles_by_keyword).twice.with(search_term).and_return(fake_results)
         
         get :search, {'term' => search_term}
         assigns(:profiles).should == [mocked_profile]
@@ -33,7 +33,7 @@ describe SearchController do
         mocked_profile.should_receive(:user_id).twice.and_return(1)
         
         fake_results = [mocked_profile]
-        Profile.should_receive(:get_profiles_by_keyword).with(search_term).and_return(fake_results)
+        Profile.should_receive(:get_profiles_by_keyword).twice.with(search_term).and_return(fake_results)
         Keyword.should_receive(:get_for_user).and_return(mocked_keyword)
         
         get :search, {'term' => search_term}

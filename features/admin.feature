@@ -14,3 +14,19 @@ Scenario: Add new user
 Scenario: filter admin table
 	When I select "ACT" from "Status Filter"
 	Then I should see "ACT"
+
+Scenario: admin enable/disable
+	When I click first link of type ".img"
+	Then I should see the image "/assets/aenable.png"
+
+Scenario: admin delete
+	When I click on admin action with image "/assets/adelete.png"
+	Then I should not see "Charles Xavier"
+
+Scenario: admin make admin
+	When I click on admin action with image "/assets/akey.png"
+	Then I should see "ACTIVE"
+
+Scenario: resend email
+	When I click on admin action with image "/assets/amail.png"
+	Then I should see "AggieExperts Users"

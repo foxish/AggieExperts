@@ -3,11 +3,11 @@ describe User do
 	fixtures :users
   	describe 'user model methods' do
   		it 'should update status' do
-  			User.update_status(3,4).should == [users(:user3)]
-  		end
-
-  		it 'should add new user' do
-  			User.add_user('foo4@abc.com').should == User.find_by_email('foo4@abc.com')
+            User.should_receive(:where).and_return([users(:user1), users(:user2)])
+            User.update_status(4,3)
+            
+            users(:user1).status_id.should == 3
+            users(:user2).status_id.should == 3
   		end
  	 end
 end

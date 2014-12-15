@@ -65,7 +65,6 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
-  #print page.html
   fill_in(field, :with => value)
 end
 
@@ -272,6 +271,13 @@ When /^(?:|I )click first link of type "([^"]*)"$/ do |link|
 end
 
 Then /^I should see the image "(.+)"$/ do |image|
-  page.should have_xpath("//img[contains(@src, \"#{image}\")]")
+  page.should have_xpath("//*[contains(@src, '#{image}')]")
 end
+
+When /^(?:|I )click on admin action with image "(.+)"$/ do |image|
+  page.first(:xpath,"//*[contains(@src, '#{image}')]").click
+end
+
+
+
 

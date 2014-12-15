@@ -5,11 +5,18 @@ class ProfileController < ApplicationController
     if @profile.nil?
       redirect_to new_profile_path(params[:id])
     else
-      @user = params[:id]
-      @publications = Ppublication.where(:user_id => params[:id])
-      @keywords = Keyword.get_for_user(params[:id])
-      unless @profile[:phone].nil?
-        @phone_num = Profile.format_phone(@profile[:phone])
+      if !current_user.nil? && (current_user.urole_id == User.get_admin_role || current_user['id'].to_s == params[:id]) ||
+          !Status.find_by_id(User.find_by_id(params[:id]).status_id).code == 'DISABLE'
+
+        @user = params[:id]
+        @publications = Ppublication.where(:user_id => params[:id])
+        @keywords = Keyword.get_for_user(params[:id])
+        unless @profile[:phone].nil?
+          @phone_num = Profile.format_phone(@profile[:phone])
+        end
+      else
+        flash[:notice] = "You do not have permission to do that"
+        redirect_to '/'
       end
     end
   end
@@ -21,7 +28,9 @@ class ProfileController < ApplicationController
       @profile.save(:validate => false)
       redirect_to edit_profile_path(params[:format])
     else
-      flash[:notice] = "You do not have permission to do that."
+      flash[:notice] = !current_user.nil? && current_user.urole_id == User.get_admin_role ?
+          "Profile has not yet been created" :
+          "You do not have permission to do that"
       redirect_to '/'
     end
   end
@@ -35,13 +44,19 @@ class ProfileController < ApplicationController
       @publications = Ppublication.where(:user_id => params[:id])
       @keywords = Keyword.get_for_user(params[:id])
     else
-      flash[:notice] = "You do not have permission to do that"
+      flash[:notice] = !current_user.nil? && current_user.urole_id == User.get_admin_role ?
+          "Profile has not yet been created" :
+          "You do not have permission to do that"
       redirect_to '/'
     end
   end
 
   def update
-    message = "Profile was successfully updated!"
+    message = "Profile was successfully saved!"
+    if Status.find_by_id(User.find_by_id(params[:id]).status_id).code == 'PAPP' ||
+        Status.find_by_id(User.find_by_id(params[:id]).status_id).code == 'DISABLE'
+      message = message + " The profile will be visible after admin approval"
+    end
     profile = Profile.where(:user_id => params[:id]).first
 
 

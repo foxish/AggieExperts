@@ -49,15 +49,16 @@ group :development, :test do
   gem 'will_paginate'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
-  gem 'database_cleaner'
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
   gem 'sqlite3'
-  gem 'pry-debugger'
-  gem 'debugger'
+  # gem 'pry-debugger'
+  # gem 'debugger'
   gem 'pry'
   gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 gem 'simplecov', :require => false, :group => :test
