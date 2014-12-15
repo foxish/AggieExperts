@@ -49,7 +49,7 @@ group :development, :test do
   gem 'will_paginate'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
-  gem 'database_cleaner'
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
