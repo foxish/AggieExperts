@@ -65,7 +65,6 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
-  #print page.html
   fill_in(field, :with => value)
 end
 
@@ -263,8 +262,6 @@ end
 
 
 When(/^I click on first search result$/) do
-  save_and_open_page
-
   page.all(:xpath, '//*[@class="results"]').find('//*[@class="dataTables_wrapper"]').find('//*[@id="search_results"]').first.click
   
 end
