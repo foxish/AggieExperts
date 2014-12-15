@@ -20,8 +20,12 @@ class AdminController < ApplicationController
 			user.urole_id = Urole.find_by_code('ADMIN').id
 			user.id = user['id']
 			user.save(:validate => false)
-		else
-			flash[:notice] = "Cannot make user admin. Illegal state!!"
+			flash[:notice] = "Admin privileges added to user: "+ view_context.getUserName(user['id'])+"."
+		elsif Urole.find_by_id(user.urole_id).code.eql?'ADMIN' 
+			user.urole_id = Urole.find_by_code('USER').id
+			user.id = user['id']
+			user.save(:validate => false)
+			flash[:notice] = "Revoked admin privileges for user: "+ view_context.getUserName(user['id'])+"."
 		end
 		redirect_to ("/admin/main")
 	end

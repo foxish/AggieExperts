@@ -90,10 +90,12 @@
 														%img{:alt=>"Delete Disabled", :src=>"/assets/delete_disabled.png", :title=>"Delete Disabled"}
 											%div{:id => 'admin_container',:style => 'float: left'}
 												%form{:controller => :admin, :action => :make_admin_user, :method =>"post", :class=> "admin_action"}
+													%input{:name=>'make_admin_user', :value=>user['id'], :hidden=>"true"}
+													%input{:name=>'authenticity_token', :value=>form_authenticity_token, :hidden=>"true"}
 													- if make_admin_enabled(user.urole_id,user.status_id)
-														%input{:name=>'make_admin_user', :value=>user['id'], :hidden=>"true"}
-														%input{:name=>'authenticity_token', :value=>form_authenticity_token, :hidden=>"true"}
 														%input{:type=>"image", :src=>"/assets/akey.png", :alt=>"Submit",:title=>"Make user admin", :class=>'img'}
+													- else
+														%input{:type=>"image", :src=>"/assets/akey_revoke.png", :alt=>"Submit",:title=>"Revoke Admin privileges", :class=>'img'}
 											
 					%br
 					%div{:id => 'Approve All'}
