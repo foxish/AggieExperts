@@ -21,7 +21,7 @@ class Suser < ActiveRecord::Base
    end
    
    def sendResetLink(host)
-      mg_client = Mailgun::Client.new "key-039e5cae20d25dcfcfbbc191df4d99c6"
+      mg_client = Mailgun::Client.new "key-de0f16057123661b05c9c2f0231626b3"
       http_activation_link = "http://"+host+"/reset?aid="+self.activation_link
       body = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns=\"http://www.w3.org/1999/xhtml\" style=\"font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;\">
@@ -137,11 +137,11 @@ Or<br/>Copy and past this link in the browser<br/>"+http_activation_link+"
                         :to      => self.email,
                         :subject => 'Reset your AggieExperts password',
                         :html    => body}
-      mg_client.send_message "sandboxc665c980e8404ecf8d9f037580207b14.mailgun.org", message_params   
+      mg_client.send_message "sandboxeda6e6b579574a2f8304b6807cda3cbc.mailgun.org", message_params   
    end
    
    def sendActivationLink(host)
-      mg_client = Mailgun::Client.new "key-039e5cae20d25dcfcfbbc191df4d99c6"
+      mg_client = Mailgun::Client.new "key-de0f16057123661b05c9c2f0231626b3"
       http_activation_link = "http://"+host+"/activate?aid="+self.activation_link
       body = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns=\"http://www.w3.org/1999/xhtml\" style=\"font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;\">
@@ -257,7 +257,7 @@ Or<br/>Copy and past this link in the browser<br/>"+http_activation_link+"
                         :to      => self.email,
                         :subject => 'Welcome To AggieExperts!',
                         :html    => body}
-      mg_client.send_message "sandboxc665c980e8404ecf8d9f037580207b14.mailgun.org", message_params
+      mg_client.send_message "sandboxeda6e6b579574a2f8304b6807cda3cbc.mailgun.org", message_params
    end
 
     

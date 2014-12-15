@@ -13,7 +13,12 @@ describe ProfileController do
   describe 'Checking show controller' do
     it 'should call correct model methods and render correct page' do
       controller.stub(:current_user).and_return(@user)
+      mock_code = double('status1')
+      
       Profile.should_receive(:where).with(:user_id => "1").and_return([{:phone => '1234567890', :name=> "foo1"}, {:phone => '1234567890', :name=> "foo2"}])
+
+      User.should_receive(:get_admin_role).and_return(1)
+      
       Ppublication.should_receive(:where).with(:user_id => "1").and_return("bar")
       Keyword.should_receive(:get_for_user).with("1").and_return("baz")
 
