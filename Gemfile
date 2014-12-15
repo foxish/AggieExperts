@@ -54,8 +54,8 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'sqlite3'
-  gem 'pry-debugger'
-  gem 'debugger'
+  # gem 'pry-debugger'
+  # gem 'debugger'
   gem 'pry'
   gem 'factory_girl'
 end

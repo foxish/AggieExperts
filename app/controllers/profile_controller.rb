@@ -21,7 +21,9 @@ class ProfileController < ApplicationController
       @profile.save(:validate => false)
       redirect_to edit_profile_path(params[:format])
     else
-      flash[:notice] = "You do not have permission to do that."
+      flash[:notice] = current_user.urole_id == User.get_admin_role ?
+          "Profile has not yet been created" :
+          "You do not have permission to do that"
       redirect_to '/'
     end
   end
@@ -35,7 +37,9 @@ class ProfileController < ApplicationController
       @publications = Ppublication.where(:user_id => params[:id])
       @keywords = Keyword.get_for_user(params[:id])
     else
-      flash[:notice] = "You do not have permission to do that"
+      flash[:notice] = current_user.urole_id == User.get_admin_role ?
+          "Profile has not yet been created" :
+          "You do not have permission to do that"
       redirect_to '/'
     end
   end
