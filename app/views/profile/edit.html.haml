@@ -2,6 +2,8 @@
   .content_resize
     = form_tag profile_path(@user), :method => :put, :id => 'edit_form', :multipart => true do
       #edit_content
+        .submit
+          = submit_tag 'Save Changes', :onclick => "return validateForm();", :class=>'pure-button pure-button-active button-xlarge'
         %table#parent
           %tbody
             %tr
