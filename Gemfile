@@ -54,10 +54,11 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'sqlite3'
-  # gem 'pry-debugger'
-  # gem 'debugger'
+  gem 'pry-debugger'
+  gem 'debugger'
   gem 'pry'
   gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 gem 'simplecov', :require => false, :group => :test
