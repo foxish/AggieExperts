@@ -30,3 +30,21 @@ Scenario: Search field and button
   When I fill in "tb_search" with "Charles Modern" 
   Then I press "bt_search"
   Then I should be on the search page  
+
+Scenario: request invite
+  Given I am on the request_invite page
+  Then I should see "Name"
+  And I should see "Email"
+  And I should see "Department"
+  And I should see "Message"
+
+Scenario: request invite
+  Given I am on the request_invite page
+  And I fill in "Name" with "John Doe"
+  And I fill in "Email" with "email@rmail.com"
+  And I fill in "Department" with "Computer Science"
+  And I fill in "Message" with "test"
+  And I press "Request Invite"
+  Then I should be on the home page
+  And I should see "Thank you. An email will be sent to you once your request is approved"
+
