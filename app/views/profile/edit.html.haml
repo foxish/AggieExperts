@@ -3,7 +3,7 @@
     = form_tag profile_path(@user), :method => :put, :id => 'edit_form', :multipart => true do
       #edit_content
         .submit
-          = submit_tag 'Save Changes', :onclick => "return validateForm();", :class=>'pure-button pure-button-active button-xlarge'
+          = submit_tag 'Save Changes', :onclick => "return validateForm();", :class=>'pure-button pure-button-active button-xlarge', :id => 'submit_top'
         %table#parent
           %tbody
             %tr
@@ -135,4 +135,4 @@
                               %td.center
                                 %input{:type=>'checkbox',:name=> "pub[new][#{index}][check]", :id => "pub_check_#{index}", :disabled => ""}
       .submit
-        = submit_tag 'Save Changes', :onclick => "return validateForm();", :class=>'pure-button pure-button-active button-xlarge'
+        = submit_tag 'Save Changes', :onclick => "return validateForm();", :class=>'pure-button pure-button-active button-xlarge', :id => 'submit_bottom'
