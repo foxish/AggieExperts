@@ -3,7 +3,7 @@ require 'rails_helper'
         fixtures :susers, :status
         before(:all) do
           setup_controller_request_and_response
-          @user = FactoryGirl.create(Clearance.configuration.user_model.to_s.underscore.to_sym)
+          @user = build(Clearance.configuration.user_model.to_s.underscore.to_sym, :email => 'admin@tamu.edu')
           @user['id'] = @user.id
           sign_in_as @user
         end
