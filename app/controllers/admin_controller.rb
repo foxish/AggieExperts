@@ -1,8 +1,8 @@
 class AdminController < ApplicationController
 	helper AdminHelper
 	def main
-		if !current_user.nil? && (current_user.urole_id == User.get_admin_role)
-			@status = Status.where(entity: 'USER')
+        if !current_user.nil? && (current_user.urole_id == User.get_admin_role)
+            @status = Status.where(entity: 'USER')
 			urole = Urole.find_by_code('USER')
 			@users = User.find_reg_users(current_user['id'])
 			@pact_susers = Status.find_by_code('PACT').susers
@@ -68,18 +68,19 @@ class AdminController < ApplicationController
 	def disable_user
         user = User.find_user(params[:disable_user])
         from_status = Status.find_by_id(user.status_id)
-		if from_status.code.eql?'DISABLE' then
+
+        if from_status.code.eql?'DISABLE' then
 			to_status = Status.where(code: 'ACTIVE').first
 			user.status_id = to_status.id
 		elsif from_status.code.eql?'ACTIVE' then
 			to_status = Status.where(code: 'DISABLE').first
 			user.status_id = to_status.id
 		else
-			flash[:notice] = "Cannot enable or disable user. Illegal state!!"
+            flash[:notice] = "Cannot enable or disable user. Illegal state!!"
 		end
         user.id = user['id']
 		user.save(:validate => false)
-		redirect_to("/admin/main")
+        redirect_to("/admin/main")
 	end
 
 	def approve_user

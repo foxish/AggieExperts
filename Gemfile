@@ -58,6 +58,7 @@ group :development, :test do
   gem 'debugger'
   gem 'pry'
   gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 gem 'simplecov', :require => false, :group => :test
