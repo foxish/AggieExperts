@@ -1,7 +1,7 @@
 %div{:class => "content"}
 	%div{:class => "content_resize"}
 		%div{:id => "invite_form", :align=>'center'}
-			%form{:class=>'pure-form pure-form-stacked', :controller => :profile, :action => :invite_suser, :method => 'post'}
+			%form{:class=>'pure-form pure-form-stacked', :controller => :profile, :action => :invite_suser, :method => 'post', :onsubmit=> 'return validateInviteForm();'}
 				= label :suser, :name, "Name:"
 				= text_field :suser, :name
 				= label :suser, :email, "Email:"
