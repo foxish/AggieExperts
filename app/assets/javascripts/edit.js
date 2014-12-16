@@ -93,6 +93,20 @@ function validateForm() {
     }
 }
 
+function validateAdminForm() {
+    if (validateEmail(document.getElementById('tb_add_user'))) {
+        alert('Email is of wrong or invalid format');
+        return false
+    }
+}
+
+function validateInviteForm(){
+    if (validateEmail(document.getElementById('suser_email'))) {
+        alert('Email is of wrong or invalid format');
+        return false
+    }   
+}
+
 function setElementBorder(error, elem) {
     elem.style.borderColor = error ? errorColor : defaultColor;
     return error;

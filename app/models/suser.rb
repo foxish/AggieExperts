@@ -3,7 +3,8 @@ require 'mailgun'
 
 class Suser < ActiveRecord::Base
    attr_accessible :email, :activation_link, :active_till, :status_id, :name, :department, :message
-   validates :email, presence: true,uniqueness: {:message => "already exist"}
+   validates :email, presence: true,uniqueness: {:message => "already exist"}, format: { with: /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/,
+    message: "Email is not of the correct format" }
    validates :activation_link, uniqueness: true
    belongs_to :status
 
