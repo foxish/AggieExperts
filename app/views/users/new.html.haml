@@ -56,7 +56,7 @@
     %div{:id => 'password_container', :class=> 'pass_class'}
       %div{:id=>"clearance", :class=>"sign-up-div"}
         %h3 Set New Password
-        = form_for @user, :url=> @url,:html=>{:method=>'put', :class=>'pure-form',:onSubmit=>'return checkForm(this);'} do |form|
+        = form_for @user, :html=>{:class=>'pure-form',:onSubmit=>'return checkForm(this);'} do |form|
           %div{:id=>"password", :class=>"password-field"}
             = form.password_field :password,:placeholder=>'Password'
             %br
