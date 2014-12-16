@@ -6,8 +6,7 @@ class ProfileController < ApplicationController
       redirect_to new_profile_path(params[:id])
     else
       if !current_user.nil? && (current_user.urole_id == User.get_admin_role || current_user['id'].to_s == params[:id]) ||
-          !Status.find_by_id(User.find_by_id(params[:id]).status_id).code == 'DISABLE'
-
+          !(Status.find_by_id(User.find_by_id(params[:id]).status_id).code == 'DISABLE')
         @user = params[:id]
         @publications = Ppublication.where(:user_id => params[:id])
         @keywords = Keyword.get_for_user(params[:id])
